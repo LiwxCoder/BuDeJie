@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */; };
 		D95F32F21C4D113700ED13EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F01C4D113700ED13EB /* Main.storyboard */; };
 		D95F32F41C4D113700ED13EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F31C4D113700ED13EB /* Assets.xcassets */; };
 		D95F32F71C4D113700ED13EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F51C4D113700ED13EB /* LaunchScreen.storyboard */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D93E03A91C4D47E8002CBDE8 /* WXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNavigationController.h; sourceTree = "<group>"; };
+		D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNavigationController.m; sourceTree = "<group>"; };
 		D95F32E41C4D113700ED13EB /* BuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95F32F11C4D113700ED13EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D95F32F31C4D113700ED13EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,9 +109,9 @@
 		D95F32FE1C4D116500ED13EB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D95F330B1C4D116500ED13EB /* Main */,
 				D95F32FF1C4D116500ED13EB /* Essence(精华) */,
 				D95F33051C4D116500ED13EB /* FriendTrend(关注) */,
-				D95F330B1C4D116500ED13EB /* Main */,
 				D95F33131C4D116500ED13EB /* Me(我) */,
 				D95F33191C4D116500ED13EB /* New(新帖) */,
 				D95F331F1C4D116500ED13EB /* Other */,
@@ -198,6 +201,8 @@
 			children = (
 				D95F330D1C4D116500ED13EB /* WXTabBarController.h */,
 				D95F330E1C4D116500ED13EB /* WXTabBarController.m */,
+				D93E03A91C4D47E8002CBDE8 /* WXNavigationController.h */,
+				D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,9 +294,9 @@
 			children = (
 				D95F33201C4D116500ED13EB /* AppDelegate.h */,
 				D95F33211C4D116500ED13EB /* AppDelegate.m */,
+				D95F332A1C4D116500ED13EB /* main.m */,
 				D95F33221C4D116500ED13EB /* BuDeJie.pch */,
 				D95F33231C4D116500ED13EB /* Category */,
-				D95F332A1C4D116500ED13EB /* main.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 		D95F32DC1C4D113700ED13EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WX;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = liwx;
 				TargetAttributes = {
@@ -419,6 +425,7 @@
 				D95F33381C4D116500ED13EB /* UIColor+Hex.m in Sources */,
 				D95F33371C4D116500ED13EB /* AppDelegate.m in Sources */,
 				D95F33351C4D116500ED13EB /* WXMeViewController.m in Sources */,
+				D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */,
 				D95F33391C4D116500ED13EB /* UIImage+Render.m in Sources */,
 				D95F333C1C4D116500ED13EB /* WXPublishViewController.m in Sources */,
 				D95F33331C4D116500ED13EB /* WXTabBarController.m in Sources */,
@@ -576,6 +583,7 @@
 				D95F32FD1C4D113700ED13EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

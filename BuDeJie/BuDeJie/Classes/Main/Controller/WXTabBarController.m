@@ -7,13 +7,13 @@
 //
 
 #import "WXTabBarController.h"
-
 #import "WXEssenceViewController.h"
 #import "WXNewViewController.h"
 #import "WXPublishViewController.h"
 #import "WXFriendTrendViewController.h"
 #import "WXMeViewController.h"
 #import "WXTabBar.h"
+#import "WXNavigationController.h"
 
 @interface WXTabBarController ()
 
@@ -21,12 +21,27 @@
 
 @implementation WXTabBarController
 
-/** 
- 
-    1.他不Bar字体渲染问题.
- 
- */
+#pragma =======================================================================
+#pragma mark - 系统方法重写
+// ----------------------------------------------------------------------------
+// 第一次使用当前类或者它的子类的时候调用
++ (void)initialize
+{
+    // 一次性设置tabBarItem字体颜色
+    // 1.判断是否是WXTabBarController
+    if (self == [WXTabBarController class]) {
+        // 1.1 获取item
+        UITabBarItem *item = [UITabBarItem appearanceWhenContainedIn:self, nil];
+        
+        NSDictionary *attrNormal = @{NSForegroundColorAttributeName : [UIColor redColor]};
+        [item setTitleTextAttributes:attrNormal forState:UIControlStateSelected];
+        NSDictionary *attrHigh = @{NSForegroundColorAttributeName : [UIColor grayColor]};
+        [item setTitleTextAttributes:attrHigh forState:UIControlStateNormal];
+    }
+}
 
+// ----------------------------------------------------------------------------
+// view加载完成
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -40,10 +55,9 @@
     [self setupTabBar];
 }
 
-// ----------------------------------------------------------------------------
-// 初始化设置,初始化所有子控制器,设置所有子控制器的tabBarButton
+#pragma =======================================================================
 #pragma mark - 初始化设置
-
+// ----------------------------------------------------------------------------
 // 添加所有子控制器
 - (void)setupAllChildViewController
 {
@@ -63,6 +77,7 @@
     [self setupOneChildViewController:[[WXMeViewController alloc] init]];
 }
 
+// ----------------------------------------------------------------------------
 // 添加一个子控制器
 - (void)setupOneChildViewController:(UIViewController *)viewController
 {
@@ -71,6 +86,7 @@
     [self addChildViewController:nav];
 }
 
+// ----------------------------------------------------------------------------
 // 设置所有tabBarButton
 - (void)setupAllTabBarButton
 {
@@ -85,30 +101,27 @@
     
     // 我tabBarItem设置
     [self setupOneTabBarButtonVcIndex:3 titile:@"我" imageName:@"tabBar_me_icon" selectedImageName:@"tabBar_me_click_icon"];
-    
 }
 
+// ----------------------------------------------------------------------------
 // 设置一个tabBarButton信息
 - (void)setupOneTabBarButtonVcIndex:(NSInteger)vcIndex titile:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
 {
     // 1.获取子控制器(UINavigationController),并设置标题和图片
-    UINavigationController *nav = self.childViewControllers[vcIndex];
+    WXNavigationController *nav = self.childViewControllers[vcIndex];
     
     nav.tabBarItem.title = title;
     nav.tabBarItem.image = [UIImage imageNamed:imageName];
     nav.tabBarItem.selectedImage = [UIImage imageWithOriginalRender:selectedImageName];
 }
 
+// ----------------------------------------------------------------------------
 // 设置自定义tabBar
 - (void)setupTabBar
 {
     WXTabBar *tabBar = [[WXTabBar alloc] init];
     // 1.将系统的tabBar换成自定义tabBar,系统的tabBar是readOnly,用KVC设置
     [self setValue:tabBar forKey:@"tabBar"];
-    
-    // 2.
-    [tabBar setTintColor:[UIColor redColor]];
-    
 }
 
 

@@ -17,13 +17,17 @@
 
 @implementation WXTabBar
 
+#pragma =======================================================================
 #pragma mark - 懒加载
+// ----------------------------------------------------------------------------
+// 加号按钮
 - (UIButton *)plusButton
 {
     if (_plusButton == nil) {
         UIButton *plusButton = [[UIButton alloc] init];
         [plusButton setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [plusButton setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
+        // 设置尺寸
         [plusButton sizeToFit];
         _plusButton = plusButton;
         
@@ -32,8 +36,10 @@
     return _plusButton;
 }
 
+#pragma =======================================================================
 #pragma mark - 布局子控件
-// 重新布局tabBarButton
+// ----------------------------------------------------------------------------
+// 重新布局tabBar子控件
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -68,7 +74,6 @@
     
     // 3.设置加号按钮
     self.plusButton.center = CGPointMake(self.wx_width * 0.5, self.wx_height * 0.5);
-    
 }
 
 
