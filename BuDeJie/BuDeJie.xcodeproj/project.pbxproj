@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D95F32F21C4D113700ED13EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F01C4D113700ED13EB /* Main.storyboard */; };
+		D95F32F41C4D113700ED13EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F31C4D113700ED13EB /* Assets.xcassets */; };
+		D95F32F71C4D113700ED13EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F51C4D113700ED13EB /* LaunchScreen.storyboard */; };
+		D95F33311C4D116500ED13EB /* WXEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F33021C4D116500ED13EB /* WXEssenceViewController.m */; };
+		D95F33321C4D116500ED13EB /* WXFriendTrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F33081C4D116500ED13EB /* WXFriendTrendViewController.m */; };
+		D95F33331C4D116500ED13EB /* WXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F330E1C4D116500ED13EB /* WXTabBarController.m */; };
+		D95F33341C4D116500ED13EB /* WXTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F33121C4D116500ED13EB /* WXTabBar.m */; };
+		D95F33351C4D116500ED13EB /* WXMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F33161C4D116500ED13EB /* WXMeViewController.m */; };
+		D95F33361C4D116500ED13EB /* WXNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F331C1C4D116500ED13EB /* WXNewViewController.m */; };
+		D95F33371C4D116500ED13EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F33211C4D116500ED13EB /* AppDelegate.m */; };
+		D95F33381C4D116500ED13EB /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F33251C4D116500ED13EB /* UIColor+Hex.m */; };
+		D95F33391C4D116500ED13EB /* UIImage+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F33271C4D116500ED13EB /* UIImage+Render.m */; };
+		D95F333A1C4D116500ED13EB /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F33291C4D116500ED13EB /* UIView+Frame.m */; };
+		D95F333B1C4D116500ED13EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F332A1C4D116500ED13EB /* main.m */; };
+		D95F333C1C4D116500ED13EB /* WXPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F332E1C4D116500ED13EB /* WXPublishViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D95F32E41C4D113700ED13EB /* BuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95F32F11C4D113700ED13EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D95F32F31C4D113700ED13EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D95F32F61C4D113700ED13EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D95F32F81C4D113700ED13EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D95F33011C4D116500ED13EB /* WXEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXEssenceViewController.h; sourceTree = "<group>"; };
+		D95F33021C4D116500ED13EB /* WXEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXEssenceViewController.m; sourceTree = "<group>"; };
+		D95F33071C4D116500ED13EB /* WXFriendTrendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFriendTrendViewController.h; sourceTree = "<group>"; };
+		D95F33081C4D116500ED13EB /* WXFriendTrendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFriendTrendViewController.m; sourceTree = "<group>"; };
+		D95F330D1C4D116500ED13EB /* WXTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabBarController.h; sourceTree = "<group>"; };
+		D95F330E1C4D116500ED13EB /* WXTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabBarController.m; sourceTree = "<group>"; };
+		D95F33111C4D116500ED13EB /* WXTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabBar.h; sourceTree = "<group>"; };
+		D95F33121C4D116500ED13EB /* WXTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabBar.m; sourceTree = "<group>"; };
+		D95F33151C4D116500ED13EB /* WXMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMeViewController.h; sourceTree = "<group>"; };
+		D95F33161C4D116500ED13EB /* WXMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXMeViewController.m; sourceTree = "<group>"; };
+		D95F331B1C4D116500ED13EB /* WXNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNewViewController.h; sourceTree = "<group>"; };
+		D95F331C1C4D116500ED13EB /* WXNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNewViewController.m; sourceTree = "<group>"; };
+		D95F33201C4D116500ED13EB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D95F33211C4D116500ED13EB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D95F33221C4D116500ED13EB /* BuDeJie.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
+		D95F33241C4D116500ED13EB /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		D95F33251C4D116500ED13EB /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		D95F33261C4D116500ED13EB /* UIImage+Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Render.h"; sourceTree = "<group>"; };
+		D95F33271C4D116500ED13EB /* UIImage+Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Render.m"; sourceTree = "<group>"; };
+		D95F33281C4D116500ED13EB /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		D95F33291C4D116500ED13EB /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		D95F332A1C4D116500ED13EB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D95F332D1C4D116500ED13EB /* WXPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPublishViewController.h; sourceTree = "<group>"; };
+		D95F332E1C4D116500ED13EB /* WXPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPublishViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D95F32E11C4D113700ED13EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D95F32DB1C4D113700ED13EB = {
+			isa = PBXGroup;
+			children = (
+				D95F32E61C4D113700ED13EB /* BuDeJie */,
+				D95F32E51C4D113700ED13EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D95F32E51C4D113700ED13EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D95F32E41C4D113700ED13EB /* BuDeJie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D95F32E61C4D113700ED13EB /* BuDeJie */ = {
+			isa = PBXGroup;
+			children = (
+				D95F32FE1C4D116500ED13EB /* Classes */,
+				D95F32F01C4D113700ED13EB /* Main.storyboard */,
+				D95F32F31C4D113700ED13EB /* Assets.xcassets */,
+				D95F32F51C4D113700ED13EB /* LaunchScreen.storyboard */,
+				D95F32F81C4D113700ED13EB /* Info.plist */,
+				D95F32E71C4D113700ED13EB /* Supporting Files */,
+			);
+			path = BuDeJie;
+			sourceTree = "<group>";
+		};
+		D95F32E71C4D113700ED13EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D95F32FE1C4D116500ED13EB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D95F32FF1C4D116500ED13EB /* Essence(精华) */,
+				D95F33051C4D116500ED13EB /* FriendTrend(关注) */,
+				D95F330B1C4D116500ED13EB /* Main */,
+				D95F33131C4D116500ED13EB /* Me(我) */,
+				D95F33191C4D116500ED13EB /* New(新帖) */,
+				D95F331F1C4D116500ED13EB /* Other */,
+				D95F332B1C4D116500ED13EB /* Publish(发布) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D95F32FF1C4D116500ED13EB /* Essence(精华) */ = {
+			isa = PBXGroup;
+			children = (
+				D95F33001C4D116500ED13EB /* Controller */,
+				D95F33031C4D116500ED13EB /* Model */,
+				D95F33041C4D116500ED13EB /* View */,
+			);
+			path = "Essence(精华)";
+			sourceTree = "<group>";
+		};
+		D95F33001C4D116500ED13EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D95F33011C4D116500ED13EB /* WXEssenceViewController.h */,
+				D95F33021C4D116500ED13EB /* WXEssenceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D95F33031C4D116500ED13EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D95F33041C4D116500ED13EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D95F33051C4D116500ED13EB /* FriendTrend(关注) */ = {
+			isa = PBXGroup;
+			children = (
+				D95F33061C4D116500ED13EB /* Controller */,
+				D95F33091C4D116500ED13EB /* Model */,
+				D95F330A1C4D116500ED13EB /* View */,
+			);
+			path = "FriendTrend(关注)";
+			sourceTree = "<group>";
+		};
+		D95F33061C4D116500ED13EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D95F33071C4D116500ED13EB /* WXFriendTrendViewController.h */,
+				D95F33081C4D116500ED13EB /* WXFriendTrendViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D95F33091C4D116500ED13EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D95F330A1C4D116500ED13EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D95F330B1C4D116500ED13EB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D95F330C1C4D116500ED13EB /* Controller */,
+				D95F330F1C4D116500ED13EB /* Model */,
+				D95F33101C4D116500ED13EB /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D95F330C1C4D116500ED13EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D95F330D1C4D116500ED13EB /* WXTabBarController.h */,
+				D95F330E1C4D116500ED13EB /* WXTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D95F330F1C4D116500ED13EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D95F33101C4D116500ED13EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D95F33111C4D116500ED13EB /* WXTabBar.h */,
+				D95F33121C4D116500ED13EB /* WXTabBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D95F33131C4D116500ED13EB /* Me(我) */ = {
+			isa = PBXGroup;
+			children = (
+				D95F33141C4D116500ED13EB /* Controller */,
+				D95F33171C4D116500ED13EB /* Model */,
+				D95F33181C4D116500ED13EB /* View */,
+			);
+			path = "Me(我)";
+			sourceTree = "<group>";
+		};
+		D95F33141C4D116500ED13EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D95F33151C4D116500ED13EB /* WXMeViewController.h */,
+				D95F33161C4D116500ED13EB /* WXMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D95F33171C4D116500ED13EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D95F33181C4D116500ED13EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D95F33191C4D116500ED13EB /* New(新帖) */ = {
+			isa = PBXGroup;
+			children = (
+				D95F331A1C4D116500ED13EB /* Controller */,
+				D95F331D1C4D116500ED13EB /* Model */,
+				D95F331E1C4D116500ED13EB /* View */,
+			);
+			path = "New(新帖)";
+			sourceTree = "<group>";
+		};
+		D95F331A1C4D116500ED13EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D95F331B1C4D116500ED13EB /* WXNewViewController.h */,
+				D95F331C1C4D116500ED13EB /* WXNewViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D95F331D1C4D116500ED13EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D95F331E1C4D116500ED13EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D95F331F1C4D116500ED13EB /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D95F33201C4D116500ED13EB /* AppDelegate.h */,
+				D95F33211C4D116500ED13EB /* AppDelegate.m */,
+				D95F33221C4D116500ED13EB /* BuDeJie.pch */,
+				D95F33231C4D116500ED13EB /* Category */,
+				D95F332A1C4D116500ED13EB /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		D95F33231C4D116500ED13EB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D95F33241C4D116500ED13EB /* UIColor+Hex.h */,
+				D95F33251C4D116500ED13EB /* UIColor+Hex.m */,
+				D95F33261C4D116500ED13EB /* UIImage+Render.h */,
+				D95F33271C4D116500ED13EB /* UIImage+Render.m */,
+				D95F33281C4D116500ED13EB /* UIView+Frame.h */,
+				D95F33291C4D116500ED13EB /* UIView+Frame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D95F332B1C4D116500ED13EB /* Publish(发布) */ = {
+			isa = PBXGroup;
+			children = (
+				D95F332C1C4D116500ED13EB /* Controller */,
+				D95F332F1C4D116500ED13EB /* Model */,
+				D95F33301C4D116500ED13EB /* View */,
+			);
+			path = "Publish(发布)";
+			sourceTree = "<group>";
+		};
+		D95F332C1C4D116500ED13EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D95F332D1C4D116500ED13EB /* WXPublishViewController.h */,
+				D95F332E1C4D116500ED13EB /* WXPublishViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D95F332F1C4D116500ED13EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D95F33301C4D116500ED13EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D95F32E31C4D113700ED13EB /* BuDeJie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D95F32FB1C4D113700ED13EB /* Build configuration list for PBXNativeTarget "BuDeJie" */;
+			buildPhases = (
+				D95F32E01C4D113700ED13EB /* Sources */,
+				D95F32E11C4D113700ED13EB /* Frameworks */,
+				D95F32E21C4D113700ED13EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuDeJie;
+			productName = BuDeJie;
+			productReference = D95F32E41C4D113700ED13EB /* BuDeJie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D95F32DC1C4D113700ED13EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = liwx;
+				TargetAttributes = {
+					D95F32E31C4D113700ED13EB = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = D95F32DF1C4D113700ED13EB /* Build configuration list for PBXProject "BuDeJie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D95F32DB1C4D113700ED13EB;
+			productRefGroup = D95F32E51C4D113700ED13EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D95F32E31C4D113700ED13EB /* BuDeJie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D95F32E21C4D113700ED13EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95F32F71C4D113700ED13EB /* LaunchScreen.storyboard in Resources */,
+				D95F32F41C4D113700ED13EB /* Assets.xcassets in Resources */,
+				D95F32F21C4D113700ED13EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D95F32E01C4D113700ED13EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95F33361C4D116500ED13EB /* WXNewViewController.m in Sources */,
+				D95F33311C4D116500ED13EB /* WXEssenceViewController.m in Sources */,
+				D95F33341C4D116500ED13EB /* WXTabBar.m in Sources */,
+				D95F33321C4D116500ED13EB /* WXFriendTrendViewController.m in Sources */,
+				D95F33381C4D116500ED13EB /* UIColor+Hex.m in Sources */,
+				D95F33371C4D116500ED13EB /* AppDelegate.m in Sources */,
+				D95F33351C4D116500ED13EB /* WXMeViewController.m in Sources */,
+				D95F33391C4D116500ED13EB /* UIImage+Render.m in Sources */,
+				D95F333C1C4D116500ED13EB /* WXPublishViewController.m in Sources */,
+				D95F33331C4D116500ED13EB /* WXTabBarController.m in Sources */,
+				D95F333B1C4D116500ED13EB /* main.m in Sources */,
+				D95F333A1C4D116500ED13EB /* UIView+Frame.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D95F32F01C4D113700ED13EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D95F32F11C4D113700ED13EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D95F32F51C4D113700ED13EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D95F32F61C4D113700ED13EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D95F32F91C4D113700ED13EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D95F32FA1C4D113700ED13EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D95F32FC1C4D113700ED13EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = BuDeJie/Classes/Other/BuDeJie.pch;
+				INFOPLIST_FILE = BuDeJie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liwx.BuDeJie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D95F32FD1C4D113700ED13EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = BuDeJie/Classes/Other/BuDeJie.pch;
+				INFOPLIST_FILE = BuDeJie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liwx.BuDeJie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D95F32DF1C4D113700ED13EB /* Build configuration list for PBXProject "BuDeJie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95F32F91C4D113700ED13EB /* Debug */,
+				D95F32FA1C4D113700ED13EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D95F32FB1C4D113700ED13EB /* Build configuration list for PBXNativeTarget "BuDeJie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95F32FC1C4D113700ED13EB /* Debug */,
+				D95F32FD1C4D113700ED13EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D95F32DC1C4D113700ED13EB /* Project object */;
+}

@@ -1,0 +1,34 @@
+//
+//  BuDeJie.pch
+//  BuDeJie
+//
+//  Created by liwx on 16/1/18.
+//  Copyright © 2016年 liwx. All rights reserved.
+//
+
+#ifndef BuDeJie_pch
+#define BuDeJie_pch
+
+
+// ----------------------------------------------------------------------------
+// 全局头文件
+#import "UIColor+Hex.h"
+#import "UIImage+Render.h"
+#import "UIView+Frame.h"
+
+#ifdef __OBJC__
+
+// 快速设置颜色UIColor
+#define WXColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g) / 255.0 blue:(b)/ 255.0 alpha:1]
+
+// 获取应用程序的keyWindow
+#define WXKeyWindow [UIApplication sharedApplication].keyWindow
+
+
+#define screenW [UIScreen mainScreen].bounds.size.width
+#define screenH [UIScreen mainScreen].bounds.size.height
+
+#endif
+
+
+#endif /* BuDeJie_pch */
