@@ -24,20 +24,29 @@
 #pragma =======================================================================
 #pragma mark - 系统方法重写
 // ----------------------------------------------------------------------------
-// 第一次使用当前类或者它的子类的时候调用
-+ (void)initialize
+// 加载类进内存的时候调用,只会调用一次(子类不会加载的适合不再加载父类的load方法)
++ (void)load
 {
+    // 谁才能使用appearance?只要遵守了这个UIAppearance协议,就能调用appearance
+    // 注意:UIAppearance并不是所有属性都能设置
+    // 哪些属性可以通过UIAppearance设置?只要属性有UI_APPEARANCE_SELECTOR这个宏描述,就可以使用UIAppearance设置
+    // UIAppearance使用场景
+    
     // 一次性设置tabBarItem字体颜色
-    // 1.判断是否是WXTabBarController
-    if (self == [WXTabBarController class]) {
-        // 1.1 获取item
-        UITabBarItem *item = [UITabBarItem appearanceWhenContainedIn:self, nil];
-        
-        NSDictionary *attrNormal = @{NSForegroundColorAttributeName : [UIColor redColor]};
-        [item setTitleTextAttributes:attrNormal forState:UIControlStateSelected];
-        NSDictionary *attrHigh = @{NSForegroundColorAttributeName : [UIColor grayColor]};
-        [item setTitleTextAttributes:attrHigh forState:UIControlStateNormal];
-    }
+    // ------------------------------------------------------------------------
+    // 1.判断是否是WXTabBarController类
+    // 1.1 获取item
+    UITabBarItem *item = [UITabBarItem appearanceWhenContainedIn:self, nil];
+    
+    // 1.2 设置
+    NSDictionary *attrSelected = @{NSForegroundColorAttributeName : [UIColor blackColor]};
+    [item setTitleTextAttributes:attrSelected forState:UIControlStateSelected];
+    
+    // ----------------------------------------------------------------------------
+    // 2.设置普通状态下的TabBar字体大小, 注意:一定要先设置正常状态下字体大小
+    NSDictionary *attrNormal = @{NSFontAttributeName : [UIFont systemFontOfSize:13]};
+    [item setTitleTextAttributes:attrNormal forState:UIControlStateNormal];
+    
 }
 
 // ----------------------------------------------------------------------------
