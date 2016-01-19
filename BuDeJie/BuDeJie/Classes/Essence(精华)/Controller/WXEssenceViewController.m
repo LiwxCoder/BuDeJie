@@ -31,11 +31,14 @@
 // 设置导航条按钮
 - (void)setupNavigationItem
 {
-    // 设置导航条左侧游戏按钮
+    // 1.设置导航条左侧游戏按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem createItemWithImage:[UIImage imageNamed:@"nav_item_game_icon"] highImage:[UIImage imageNamed:@"nav_item_game_click_icon"] target:self action:@selector(gameBarButtonClick)];
     
-    // 设置导航条右侧随机按钮
+    // 2.设置导航条右侧随机按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem createItemWithImage:[UIImage imageNamed:@"navigationButtonRandom"] highImage:[UIImage imageNamed:@"navigationButtonRandomClick"] target:self action:@selector(randomBarButtonClick)];
+    
+    // 3.设置标题titleView
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
 }
 
 // ----------------------------------------------------------------------------

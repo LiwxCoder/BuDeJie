@@ -7,6 +7,7 @@
 //
 
 #import "WXMeViewController.h"
+#import "WXSettingController.h"
 
 @interface WXMeViewController ()
 
@@ -53,7 +54,12 @@
 // 监听导航条右侧设置按钮点击
 - (void)settingBarButtonClick
 {
-    WXFunc();
+    // 1.创建设置控制器
+    WXSettingController *settingVc = [[WXSettingController alloc] init];
+    // 2.设置settingVc控制器跳转时隐藏tabBar,一定要在跳转前设置
+    settingVc.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:settingVc animated:YES];
 }
 
 // ----------------------------------------------------------------------------

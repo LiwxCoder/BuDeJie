@@ -32,10 +32,6 @@
 - (void)setupTitle
 {
     self.navigationItem.title = @"我的关注";
-    
-    // 设置标题字体
-    NSDictionary *attrDict = @{NSFontAttributeName : [UIFont systemFontOfSize:20]};
-    [self.navigationController.navigationBar setTitleTextAttributes:attrDict];
 }
 
 // ----------------------------------------------------------------------------

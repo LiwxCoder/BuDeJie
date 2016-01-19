@@ -91,7 +91,7 @@
 - (void)setupOneChildViewController:(UIViewController *)viewController
 {
     // 1.包装导航控制器
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    WXNavigationController *nav = [[WXNavigationController alloc] initWithRootViewController:viewController];
     [self addChildViewController:nav];
 }
 
