@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		123A15B51E56D72C45FB83C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230C706D036B4FFBE8847587 /* libPods.a */; };
+		D90900691C4E583300DB0EF3 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D90900681C4E583300DB0EF3 /* UIBarButtonItem+Item.m */; };
 		D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */; };
 		D95F32F21C4D113700ED13EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F01C4D113700ED13EB /* Main.storyboard */; };
 		D95F32F41C4D113700ED13EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F31C4D113700ED13EB /* Assets.xcassets */; };
@@ -30,6 +31,8 @@
 		230C706D036B4FFBE8847587 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		80363FFA14F9F7DDB0F3FBC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A10883ECFFD4AAC4A85084F1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D90900671C4E583300DB0EF3 /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
+		D90900681C4E583300DB0EF3 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
 		D93E03A91C4D47E8002CBDE8 /* WXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNavigationController.h; sourceTree = "<group>"; };
 		D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNavigationController.m; sourceTree = "<group>"; };
 		D95F32E41C4D113700ED13EB /* BuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -326,6 +329,8 @@
 				D95F33271C4D116500ED13EB /* UIImage+Render.m */,
 				D95F33281C4D116500ED13EB /* UIView+Frame.h */,
 				D95F33291C4D116500ED13EB /* UIView+Frame.m */,
+				D90900671C4E583300DB0EF3 /* UIBarButtonItem+Item.h */,
+				D90900681C4E583300DB0EF3 /* UIBarButtonItem+Item.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 				D95F33341C4D116500ED13EB /* WXTabBar.m in Sources */,
 				D95F33321C4D116500ED13EB /* WXFriendTrendViewController.m in Sources */,
 				D95F33381C4D116500ED13EB /* UIColor+Hex.m in Sources */,
+				D90900691C4E583300DB0EF3 /* UIBarButtonItem+Item.m in Sources */,
 				D95F33371C4D116500ED13EB /* AppDelegate.m in Sources */,
 				D95F33351C4D116500ED13EB /* WXMeViewController.m in Sources */,
 				D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */,

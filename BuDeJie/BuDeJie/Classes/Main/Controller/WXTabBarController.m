@@ -42,7 +42,7 @@
     NSDictionary *attrSelected = @{NSForegroundColorAttributeName : [UIColor blackColor]};
     [item setTitleTextAttributes:attrSelected forState:UIControlStateSelected];
     
-    // ----------------------------------------------------------------------------
+    // ------------------------------------------------------------------------
     // 2.设置普通状态下的TabBar字体大小, 注意:一定要先设置正常状态下字体大小
     NSDictionary *attrNormal = @{NSFontAttributeName : [UIFont systemFontOfSize:13]};
     [item setTitleTextAttributes:attrNormal forState:UIControlStateNormal];

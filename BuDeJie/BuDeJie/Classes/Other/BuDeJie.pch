@@ -15,8 +15,20 @@
 #import "UIColor+Hex.h"
 #import "UIImage+Render.h"
 #import "UIView+Frame.h"
+#import "UIBarButtonItem+Item.h"
 
 #ifdef __OBJC__
+
+/*自定义Log*/
+// 调试
+#ifdef DEBUG
+#define WXLog(...) NSLog(__VA_ARGS__)
+#else
+// 发布
+#define WXLog(...)
+#endif
+
+#define WXFunc()    WXLog(@"%s", __func__)
 
 // 快速设置颜色UIColor
 #define WXColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g) / 255.0 blue:(b)/ 255.0 alpha:1]
