@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		123A15B51E56D72C45FB83C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230C706D036B4FFBE8847587 /* libPods.a */; };
+		D907CB981C4F44920042E669 /* WXAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D907CB971C4F44920042E669 /* WXAdItem.m */; };
 		D90900691C4E583300DB0EF3 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D90900681C4E583300DB0EF3 /* UIBarButtonItem+Item.m */; };
 		D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */; };
 		D95F32F21C4D113700ED13EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F01C4D113700ED13EB /* Main.storyboard */; };
@@ -26,12 +27,23 @@
 		D95F333B1C4D116500ED13EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F332A1C4D116500ED13EB /* main.m */; };
 		D95F333C1C4D116500ED13EB /* WXPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F332E1C4D116500ED13EB /* WXPublishViewController.m */; };
 		D97FC41B1C4E89FC00D8EC8D /* WXSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */; };
+		D9D487CF1C4F16150015B0CD /* WXAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D487CD1C4F16150015B0CD /* WXAdViewController.m */; };
+		D9D487D01C4F16150015B0CD /* WXAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9D487CE1C4F16150015B0CD /* WXAdViewController.xib */; };
+		D9D487D91C4F19F60015B0CD /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D21C4F19F60015B0CD /* LaunchImage-568h@2x.png */; };
+		D9D487DA1C4F19F60015B0CD /* LaunchImage-700-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D31C4F19F60015B0CD /* LaunchImage-700-568h@2x.png */; };
+		D9D487DB1C4F19F60015B0CD /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D41C4F19F60015B0CD /* LaunchImage-700@2x.png */; };
+		D9D487DC1C4F19F60015B0CD /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D51C4F19F60015B0CD /* LaunchImage-800-667h@2x.png */; };
+		D9D487DD1C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D61C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png */; };
+		D9D487DE1C4F19F60015B0CD /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D71C4F19F60015B0CD /* LaunchImage.png */; };
+		D9D487DF1C4F19F60015B0CD /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		230C706D036B4FFBE8847587 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		80363FFA14F9F7DDB0F3FBC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A10883ECFFD4AAC4A85084F1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D907CB961C4F44920042E669 /* WXAdItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAdItem.h; sourceTree = "<group>"; };
+		D907CB971C4F44920042E669 /* WXAdItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAdItem.m; sourceTree = "<group>"; };
 		D90900671C4E583300DB0EF3 /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
 		D90900681C4E583300DB0EF3 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
 		D93E03A91C4D47E8002CBDE8 /* WXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNavigationController.h; sourceTree = "<group>"; };
@@ -67,6 +79,16 @@
 		D95F332E1C4D116500ED13EB /* WXPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPublishViewController.m; sourceTree = "<group>"; };
 		D97FC4191C4E89FC00D8EC8D /* WXSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSettingController.h; sourceTree = "<group>"; };
 		D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSettingController.m; sourceTree = "<group>"; };
+		D9D487CC1C4F16150015B0CD /* WXAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAdViewController.h; sourceTree = "<group>"; };
+		D9D487CD1C4F16150015B0CD /* WXAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAdViewController.m; sourceTree = "<group>"; };
+		D9D487CE1C4F16150015B0CD /* WXAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXAdViewController.xib; sourceTree = "<group>"; };
+		D9D487D21C4F19F60015B0CD /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
+		D9D487D31C4F19F60015B0CD /* LaunchImage-700-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700-568h@2x.png"; sourceTree = "<group>"; };
+		D9D487D41C4F19F60015B0CD /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
+		D9D487D51C4F19F60015B0CD /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
+		D9D487D61C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
+		D9D487D71C4F19F60015B0CD /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +146,7 @@
 		D95F32E71C4D113700ED13EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9D487D11C4F19F60015B0CD /* 启动图片 */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -131,6 +154,7 @@
 		D95F32FE1C4D116500ED13EB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D9D487C81C4F15D90015B0CD /* Ad(广告) */,
 				D97FC4151C4E89A300D8EC8D /* Setting(设置) */,
 				D95F330B1C4D116500ED13EB /* Main */,
 				D95F32FF1C4D116500ED13EB /* Essence(精华) */,
@@ -405,6 +429,56 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D9D487C81C4F15D90015B0CD /* Ad(广告) */ = {
+			isa = PBXGroup;
+			children = (
+				D9D487C91C4F15D90015B0CD /* Controller */,
+				D9D487CA1C4F15D90015B0CD /* Model */,
+				D9D487CB1C4F15D90015B0CD /* View */,
+			);
+			path = "Ad(广告)";
+			sourceTree = "<group>";
+		};
+		D9D487C91C4F15D90015B0CD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D9D487CC1C4F16150015B0CD /* WXAdViewController.h */,
+				D9D487CD1C4F16150015B0CD /* WXAdViewController.m */,
+				D9D487CE1C4F16150015B0CD /* WXAdViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D9D487CA1C4F15D90015B0CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D907CB961C4F44920042E669 /* WXAdItem.h */,
+				D907CB971C4F44920042E669 /* WXAdItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9D487CB1C4F15D90015B0CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9D487D11C4F19F60015B0CD /* 启动图片 */ = {
+			isa = PBXGroup;
+			children = (
+				D9D487D21C4F19F60015B0CD /* LaunchImage-568h@2x.png */,
+				D9D487D31C4F19F60015B0CD /* LaunchImage-700-568h@2x.png */,
+				D9D487D41C4F19F60015B0CD /* LaunchImage-700@2x.png */,
+				D9D487D51C4F19F60015B0CD /* LaunchImage-800-667h@2x.png */,
+				D9D487D61C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png */,
+				D9D487D71C4F19F60015B0CD /* LaunchImage.png */,
+				D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */,
+			);
+			path = "启动图片";
+			sourceTree = "<group>";
+		};
 		DD4167089DBABC0B215FC72A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,7 +549,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95F32F71C4D113700ED13EB /* LaunchScreen.storyboard in Resources */,
+				D9D487DD1C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				D95F32F41C4D113700ED13EB /* Assets.xcassets in Resources */,
+				D9D487DF1C4F19F60015B0CD /* LaunchImage@2x.png in Resources */,
+				D9D487DA1C4F19F60015B0CD /* LaunchImage-700-568h@2x.png in Resources */,
+				D9D487DC1C4F19F60015B0CD /* LaunchImage-800-667h@2x.png in Resources */,
+				D9D487D91C4F19F60015B0CD /* LaunchImage-568h@2x.png in Resources */,
+				D9D487DE1C4F19F60015B0CD /* LaunchImage.png in Resources */,
+				D9D487D01C4F16150015B0CD /* WXAdViewController.xib in Resources */,
+				D9D487DB1C4F19F60015B0CD /* LaunchImage-700@2x.png in Resources */,
 				D95F32F21C4D113700ED13EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +619,7 @@
 			files = (
 				D95F33361C4D116500ED13EB /* WXNewViewController.m in Sources */,
 				D95F33311C4D116500ED13EB /* WXEssenceViewController.m in Sources */,
+				D9D487CF1C4F16150015B0CD /* WXAdViewController.m in Sources */,
 				D95F33341C4D116500ED13EB /* WXTabBar.m in Sources */,
 				D95F33321C4D116500ED13EB /* WXFriendTrendViewController.m in Sources */,
 				D95F33381C4D116500ED13EB /* UIColor+Hex.m in Sources */,
@@ -548,6 +631,7 @@
 				D95F33391C4D116500ED13EB /* UIImage+Render.m in Sources */,
 				D95F333C1C4D116500ED13EB /* WXPublishViewController.m in Sources */,
 				D95F33331C4D116500ED13EB /* WXTabBarController.m in Sources */,
+				D907CB981C4F44920042E669 /* WXAdItem.m in Sources */,
 				D95F333B1C4D116500ED13EB /* main.m in Sources */,
 				D95F333A1C4D116500ED13EB /* UIView+Frame.m in Sources */,
 			);

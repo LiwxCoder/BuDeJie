@@ -19,7 +19,16 @@
 
 #ifdef __OBJC__
 
-/*自定义Log*/
+// ----------------------------------------------------------------------------
+// 各设备的屏幕高度
+#define iPhone5 (screenH == 568)
+#define iPhone6 (screenH == 667)
+#define iPhone6p (screenH == 736)
+#define iPhone4 (screenH == 480)
+
+
+// ----------------------------------------------------------------------------
+// 自定义Log
 // 调试
 #ifdef DEBUG
 #define WXLog(...) NSLog(__VA_ARGS__)
@@ -28,15 +37,20 @@
 #define WXLog(...)
 #endif
 
+// ----------------------------------------------------------------------------
+// 调试打印信息
 #define WXFunc()    WXLog(@"%s", __func__)
 
+// ----------------------------------------------------------------------------
 // 快速设置颜色UIColor
 #define WXColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g) / 255.0 blue:(b)/ 255.0 alpha:1]
 
+// ----------------------------------------------------------------------------
 // 获取应用程序的keyWindow
 #define WXKeyWindow [UIApplication sharedApplication].keyWindow
 
-
+// ----------------------------------------------------------------------------
+// 屏幕尺寸宏定义
 #define screenW [UIScreen mainScreen].bounds.size.width
 #define screenH [UIScreen mainScreen].bounds.size.height
 

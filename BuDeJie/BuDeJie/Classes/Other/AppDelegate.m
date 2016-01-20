@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "WXTabBarController.h"
+#import "WXAdViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +22,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     // 2.设置window的根控制器
-    self.window.rootViewController = [[WXTabBarController alloc] init];
+    self.window.rootViewController = [[WXAdViewController alloc] init];
+    // init -> initWithNibName -> 1.判断有没有指定NibName 2.判断有没有跟控制器同名的xib,就会去加载 3.判断下有没有不带controller的xib 4.创建一个clearColor透明的View
     
     // 3.让window成为主窗口,并显示
     [self.window makeKeyAndVisible];
