@@ -51,7 +51,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="148" height="20"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="JyX-Kj-fgh" firstAttribute="top" secondItem="dIq-rB-KkM" secondAttribute="bottom" id="2Hj-tE-RYr"/>
                 <constraint firstItem="JyX-Kj-fgh" firstAttribute="width" secondItem="Ptw-up-TST" secondAttribute="width" id="2dj-fa-WUQ"/>

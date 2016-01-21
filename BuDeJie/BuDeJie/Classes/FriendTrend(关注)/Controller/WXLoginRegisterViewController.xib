@@ -3,24 +3,27 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WXLoginRegisterViewController">
             <connections>
                 <outlet property="fastLoginView" destination="J9p-KD-M06" id="Mbz-Ot-T57"/>
+                <outlet property="leftMargin" destination="RMM-eM-dgD" id="Qv0-Zg-QgU"/>
+                <outlet property="middleView" destination="hkH-H1-n7Q" id="u5f-TY-NVR"/>
                 <outlet property="view" destination="sWB-1p-7Nq" id="o92-cH-kCX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="sWB-1p-7Nq">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_background" translatesAutoresizingMaskIntoConstraints="NO" id="UfJ-w1-puD">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8t-6d-jNG" userLabel="顶部view">
-                    <rect key="frame" x="0.0" y="30" width="600" height="35"/>
+                    <rect key="frame" x="0.0" y="30" width="375" height="35"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzD-jU-djo" userLabel="关闭">
                             <rect key="frame" x="10" y="6" width="16" height="22"/>
@@ -29,8 +32,8 @@
                                 <action selector="dismissVc" destination="-1" eventType="touchUpInside" id="f3Q-6Z-u8F"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AE-yk-yPQ">
-                            <rect key="frame" x="534" y="3" width="56" height="31.5"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AE-yk-yPQ">
+                            <rect key="frame" x="309" y="3" width="56" height="29"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="注册帐号"/>
                             <state key="selected" title="已有账号?"/>
@@ -49,10 +52,17 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9p-KD-M06" userLabel="底部view">
-                    <rect key="frame" x="0.0" y="460" width="600" height="120"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="0.0" y="527" width="375" height="120"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="xpD-Tn-02x"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkH-H1-n7Q" userLabel="中间view">
+                    <rect key="frame" x="0.0" y="105" width="750" height="300"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="ZpC-wP-F15"/>
                     </constraints>
                 </view>
             </subviews>
@@ -64,11 +74,15 @@
                 <constraint firstAttribute="trailing" secondItem="J9p-KD-M06" secondAttribute="trailing" id="D2s-3F-7jQ"/>
                 <constraint firstItem="u8t-6d-jNG" firstAttribute="top" secondItem="sWB-1p-7Nq" secondAttribute="top" constant="30" id="Fsu-Zp-fQ5"/>
                 <constraint firstAttribute="bottom" secondItem="J9p-KD-M06" secondAttribute="bottom" constant="20" id="IuN-4S-Owd"/>
+                <constraint firstItem="hkH-H1-n7Q" firstAttribute="leading" secondItem="sWB-1p-7Nq" secondAttribute="leading" id="RMM-eM-dgD"/>
+                <constraint firstItem="hkH-H1-n7Q" firstAttribute="top" secondItem="u8t-6d-jNG" secondAttribute="bottom" constant="40" id="aAD-xy-OTd"/>
                 <constraint firstAttribute="trailing" secondItem="UfJ-w1-puD" secondAttribute="trailing" id="bad-fO-meb"/>
                 <constraint firstItem="UfJ-w1-puD" firstAttribute="leading" secondItem="sWB-1p-7Nq" secondAttribute="leading" id="hiE-5D-Q1n"/>
                 <constraint firstAttribute="trailing" secondItem="u8t-6d-jNG" secondAttribute="trailing" id="kpV-TV-7oq"/>
                 <constraint firstItem="J9p-KD-M06" firstAttribute="leading" secondItem="sWB-1p-7Nq" secondAttribute="leading" id="ttq-z2-AA7"/>
+                <constraint firstItem="hkH-H1-n7Q" firstAttribute="width" secondItem="UfJ-w1-puD" secondAttribute="width" multiplier="2" id="xC5-Ba-hvt"/>
             </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="152" y="357"/>
         </view>
     </objects>

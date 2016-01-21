@@ -47,6 +47,8 @@
 		D9D487DD1C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D61C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png */; };
 		D9D487DE1C4F19F60015B0CD /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D71C4F19F60015B0CD /* LaunchImage.png */; };
 		D9D487DF1C4F19F60015B0CD /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */; };
+		D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DBC02C1C51461B0018B030 /* WXLoginRegisterView.m */; };
+		D9DBC02F1C5146260018B030 /* WXLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DBC02E1C5146260018B030 /* WXLoginRegisterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,9 @@
 		D9D487D61C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
 		D9D487D71C4F19F60015B0CD /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		D9DBC02B1C51461B0018B030 /* WXLoginRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLoginRegisterView.h; sourceTree = "<group>"; };
+		D9DBC02C1C51461B0018B030 /* WXLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLoginRegisterView.m; sourceTree = "<group>"; };
+		D9DBC02E1C5146260018B030 /* WXLoginRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXLoginRegisterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +272,9 @@
 				D9D1B8701C51225500F9502E /* WXFastLoginView.xib */,
 				D9D1B8721C51269900F9502E /* WXFastLoginButton.h */,
 				D9D1B8731C51269900F9502E /* WXFastLoginButton.m */,
+				D9DBC02B1C51461B0018B030 /* WXLoginRegisterView.h */,
+				D9DBC02C1C51461B0018B030 /* WXLoginRegisterView.m */,
+				D9DBC02E1C5146260018B030 /* WXLoginRegisterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -595,6 +603,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DBC02F1C5146260018B030 /* WXLoginRegisterView.xib in Resources */,
 				D9D1B86C1C51047300F9502E /* WXLoginRegisterViewController.xib in Resources */,
 				D95F32F71C4D113700ED13EB /* LaunchScreen.storyboard in Resources */,
 				D9D487DD1C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
@@ -690,6 +699,7 @@
 				D95F33331C4D116500ED13EB /* WXTabBarController.m in Sources */,
 				D907CB981C4F44920042E669 /* WXAdItem.m in Sources */,
 				D9D1B85A1C50E54000F9502E /* WXSubTagViewController.m in Sources */,
+				D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */,
 				D95F333B1C4D116500ED13EB /* main.m in Sources */,
 				D95F333A1C4D116500ED13EB /* UIView+Frame.m in Sources */,
 			);
