@@ -7,6 +7,7 @@
 //
 
 #import "WXNewViewController.h"
+#import "WXSubTagViewController.h"
 
 @interface WXNewViewController ()
 
@@ -42,7 +43,10 @@
 // 监听导航条左侧订阅按钮点击
 - (void)subIconBarButtonClick
 {
-    WXFunc();
+    // 跳转到推荐标签界面
+    WXSubTagViewController *subTabVc = [[WXSubTagViewController alloc] init];
+    
+    [self.navigationController pushViewController:subTabVc animated:YES];
 }
 
 @end

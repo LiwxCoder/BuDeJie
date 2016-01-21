@@ -53,4 +53,31 @@
 {
     return self.frame.origin.y;
 }
+
+- (void)setWx_centerX:(CGFloat)wx_centerX
+{
+    CGPoint center = self.center;
+    center.x = wx_centerX;
+    self.center = center;
+}
+
+- (CGFloat)wx_centerX
+{
+    return self.center.x;
+}
+
+- (void)setWx_centerY:(CGFloat)wx_centerY
+{
+    CGPoint center = self.center;
+    center.y = wx_centerY;
+    self.center = center;
+}
+
+- (CGFloat)wx_centerY
+{
+    return self.center.y;
+}
+
+
+
 @end

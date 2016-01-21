@@ -28,7 +28,7 @@
     UIViewController *vc = [[UIViewController alloc] init];
     
     // 必须设置背景色,不然会push时会出现黑色卡顿现象
-    vc.view.backgroundColor = [UIColor redColor];
+//    vc.view.backgroundColor = [UIColor redColor];
     
     [self.navigationController pushViewController:vc animated:YES];
 }

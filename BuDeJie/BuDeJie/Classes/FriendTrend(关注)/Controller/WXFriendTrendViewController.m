@@ -7,6 +7,7 @@
 //
 
 #import "WXFriendTrendViewController.h"
+#import "WXLoginRegisterViewController.h"
 
 @interface WXFriendTrendViewController ()
 
@@ -18,8 +19,6 @@
 #pragma mark - 系统方法重写
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor blueColor];
     
     // 1.设置导航条按钮
     [self setupNavigationItem];
@@ -48,5 +47,16 @@
 {
     WXFunc();
 }
+
+
+#pragma =======================================================================
+#pragma mark - 立即登录注册按钮点击
+- (IBAction)clickLoginRegister
+{
+    WXLoginRegisterViewController *loginRegisterVc = [[WXLoginRegisterViewController alloc] init];
+    
+    [self presentViewController:loginRegisterVc animated:YES completion:nil];
+}
+
 
 @end

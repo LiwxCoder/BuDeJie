@@ -8,7 +8,7 @@
 
 /**
  广告接口Url:
- http://mobads.baidu.com/cpro/ui/mads.php?code2=phcqnauguhykfmrquanhmgn_iaubthfqmgksuarhiwdgulpxnz3vndtkqw08nau_i1y1p1rhmhwz5hb8nbul5hdknwrhta_qmvqvqhgguhi_py4mqhf1tvchmgky5h6hmypw5rfrhzuet1dgulnhuan85hchuy7s5hdhiywgujy3p1n3mwb1pvdlnvf-pyf4mhr4nyrvmwpbmhwbpjclpyfspht3uwm4fmplphykfh7sta-b5yrzpj6spvrdfhpdtwysfmkzuykemyfqnauguau95rnsnbfknbm1qhnkww6vpjujnbdkfwd1qhnsnbrsnhwkfywawiu9mlfqhbd_h70htv6qnhn1pauvmynqnjclnj0lnj0lnj0lnj0lnj0hthyqniuvujykfhkc5hrvnb3dfh7spyfqnw0srj64nbu9tjysfmub5hdhtzfeujdztlk_mgpcfmp85rnsnbfknbm1qhnkww6vpjujnbdkfwd1qhnsnbrsnhwkfywawiubnhfdnjd4rjnvpwykfh7stzu-twy1qw68nbuwuhydnhchiayqphdzfhqsmypgizbqniuythuytjd1uavxnz3vnzu9ijyzfh6qp1rsfmws5y-fpaq8uht_nbuymycqnau1ijykpjrsnhb3n1mvnhdkqwd4niuvmybqniu1uy3qwd-hqdfkhakhhnn_hr7fq7udq7pchzkhir3_ryqnqd7jfzkpirn_wdkhqdp5hikpfrb_fnc_nbwpqddrhzkdinchtvww5hnvpj0zqwndnhrvnbsdpwb4ri3kpw0kphmhmlnqph6lp1ndm1-wpydvnhkbraw9nju9phihmh9wmh6zrjrhtv7_5iu85hdhtvd15hdhtltqp1rsfh4etjyypw0spzuvuyyqn1mynjc8nwbvrjtdqjrvrhb4qwdvnjddpbuk5yrzpj6spvrdgvpstbu_my4btvp9tarqnam
+http://mobads.baidu.com/cpro/ui/mads.php?code2=phcqnauGuHYkFMRquANhmgN_IauBThfqmgKsUARhIWdGULPxnz3vndtkQW08nau_I1Y1P1Rhmhwz5Hb8nBuL5HDknWRhTA_qmvqVQhGGUhI_py4MQhF1TvChmgKY5H6hmyPW5RFRHzuET1dGULnhuAN85HchUy7s5HDhIywGujY3P1n3mWb1PvDLnvF-Pyf4mHR4nyRvmWPBmhwBPjcLPyfsPHT3uWm4FMPLpHYkFh7sTA-b5yRzPj6sPvRdFhPdTWYsFMKzuykEmyfqnauGuAu95Rnsnbfknbm1QHnkwW6VPjujnBdKfWD1QHnsnbRsnHwKfYwAwiu9mLfqHbD_H70hTv6qnHn1PauVmynqnjclnj0lnj0lnj0lnj0lnj0hThYqniuVujYkFhkC5HRvnB3dFh7spyfqnW0srj64nBu9TjYsFMub5HDhTZFEujdzTLK_mgPCFMP85Rnsnbfknbm1QHnkwW6VPjujnBdKfWD1QHnsnbRsnHwKfYwAwiuBnHfdnjD4rjnvPWYkFh7sTZu-TWY1QW68nBuWUHYdnHchIAYqPHDzFhqsmyPGIZbqniuYThuYTjd1uAVxnz3vnzu9IjYzFh6qP1RsFMws5y-fpAq8uHT_nBuYmycqnau1IjYkPjRsnHb3n1mvnHDkQWD4niuVmybqniu1uy3qwD-HQDFKHakHHNn_HR7fQ7uDQ7PcHzkHiR3_RYqNQD7jfzkPiRn_wdKHQDP5HikPfRb_fNc_NbwPQDdRHzkDiNchTvwW5HnvPj0zQWndnHRvnBsdPWb4ri3kPW0kPHmhmLnqPH6LP1ndm1-WPyDvnHKBrAw9nju9PHIhmH9WmH6zrjRhTv7_5iu85HDhTvd15HDhTLTqP1RsFh4ETjYYPW0sPzuVuyYqn1mYnjc8nWbvrjTdQjRvrHb4QWDvnjDdPBuk5yRzPj6sPvRdgvPsTBu_my4bTvP9TARqnam
  
  服务器返回的json数据:
  
@@ -71,10 +71,6 @@
     "m": 0, 
     "u": ""
 }
- */
-
-/** 
-http://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87&step_word=&pn=0&spn=0&di=183349755270&pi=&rn=1&tn=baiduimagedetail&is=&istype=0&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=undefined&cs=3729580552%2C646614237&os=2951677679%2C3790818250&simid=3444745649%2C288760913&adpicid=0&ln=1000&fr=&fmq=1453258445740_R&ic=undefined&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&objurl=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fwh%3D450%2C600%2Fsign%3D603e37439313b07ebde8580c39e7bd15%2Fa8014c086e061d9591b7875a7bf40ad163d9cadb.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fr5oj6_z%26e3Bkwt17_z%26e3Bv54AzdH3Fq7jfpt5gAzdH3Fdd9dl0abm_z%26e3Bip4s%3Fqks%3D6jswpj_q7jfpt5g_n&gsm=0
  */
 
 #import "WXAdViewController.h"
@@ -151,7 +147,7 @@ static NSString * const code2 = @"phcqnauGuHYkFMRquANhmgN_IauBThfqmgKsUARhIWdGUL
     manager.responseSerializer = serializer;
     
     // ------------------------------------------------------------------------
-    // 3.拼接参数
+    // 3.拼接请求参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"code2"] = code2;
     
@@ -159,25 +155,35 @@ static NSString * const code2 = @"phcqnauGuHYkFMRquANhmgN_IauBThfqmgKsUARhIWdGUL
     // 4.请求广告数据
     [manager GET:@"http://mobads.baidu.com/cpro/ui/mads.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSLog(@"%@", responseObject);
+        // 判断取回来的数据是否正确
+        
         // 4.1 获取广告数据 ,返回的广告数据是数组,有[],所以要用lastObject取出数据
         NSDictionary *adDict = [responseObject[@"ad"] lastObject];
         
+        // 判断是否请求到数据,如果没有数据,则退出
+        if (adDict == nil) {
+            return;
+        }
         // 4.2 字典转模型 mj_objectWithKeyValues:方法作用是将字典转换成对应的模型
         WXAdItem *adItem = [WXAdItem mj_objectWithKeyValues:adDict];
         self.adItem = adItem;
         
         // 4.3 设置广告界面的数据,返回数据中有广告图片的尺寸
         CGFloat w = screenW;
-        CGFloat h = screenW / adItem.w * adItem.h;
-        UIImageView *adImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, w, h)];
-        [adImageView sd_setImageWithURL:[NSURL URLWithString:adItem.w_picurl]];
-        [self.adView addSubview:adImageView];
-        adImageView.userInteractionEnabled = YES;
-        
-        // 4.4 添加点击手势,点击图片跳转到广告页
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
-        [adImageView addGestureRecognizer:tap];
+        // NaN:除以0, 不等于0才可以除
+        if (adItem.w) {
+            
+            // 计算宽高比例
+            CGFloat h = screenW / adItem.w * adItem.h;
+            UIImageView *adImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, w, h)];
+            [adImageView sd_setImageWithURL:[NSURL URLWithString:adItem.w_picurl]];
+            [self.adView addSubview:adImageView];
+            adImageView.userInteractionEnabled = YES;
+            
+            // 4.4 添加点击手势,点击图片跳转到广告页
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
+            [adImageView addGestureRecognizer:tap];
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
@@ -189,7 +195,7 @@ static NSString * const code2 = @"phcqnauGuHYkFMRquANhmgN_IauBThfqmgKsUARhIWdGUL
 // 定时更新按钮的标题,定时时间到则跳转
 - (void)timeChange
 {
-    static NSInteger timeIndex = 3;
+    static NSInteger timeIndex = 0;
     // 更新跳过按钮标题
     [self.jumpButton setTitle:[NSString stringWithFormat:@"跳过 (%ld)", timeIndex] forState:UIControlStateNormal];
     
@@ -197,6 +203,7 @@ static NSString * const code2 = @"phcqnauGuHYkFMRquANhmgN_IauBThfqmgKsUARhIWdGUL
         [self.timer invalidate];
         [self jump];
     }
+    
 }
 
 

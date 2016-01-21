@@ -14,5 +14,7 @@
 @property CGFloat wx_y;
 @property CGFloat wx_width;
 @property CGFloat wx_height;
+@property CGFloat wx_centerX;
+@property CGFloat wx_centerY;
 
 @end
