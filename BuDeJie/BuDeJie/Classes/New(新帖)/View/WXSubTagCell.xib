@@ -27,12 +27,16 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ya2-xZ-TC5">
-                        <rect key="frame" x="263" y="25.5" width="41" height="29"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ya2-xZ-TC5">
+                        <rect key="frame" x="242" y="24.5" width="60" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="jXc-qi-atl"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="+ 订阅" backgroundImage="tagButtonBG">
                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <state key="highlighted" backgroundImage="FollowBtnClickBg"/>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S5K-aD-1gV">
                         <rect key="frame" x="20" y="10" width="60" height="60"/>
@@ -50,7 +54,7 @@
                     <constraint firstItem="5Sp-Es-q9J" firstAttribute="bottom" secondItem="S5K-aD-1gV" secondAttribute="bottom" id="JsV-Ha-geJ"/>
                     <constraint firstItem="5Sp-Es-q9J" firstAttribute="leading" secondItem="EHe-fe-KCB" secondAttribute="leading" id="blV-Qg-40b"/>
                     <constraint firstItem="EHe-fe-KCB" firstAttribute="leading" secondItem="S5K-aD-1gV" secondAttribute="trailing" constant="20" id="rLf-BY-ssQ"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ya2-xZ-TC5" secondAttribute="trailing" constant="8" id="w7i-0G-Ktl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ya2-xZ-TC5" secondAttribute="trailing" constant="10" id="w7i-0G-Ktl"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -61,6 +65,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="FollowBtnClickBg" width="51" height="25"/>
         <image name="tagButtonBG" width="80" height="31"/>
     </resources>
 </document>
