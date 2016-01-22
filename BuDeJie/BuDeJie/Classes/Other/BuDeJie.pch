@@ -16,6 +16,7 @@
 #import "UIImage+Render.h"
 #import "UIView+Frame.h"
 #import "UIBarButtonItem+Item.h"
+#import "UITextField+Placeholder.h"
 
 #ifdef __OBJC__
 

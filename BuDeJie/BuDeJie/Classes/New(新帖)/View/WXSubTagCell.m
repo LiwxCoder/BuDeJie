@@ -42,9 +42,9 @@
     
     // ------------------------------------------------------------------------
     // 设置圆形图片
-    NSLog(@"%@", item.image_list);
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
+        NSLog(@"%@", NSStringFromCGSize(image.size));
         // --------------------------------------------------------------------
         // 重新生产圆形图片
 //        NSLog(@"%@", NSStringFromCGSize(image.size));
