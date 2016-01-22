@@ -192,9 +192,9 @@ static CGFloat const margin = 1;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    cell.selected = NO;
+    cell.selected = YES;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+        cell.selected = NO;
     });
     NSLog(@"%ld", indexPath.row);
 }
