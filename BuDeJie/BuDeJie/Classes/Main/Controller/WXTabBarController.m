@@ -64,7 +64,7 @@
     [self setupTabBar];
     
     // 调试默认选中新帖
-    self.selectedIndex = 2;
+    self.selectedIndex = 3;
 }
 
 #pragma =======================================================================
@@ -86,7 +86,10 @@
     [self setupOneChildViewController:[[WXFriendTrendViewController alloc] init]];
     
     // 我
-    [self setupOneChildViewController:[[WXMeViewController alloc] init]];
+    // TODO: Storyboard加载控制器,storyboard必须手动加载控制器
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass([WXMeViewController class]) bundle:nil];
+    WXMeViewController *meVc = [storyboard instantiateInitialViewController];
+    [self setupOneChildViewController:meVc];
 }
 
 // ----------------------------------------------------------------------------

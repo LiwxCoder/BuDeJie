@@ -18,6 +18,7 @@
 		D92D6B881C526A680008A53C /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B7E1C526A680008A53C /* UIView+Frame.m */; };
 		D92D6B891C526A680008A53C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B7F1C526A680008A53C /* main.m */; };
 		D92D6B8D1C526AC70008A53C /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B8C1C526AC70008A53C /* UITextField+Placeholder.m */; };
+		D92D6B911C5281C90008A53C /* WXMeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92D6B901C5281C90008A53C /* WXMeViewController.storyboard */; };
 		D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */; };
 		D95F32F21C4D113700ED13EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F01C4D113700ED13EB /* Main.storyboard */; };
 		D95F32F41C4D113700ED13EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F31C4D113700ED13EB /* Assets.xcassets */; };
@@ -51,6 +52,10 @@
 		D9D487DF1C4F19F60015B0CD /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */; };
 		D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DBC02C1C51461B0018B030 /* WXLoginRegisterView.m */; };
 		D9DBC02F1C5146260018B030 /* WXLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DBC02E1C5146260018B030 /* WXLoginRegisterView.xib */; };
+		D9EAA73A1C5298AF00341505 /* GlobalConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA7391C5298AF00341505 /* GlobalConst.m */; };
+		D9EAA73D1C5299E800341505 /* WXSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA73C1C5299E800341505 /* WXSquareItem.m */; };
+		D9EAA7411C52A09800341505 /* WXSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA73F1C52A09800341505 /* WXSquareCell.m */; };
+		D9EAA7421C52A09800341505 /* WXSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9EAA7401C52A09800341505 /* WXSquareCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +82,7 @@
 		D92D6B7F1C526A680008A53C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D92D6B8B1C526AC70008A53C /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
 		D92D6B8C1C526AC70008A53C /* UITextField+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
+		D92D6B901C5281C90008A53C /* WXMeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WXMeViewController.storyboard; sourceTree = "<group>"; };
 		D93E03A91C4D47E8002CBDE8 /* WXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNavigationController.h; sourceTree = "<group>"; };
 		D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNavigationController.m; sourceTree = "<group>"; };
 		D95F32E41C4D113700ED13EB /* BuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +135,13 @@
 		D9DBC02B1C51461B0018B030 /* WXLoginRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLoginRegisterView.h; sourceTree = "<group>"; };
 		D9DBC02C1C51461B0018B030 /* WXLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLoginRegisterView.m; sourceTree = "<group>"; };
 		D9DBC02E1C5146260018B030 /* WXLoginRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXLoginRegisterView.xib; sourceTree = "<group>"; };
+		D9EAA7381C5298AF00341505 /* GlobalConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalConst.h; sourceTree = "<group>"; };
+		D9EAA7391C5298AF00341505 /* GlobalConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalConst.m; sourceTree = "<group>"; };
+		D9EAA73B1C5299E800341505 /* WXSquareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSquareItem.h; sourceTree = "<group>"; };
+		D9EAA73C1C5299E800341505 /* WXSquareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSquareItem.m; sourceTree = "<group>"; };
+		D9EAA73E1C52A09800341505 /* WXSquareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSquareCell.h; sourceTree = "<group>"; };
+		D9EAA73F1C52A09800341505 /* WXSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSquareCell.m; sourceTree = "<group>"; };
+		D9EAA7401C52A09800341505 /* WXSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXSquareCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +173,8 @@
 				D92D6B701C526A680008A53C /* AppDelegate.m */,
 				D92D6B711C526A680008A53C /* BuDeJie.pch */,
 				D92D6B7F1C526A680008A53C /* main.m */,
+				D9EAA7381C5298AF00341505 /* GlobalConst.h */,
+				D9EAA7391C5298AF00341505 /* GlobalConst.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -225,7 +240,6 @@
 		D95F32FE1C4D116500ED13EB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D92D6B6E1C526A680008A53C /* Other */,
 				D9D487C81C4F15D90015B0CD /* Ad(广告) */,
 				D97FC4151C4E89A300D8EC8D /* Setting(设置) */,
 				D95F330B1C4D116500ED13EB /* Main */,
@@ -234,6 +248,7 @@
 				D95F33131C4D116500ED13EB /* Me(我) */,
 				D95F33191C4D116500ED13EB /* New(新帖) */,
 				D95F332B1C4D116500ED13EB /* Publish(发布) */,
+				D92D6B6E1C526A680008A53C /* Other */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -370,6 +385,7 @@
 			children = (
 				D95F33151C4D116500ED13EB /* WXMeViewController.h */,
 				D95F33161C4D116500ED13EB /* WXMeViewController.m */,
+				D92D6B901C5281C90008A53C /* WXMeViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -377,6 +393,8 @@
 		D95F33171C4D116500ED13EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D9EAA73B1C5299E800341505 /* WXSquareItem.h */,
+				D9EAA73C1C5299E800341505 /* WXSquareItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,6 +402,9 @@
 		D95F33181C4D116500ED13EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D9EAA73E1C52A09800341505 /* WXSquareCell.h */,
+				D9EAA73F1C52A09800341505 /* WXSquareCell.m */,
+				D9EAA7401C52A09800341505 /* WXSquareCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -622,8 +643,10 @@
 				D9D487DF1C4F19F60015B0CD /* LaunchImage@2x.png in Resources */,
 				D9D487DA1C4F19F60015B0CD /* LaunchImage-700-568h@2x.png in Resources */,
 				D9D487DC1C4F19F60015B0CD /* LaunchImage-800-667h@2x.png in Resources */,
+				D9EAA7421C52A09800341505 /* WXSquareCell.xib in Resources */,
 				D9D1B8621C50F27300F9502E /* WXSubTagCell.xib in Resources */,
 				D9D1B8671C51006100F9502E /* WXFriendTrendViewController.xib in Resources */,
+				D92D6B911C5281C90008A53C /* WXMeViewController.storyboard in Resources */,
 				D9D487D91C4F19F60015B0CD /* LaunchImage-568h@2x.png in Resources */,
 				D9D487DE1C4F19F60015B0CD /* LaunchImage.png in Resources */,
 				D9D487D01C4F16150015B0CD /* WXAdViewController.xib in Resources */,
@@ -696,6 +719,7 @@
 				D95F33341C4D116500ED13EB /* WXTabBar.m in Sources */,
 				D92D6B861C526A680008A53C /* UIImage+Render.m in Sources */,
 				D9D1B85D1C50EC4A00F9502E /* WXSubTagItem.m in Sources */,
+				D9EAA7411C52A09800341505 /* WXSquareCell.m in Sources */,
 				D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */,
 				D9D1B86F1C51224900F9502E /* WXFastLoginView.m in Sources */,
 				D95F33321C4D116500ED13EB /* WXFriendTrendViewController.m in Sources */,
@@ -703,6 +727,7 @@
 				D9D1B86A1C5103EB00F9502E /* WXLoginRegisterViewController.m in Sources */,
 				D95F33351C4D116500ED13EB /* WXMeViewController.m in Sources */,
 				D92D6B8D1C526AC70008A53C /* UITextField+Placeholder.m in Sources */,
+				D9EAA73A1C5298AF00341505 /* GlobalConst.m in Sources */,
 				D92D6B891C526A680008A53C /* main.m in Sources */,
 				D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */,
 				D9D1B8741C51269900F9502E /* WXFastLoginButton.m in Sources */,
@@ -714,6 +739,7 @@
 				D92D6B841C526A680008A53C /* UIColor+Hex.m in Sources */,
 				D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */,
 				D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */,
+				D9EAA73D1C5299E800341505 /* WXSquareItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

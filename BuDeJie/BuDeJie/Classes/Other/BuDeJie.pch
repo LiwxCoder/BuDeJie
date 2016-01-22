@@ -12,6 +12,8 @@
 
 // ----------------------------------------------------------------------------
 // 全局头文件
+#import "GlobalConst.h"
+
 #import "UIColor+Hex.h"
 #import "UIImage+Render.h"
 #import "UIView+Frame.h"
