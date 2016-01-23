@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WXWebViewController">
+            <connections>
+                <outlet property="backItem" destination="eyL-Gg-cRj" id="wXq-el-L0m"/>
+                <outlet property="forwardItem" destination="Vx9-ee-pHm" id="TZv-gt-MaA"/>
+                <outlet property="htmlView" destination="H4J-HM-0gf" id="y5S-Eo-qLv"/>
+                <outlet property="progressView" destination="eue-PQ-ytI" id="g0g-EA-gGJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4J-HM-0gf" userLabel="HtmlView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eue-PQ-ytI">
+                    <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="nVl-NN-utg"/>
+                    </constraints>
+                </progressView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yng-l5-7Bs">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Mbe-jg-f1j"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem image="back" style="plain" id="eyL-Gg-cRj" userLabel="后退">
+                            <connections>
+                                <action selector="back:" destination="-1" id="kHw-Lm-PMp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="forward" id="Vx9-ee-pHm" userLabel="前进">
+                            <connections>
+                                <action selector="forward:" destination="-1" id="ldU-hy-yKH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="O9P-yW-7j2" userLabel="间距"/>
+                        <barButtonItem image="rycycle" id="Mze-hh-R4A" userLabel="刷新">
+                            <connections>
+                                <action selector="reload:" destination="-1" id="pMm-nQ-eCq"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="yng-l5-7Bs" secondAttribute="bottom" id="4F0-vz-v0x"/>
+                <constraint firstItem="H4J-HM-0gf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9yj-uq-uU6"/>
+                <constraint firstAttribute="trailing" secondItem="eue-PQ-ytI" secondAttribute="trailing" id="Cb2-9e-prn"/>
+                <constraint firstItem="eue-PQ-ytI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OYI-xG-YTS"/>
+                <constraint firstItem="eue-PQ-ytI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P3c-TI-7mB"/>
+                <constraint firstAttribute="trailing" secondItem="H4J-HM-0gf" secondAttribute="trailing" id="VIx-AW-Cvj"/>
+                <constraint firstAttribute="trailing" secondItem="yng-l5-7Bs" secondAttribute="trailing" id="Yaq-1Z-Vly"/>
+                <constraint firstItem="yng-l5-7Bs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="c0c-l6-7EA"/>
+                <constraint firstItem="eue-PQ-ytI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="eES-ke-Eqp"/>
+                <constraint firstAttribute="bottom" secondItem="H4J-HM-0gf" secondAttribute="bottom" id="qxt-YX-aC8"/>
+                <constraint firstItem="H4J-HM-0gf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uhF-DX-glU"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="32" height="26"/>
+        <image name="forward" width="32" height="26"/>
+        <image name="rycycle" width="32" height="32"/>
+    </resources>
+</document>

@@ -10,8 +10,10 @@
 #import "WXSettingController.h"
 #import "WXSquareItem.h"
 #import "WXSquareCell.h"
+#import "WXWebViewController.h"
 #import <AFNetworking.h>
 #import <MJExtension.h>
+#import <SafariServices/SafariServices.h>
 
 // ----------------------------------------------------------------------------
 // 常量和宏
@@ -21,7 +23,7 @@ static CGFloat const margin = 1;
 #define cellWH ((screenW - margin * (colCount - 1)) / colCount)
 
 
-@interface WXMeViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface WXMeViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, SFSafariViewControllerDelegate>
 @property (nonatomic, weak) UICollectionView *collectionView;
 
 /** 数据源数组 */
@@ -188,24 +190,68 @@ static CGFloat const margin = 1;
 }
 
 // ----------------------------------------------------------------------------
+// TODO: 展示网页的几种方式
+
+// 展示网页:1.webView 2.openUrl 3.WKWebView
+// webView:没有自带功能,好处,就在当前应用下展示网页,webView不能监听进度条
+// safari:自带了很多功能,弊端:必须要跳转到其他应用
+// 在当前应用下展示网页,但是有safari功能,自定义view,进度条,前进,后退,刷新功能,网址
+// iOS9 SFSafariViewController:具备safari功能,并且可以在当前应用下展示网页
+// 只能在iOS9使用
+// 1.首先导入一个框架#import <SafariServices/SafariServices.h>
+
+// WebKit:跟WebView,能监听进度条,iOS8
+// ----------------------------------------------------------------------------
 // 监听cell的点击
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    // 1.处理点击闪烁
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     cell.selected = YES;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         cell.selected = NO;
     });
-    NSLog(@"%ld", indexPath.row);
+    
+    // 2.获取模型数据
+    WXSquareItem *item = self.squareList[indexPath.row];
+    
+    // 3.跳转到控制器
+    if ([item.url hasPrefix:@"http:"]) {
+        
+        // 3.1 WKWebView展示网页
+        WXWebViewController *webVc = [[WXWebViewController alloc] init];
+        webVc.url = [NSURL URLWithString:item.url];
+        [self.navigationController pushViewController:webVc animated:YES];
+        
+        // --------------------------------------------------------------------
+        // TODO: SFSafariViewController实现浏览展示网页
+        // 3.1 创建Safari网页控制器 iOS9才能用
+//        SFSafariViewController *safariVc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:item.url]];
+//        safariVc.delegate = self;
+//        
+//        // 3.2 跳转网页控制器
+//        [self presentViewController:safariVc animated:YES completion:nil];
+//        safariVc.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:safariVc animated:YES];
+    }
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+#pragma =======================================================================
+#pragma mark - SFSafariViewControllerDelegat代理协议
+
+// ----------------------------------------------------------------------------
+// TODO: SFSafariViewController 监听Safari点击完成按钮
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
 {
-    return YES;
+    WXFunc();
 }
 
-
-
+// ----------------------------------------------------------------------------
+// TODO: SFSafariViewController 监听Safari初始化载入完成
+- (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully
+{
+    NSLog(@"%s %d", __func__, didLoadSuccessfully);
+}
 
 #pragma =======================================================================
 #pragma mark - 监听导航条按钮点击事件

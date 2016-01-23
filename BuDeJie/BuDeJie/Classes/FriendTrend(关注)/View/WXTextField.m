@@ -36,7 +36,7 @@
 #pragma mark - 设置UITextField属性方法实现
 
 // ----------------------------------------------------------------------------
-// TODO: 设置文本框的占位文字颜色 方法一: 通过修改UITextField的attributedPlaceholder属性
+// TODO: TextField 设置文本框的占位文字颜色 方法一: 通过修改UITextField的attributedPlaceholder属性
 // 在自定义TextField类中使用UITextField的attributedPlaceholder属性修改
 - (void)setAttrPlaceholderColor:(UIColor *)placeholderColor
 {
@@ -53,7 +53,7 @@
 
 
 // ----------------------------------------------------------------------------
-// TODO: 设置文本框的占位文字颜色 方法二: 使用KVC方式设置
+// TODO: TextField 设置文本框的占位文字颜色 方法二: 使用KVC方式设置
 // 该方法有前提,必须在设置占位文字颜色前先设置占位文字,因为占位文本Label是使用懒加载,如果使用KVC方式获取占位文本Label时,有可能该Label还没创建,所以使用该方法必须确保占位文本Label已经创建.
 - (void)setKVCPlaceholderColor:(UIColor *)placeholderColor
 {

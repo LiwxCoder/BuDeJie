@@ -56,6 +56,9 @@
 		D9EAA73D1C5299E800341505 /* WXSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA73C1C5299E800341505 /* WXSquareItem.m */; };
 		D9EAA7411C52A09800341505 /* WXSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA73F1C52A09800341505 /* WXSquareCell.m */; };
 		D9EAA7421C52A09800341505 /* WXSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9EAA7401C52A09800341505 /* WXSquareCell.xib */; };
+		D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF0B001C5312FA00A98A2E /* WXWebViewController.m */; };
+		D9FF0B031C5312FA00A98A2E /* WXWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF0B011C5312FA00A98A2E /* WXWebViewController.xib */; };
+		D9FF0B051C5318AD00A98A2E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF0B041C5318AD00A98A2E /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +145,10 @@
 		D9EAA73E1C52A09800341505 /* WXSquareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSquareCell.h; sourceTree = "<group>"; };
 		D9EAA73F1C52A09800341505 /* WXSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSquareCell.m; sourceTree = "<group>"; };
 		D9EAA7401C52A09800341505 /* WXSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXSquareCell.xib; sourceTree = "<group>"; };
+		D9FF0AFF1C5312FA00A98A2E /* WXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXWebViewController.h; sourceTree = "<group>"; };
+		D9FF0B001C5312FA00A98A2E /* WXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebViewController.m; sourceTree = "<group>"; };
+		D9FF0B011C5312FA00A98A2E /* WXWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXWebViewController.xib; sourceTree = "<group>"; };
+		D9FF0B041C5318AD00A98A2E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FF0B051C5318AD00A98A2E /* WebKit.framework in Frameworks */,
 				123A15B51E56D72C45FB83C9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +394,9 @@
 				D95F33151C4D116500ED13EB /* WXMeViewController.h */,
 				D95F33161C4D116500ED13EB /* WXMeViewController.m */,
 				D92D6B901C5281C90008A53C /* WXMeViewController.storyboard */,
+				D9FF0AFF1C5312FA00A98A2E /* WXWebViewController.h */,
+				D9FF0B001C5312FA00A98A2E /* WXWebViewController.m */,
+				D9FF0B011C5312FA00A98A2E /* WXWebViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -568,6 +579,7 @@
 		DD4167089DBABC0B215FC72A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9FF0B041C5318AD00A98A2E /* WebKit.framework */,
 				230C706D036B4FFBE8847587 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -642,6 +654,7 @@
 				D95F32F41C4D113700ED13EB /* Assets.xcassets in Resources */,
 				D9D487DF1C4F19F60015B0CD /* LaunchImage@2x.png in Resources */,
 				D9D487DA1C4F19F60015B0CD /* LaunchImage-700-568h@2x.png in Resources */,
+				D9FF0B031C5312FA00A98A2E /* WXWebViewController.xib in Resources */,
 				D9D487DC1C4F19F60015B0CD /* LaunchImage-800-667h@2x.png in Resources */,
 				D9EAA7421C52A09800341505 /* WXSquareCell.xib in Resources */,
 				D9D1B8621C50F27300F9502E /* WXSubTagCell.xib in Resources */,
@@ -739,6 +752,7 @@
 				D92D6B841C526A680008A53C /* UIColor+Hex.m in Sources */,
 				D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */,
 				D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */,
+				D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */,
 				D9EAA73D1C5299E800341505 /* WXSquareItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
