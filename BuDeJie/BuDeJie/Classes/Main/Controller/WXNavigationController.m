@@ -94,7 +94,7 @@
     // ------------------------------------------------------------------------
     // 1.判断如果不是根控制器,则设置viewController控制器返回按钮
     if (self.childViewControllers.count > 0) {
-        
+        // 必须在push前隐藏tabBar
         viewController.hidesBottomBarWhenPushed = YES;
         
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem backItemWithImage:[UIImage imageNamed:@"navigationButtonReturn"] highImage:[UIImage imageNamed:@"navigationButtonReturnClick"] target:self action:@selector(back) title:@"返回"];

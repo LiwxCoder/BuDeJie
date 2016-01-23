@@ -53,7 +53,7 @@ static NSString * const ID = @"cell";
     // 5.3 提示正在计算
     [SVProgressHUD showWithStatus:@"正在计算缓存..."];
     
-    // 5.3 异步获取缓存大小
+    // 5.3 异步获取缓存大小,使用dispatch_after是为了模拟正在计算缓存大小
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [WXFileCacheManager getCacheSizeOfDirectoriesPath:defaultPath completeBlock:^(NSInteger totalSize) {
             // 1.获取缓存总大小,重新刷新表格
@@ -92,12 +92,13 @@ static NSString * const ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     // 2.设置数据
-    
     cell.textLabel.text = [self getCacheStr];
     
     return cell;
 }
 
+// ----------------------------------------------------------------------------
+// 选中第0行执行清除
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
@@ -106,6 +107,11 @@ static NSString * const ID = @"cell";
         NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
         NSString *defaultPath = [cachePath stringByAppendingPathComponent:@"default"];
         [WXFileCacheManager removeDirectoriesPath:defaultPath];
+        
+        // 总数清零
+        self.totalSize = 0;
+        // 刷新表格
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
 }
 

@@ -141,7 +141,7 @@ static NSString * const code2 = @"phcqnauGuHYkFMRquANhmgN_IauBThfqmgKsUARhIWdGUL
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     // ------------------------------------------------------------------------
-    // 2. 设置响应体的数据格式,添加@"text/html"
+    // 2.设置响应体的数据格式,添加@"text/html"
     AFJSONResponseSerializer *serializer = [AFJSONResponseSerializer serializer];
     serializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     manager.responseSerializer = serializer;
