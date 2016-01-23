@@ -59,6 +59,7 @@
 		D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF0B001C5312FA00A98A2E /* WXWebViewController.m */; };
 		D9FF0B031C5312FA00A98A2E /* WXWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF0B011C5312FA00A98A2E /* WXWebViewController.xib */; };
 		D9FF0B051C5318AD00A98A2E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF0B041C5318AD00A98A2E /* WebKit.framework */; };
+		D9FF0B0A1C533B0000A98A2E /* WXFileCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF0B091C533B0000A98A2E /* WXFileCacheManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +150,8 @@
 		D9FF0B001C5312FA00A98A2E /* WXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebViewController.m; sourceTree = "<group>"; };
 		D9FF0B011C5312FA00A98A2E /* WXWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXWebViewController.xib; sourceTree = "<group>"; };
 		D9FF0B041C5318AD00A98A2E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D9FF0B081C533B0000A98A2E /* WXFileCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFileCacheManager.h; sourceTree = "<group>"; };
+		D9FF0B091C533B0000A98A2E /* WXFileCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFileCacheManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +251,7 @@
 		D95F32FE1C4D116500ED13EB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D9FF0B061C533AD600A98A2E /* Tool(业务类) */,
 				D9D487C81C4F15D90015B0CD /* Ad(广告) */,
 				D97FC4151C4E89A300D8EC8D /* Setting(设置) */,
 				D95F330B1C4D116500ED13EB /* Main */,
@@ -576,6 +580,23 @@
 			path = "启动图片";
 			sourceTree = "<group>";
 		};
+		D9FF0B061C533AD600A98A2E /* Tool(业务类) */ = {
+			isa = PBXGroup;
+			children = (
+				D9FF0B071C533AD600A98A2E /* File */,
+			);
+			path = "Tool(业务类)";
+			sourceTree = "<group>";
+		};
+		D9FF0B071C533AD600A98A2E /* File */ = {
+			isa = PBXGroup;
+			children = (
+				D9FF0B081C533B0000A98A2E /* WXFileCacheManager.h */,
+				D9FF0B091C533B0000A98A2E /* WXFileCacheManager.m */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		DD4167089DBABC0B215FC72A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,6 +757,7 @@
 				D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */,
 				D9D1B86F1C51224900F9502E /* WXFastLoginView.m in Sources */,
 				D95F33321C4D116500ED13EB /* WXFriendTrendViewController.m in Sources */,
+				D9FF0B0A1C533B0000A98A2E /* WXFileCacheManager.m in Sources */,
 				D97FC41B1C4E89FC00D8EC8D /* WXSettingController.m in Sources */,
 				D9D1B86A1C5103EB00F9502E /* WXLoginRegisterViewController.m in Sources */,
 				D95F33351C4D116500ED13EB /* WXMeViewController.m in Sources */,

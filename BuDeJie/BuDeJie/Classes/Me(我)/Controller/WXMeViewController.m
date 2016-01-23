@@ -93,12 +93,10 @@ static CGFloat const margin = 1;
     
     // ------------------------------------------------------------------------
     // 2.创建collectionView,设置collectionView的属性
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 300) collectionViewLayout:flowLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 00) collectionViewLayout:flowLayout];
     collectionView.backgroundColor = WXColor(206, 206, 206);
     collectionView.scrollEnabled = NO;
     self.collectionView = collectionView;
-    
-    
     
     // 3.设置collectionView的数据源和代理
     collectionView.dataSource = self;
