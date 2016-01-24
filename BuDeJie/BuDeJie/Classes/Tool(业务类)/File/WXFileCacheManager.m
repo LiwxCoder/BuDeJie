@@ -13,34 +13,46 @@
 
 // ----------------------------------------------------------------------------
 // TODO: 移除文件夹路径下的所有文件
-+ (void)removeDirectoriesPath:(NSString *)directoriesPath
++ (void)removeDirectoriesPath:(NSString *)directoriesPath completeBlock:(void(^)())completeBlock
 {
-    // 1.创建文件管理者
-    NSFileManager *mgr = [NSFileManager defaultManager];
-    
-    // 2.判断是否是文件夹
-    BOOL isDirectory;
-    BOOL isExists = [mgr fileExistsAtPath:directoriesPath isDirectory:&isDirectory];
-    if (!isExists || !isDirectory) {
-        NSException *exp = [NSException exceptionWithName:@"directoriesPathError" reason:@"directoriesPath must be directory" userInfo:nil];
-        [exp raise];
-    }
-    
-    // 3.获取路径下所有子路径
-    NSArray *subPathArray = [mgr subpathsAtPath:directoriesPath];
-    
-    // 4.遍历移除文件夹下的所有文件
-    for (NSString *subPath in subPathArray) {
-        // 4.1 拼接全路径
-        NSString *fullPath = [directoriesPath stringByAppendingPathComponent:subPath];
+    // ------------------------------------------------------------------------
+    // 异步(子线程)移除,此操作比较耗时,所以放在子线程执行
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
-        // 4.2 移除文件
-        [mgr removeItemAtPath:fullPath error:nil];
-    }
+        // 1.创建文件管理者
+        NSFileManager *mgr = [NSFileManager defaultManager];
+        
+        // 2.判断是否是文件夹
+        BOOL isDirectory;
+        BOOL isExists = [mgr fileExistsAtPath:directoriesPath isDirectory:&isDirectory];
+        if (!isExists || !isDirectory) {
+            NSException *exp = [NSException exceptionWithName:@"directoriesPathError" reason:@"directoriesPath must be directory" userInfo:nil];
+            [exp raise];
+        }
+        
+        // 3.获取路径下所有子路径
+        NSArray *subPathArray = [mgr subpathsAtPath:directoriesPath];
+        
+        // 4.遍历移除文件夹下的所有文件
+        for (NSString *subPath in subPathArray) {
+            // 4.1 拼接全路径
+            NSString *fullPath = [directoriesPath stringByAppendingPathComponent:subPath];
+            
+            // 4.2 移除文件
+            [mgr removeItemAtPath:fullPath error:nil];
+        }
+        
+        // 5.执行移除文件完成后要处理的操作.避免block里有执行UI操作,最好在主线程下执行
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (completeBlock) {
+                completeBlock();
+            }
+        });
+    });
 }
 
 // ----------------------------------------------------------------------------
-// TODO: 获取文件夹尺寸
+// TODO: 获取文件夹大小
 + (void)getCacheSizeOfDirectoriesPath:(NSString *)directoriesPath completeBlock:(void(^)(NSInteger))completeBlock
 {
     // ------------------------------------------------------------------------
@@ -64,7 +76,7 @@
         NSArray *subPathArray = [mgr subpathsAtPath:directoriesPath];
         
         // --------------------------------------------------------------------
-        // 4.便利文件夹下的所有文件,累计文件夹下的所有文件大小
+        // 4.遍历文件夹下的所有文件,累计文件夹下的所有文件大小
         NSInteger totalSize = 0;
         for (NSString *subPath in subPathArray) {
             

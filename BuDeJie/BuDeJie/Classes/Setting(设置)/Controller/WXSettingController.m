@@ -54,7 +54,7 @@ static NSString * const ID = @"cell";
     [SVProgressHUD showWithStatus:@"正在计算缓存..."];
     
     // 5.3 异步获取缓存大小,使用dispatch_after是为了模拟正在计算缓存大小
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [WXFileCacheManager getCacheSizeOfDirectoriesPath:defaultPath completeBlock:^(NSInteger totalSize) {
             // 1.获取缓存总大小,重新刷新表格
             self.totalSize = totalSize;
@@ -65,6 +65,7 @@ static NSString * const ID = @"cell";
             [SVProgressHUD dismiss];
         }];
     });
+    
 }
 
 // ----------------------------------------------------------------------------
@@ -106,14 +107,23 @@ static NSString * const ID = @"cell";
         // 删除SDWebImage的缓存路径(沙盒中的default路径)
         NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
         NSString *defaultPath = [cachePath stringByAppendingPathComponent:@"default"];
-        [WXFileCacheManager removeDirectoriesPath:defaultPath];
-        
-        // 总数清零
-        self.totalSize = 0;
-        // 刷新表格
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        [SVProgressHUD showWithStatus:@"正在清理缓存..."];
+        // 模拟清理缓存,使用dispatch_after延迟,实际应用不需要延迟执行dispatch_after
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [WXFileCacheManager removeDirectoriesPath:defaultPath completeBlock:^{
+                // 隐藏指示器
+                [SVProgressHUD dismiss];
+                
+                // 总数清零
+                self.totalSize = 0;
+                // 刷新表格
+                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            }];
+        });
     }
 }
+
+
 
 #pragma =======================================================================
 #pragma mark - 缓存处理
@@ -130,7 +140,7 @@ static NSString * const ID = @"cell";
         cacheStr = [NSString stringWithFormat:@"%@: (%.1f)KB", cacheStr, self.totalSize / 1000.0];
         cacheStr = [cacheStr stringByReplacingOccurrencesOfString:@".0" withString:@""];
     } else if (self.totalSize > 0) {
-        cacheStr = [NSString stringWithFormat:@"%@: (%u)B", cacheStr, self.totalSize];
+        cacheStr = [NSString stringWithFormat:@"%@: (%ld)B", cacheStr, self.totalSize];
     }
     return cacheStr;
 }
@@ -142,7 +152,7 @@ static NSString * const ID = @"cell";
     // 1.获取SDWebImage缓存大小,用于对比自己计算的缓存大小是否正确
     NSUInteger cacheSize = [[SDImageCache sharedImageCache] getSize];
     
-    NSLog(@"cacheSize: %u", cacheSize);
+    NSLog(@"cacheSize: %ld", cacheSize);
 }
 
 @end

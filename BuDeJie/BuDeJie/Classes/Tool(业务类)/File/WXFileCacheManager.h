@@ -14,5 +14,5 @@
 + (void)getCacheSizeOfDirectoriesPath:(NSString *)directoriesPath completeBlock:(void(^)(NSInteger))completeBlock;
 
 /** 移除文件夹路径下的所有文件 */
-+ (void)removeDirectoriesPath:(NSString *)directoriesPath;
++ (void)removeDirectoriesPath:(NSString *)directoriesPath completeBlock:(void(^)())completeBlock;
 @end
