@@ -52,6 +52,10 @@
 		D9D487DF1C4F19F60015B0CD /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */; };
 		D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DBC02C1C51461B0018B030 /* WXLoginRegisterView.m */; };
 		D9DBC02F1C5146260018B030 /* WXLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DBC02E1C5146260018B030 /* WXLoginRegisterView.xib */; };
+		D9E32F521C5549180020A656 /* 01-项目实战-百思不得姐-项目界面框架搭建.md in Sources */ = {isa = PBXBuildFile; fileRef = D9E32F4E1C5549180020A656 /* 01-项目实战-百思不得姐-项目界面框架搭建.md */; };
+		D9E32F531C5549180020A656 /* 02-项目实战-百思不得姐-自定义导航条,广告界面.md in Sources */ = {isa = PBXBuildFile; fileRef = D9E32F4F1C5549180020A656 /* 02-项目实战-百思不得姐-自定义导航条,广告界面.md */; };
+		D9E32F541C5549180020A656 /* 03-项目实战-百思不得姐-推荐标签,关注-登陆界面搭建.md in Sources */ = {isa = PBXBuildFile; fileRef = D9E32F501C5549180020A656 /* 03-项目实战-百思不得姐-推荐标签,关注-登陆界面搭建.md */; };
+		D9E32F551C5549180020A656 /* 04-项目实战-百思不得姐-登录界面补充,我的界面,设置界面清除缓存.md in Sources */ = {isa = PBXBuildFile; fileRef = D9E32F511C5549180020A656 /* 04-项目实战-百思不得姐-登录界面补充,我的界面,设置界面清除缓存.md */; };
 		D9EAA73A1C5298AF00341505 /* GlobalConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA7391C5298AF00341505 /* GlobalConst.m */; };
 		D9EAA73D1C5299E800341505 /* WXSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA73C1C5299E800341505 /* WXSquareItem.m */; };
 		D9EAA7411C52A09800341505 /* WXSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA73F1C52A09800341505 /* WXSquareCell.m */; };
@@ -139,6 +143,10 @@
 		D9DBC02B1C51461B0018B030 /* WXLoginRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLoginRegisterView.h; sourceTree = "<group>"; };
 		D9DBC02C1C51461B0018B030 /* WXLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLoginRegisterView.m; sourceTree = "<group>"; };
 		D9DBC02E1C5146260018B030 /* WXLoginRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXLoginRegisterView.xib; sourceTree = "<group>"; };
+		D9E32F4E1C5549180020A656 /* 01-项目实战-百思不得姐-项目界面框架搭建.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "01-项目实战-百思不得姐-项目界面框架搭建.md"; sourceTree = "<group>"; };
+		D9E32F4F1C5549180020A656 /* 02-项目实战-百思不得姐-自定义导航条,广告界面.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "02-项目实战-百思不得姐-自定义导航条,广告界面.md"; sourceTree = "<group>"; };
+		D9E32F501C5549180020A656 /* 03-项目实战-百思不得姐-推荐标签,关注-登陆界面搭建.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "03-项目实战-百思不得姐-推荐标签,关注-登陆界面搭建.md"; sourceTree = "<group>"; };
+		D9E32F511C5549180020A656 /* 04-项目实战-百思不得姐-登录界面补充,我的界面,设置界面清除缓存.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "04-项目实战-百思不得姐-登录界面补充,我的界面,设置界面清除缓存.md"; sourceTree = "<group>"; };
 		D9EAA7381C5298AF00341505 /* GlobalConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalConst.h; sourceTree = "<group>"; };
 		D9EAA7391C5298AF00341505 /* GlobalConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalConst.m; sourceTree = "<group>"; };
 		D9EAA73B1C5299E800341505 /* WXSquareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSquareItem.h; sourceTree = "<group>"; };
@@ -236,6 +244,7 @@
 				D95F32F51C4D113700ED13EB /* LaunchScreen.storyboard */,
 				D95F32F81C4D113700ED13EB /* Info.plist */,
 				D95F32E71C4D113700ED13EB /* Supporting Files */,
+				D9E32F4D1C5549180020A656 /* 实现思路 */,
 			);
 			path = BuDeJie;
 			sourceTree = "<group>";
@@ -580,6 +589,17 @@
 			path = "启动图片";
 			sourceTree = "<group>";
 		};
+		D9E32F4D1C5549180020A656 /* 实现思路 */ = {
+			isa = PBXGroup;
+			children = (
+				D9E32F4E1C5549180020A656 /* 01-项目实战-百思不得姐-项目界面框架搭建.md */,
+				D9E32F4F1C5549180020A656 /* 02-项目实战-百思不得姐-自定义导航条,广告界面.md */,
+				D9E32F501C5549180020A656 /* 03-项目实战-百思不得姐-推荐标签,关注-登陆界面搭建.md */,
+				D9E32F511C5549180020A656 /* 04-项目实战-百思不得姐-登录界面补充,我的界面,设置界面清除缓存.md */,
+			);
+			path = "实现思路";
+			sourceTree = "<group>";
+		};
 		D9FF0B061C533AD600A98A2E /* Tool(业务类) */ = {
 			isa = PBXGroup;
 			children = (
@@ -752,6 +772,7 @@
 				D92D6B821C526A680008A53C /* AppDelegate.m in Sources */,
 				D95F33341C4D116500ED13EB /* WXTabBar.m in Sources */,
 				D92D6B861C526A680008A53C /* UIImage+Render.m in Sources */,
+				D9E32F521C5549180020A656 /* 01-项目实战-百思不得姐-项目界面框架搭建.md in Sources */,
 				D9D1B85D1C50EC4A00F9502E /* WXSubTagItem.m in Sources */,
 				D9EAA7411C52A09800341505 /* WXSquareCell.m in Sources */,
 				D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */,
@@ -767,7 +788,9 @@
 				D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */,
 				D9D1B8741C51269900F9502E /* WXFastLoginButton.m in Sources */,
 				D92D6B881C526A680008A53C /* UIView+Frame.m in Sources */,
+				D9E32F551C5549180020A656 /* 04-项目实战-百思不得姐-登录界面补充,我的界面,设置界面清除缓存.md in Sources */,
 				D95F333C1C4D116500ED13EB /* WXPublishViewController.m in Sources */,
+				D9E32F541C5549180020A656 /* 03-项目实战-百思不得姐-推荐标签,关注-登陆界面搭建.md in Sources */,
 				D95F33331C4D116500ED13EB /* WXTabBarController.m in Sources */,
 				D907CB981C4F44920042E669 /* WXAdItem.m in Sources */,
 				D9D1B85A1C50E54000F9502E /* WXSubTagViewController.m in Sources */,
@@ -776,6 +799,7 @@
 				D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */,
 				D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */,
 				D9EAA73D1C5299E800341505 /* WXSquareItem.m in Sources */,
+				D9E32F531C5549180020A656 /* 02-项目实战-百思不得姐-自定义导航条,广告界面.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
