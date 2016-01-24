@@ -130,7 +130,7 @@ static NSString * const ID = @"cell";
         cacheStr = [NSString stringWithFormat:@"%@: (%.1f)KB", cacheStr, self.totalSize / 1000.0];
         cacheStr = [cacheStr stringByReplacingOccurrencesOfString:@".0" withString:@""];
     } else if (self.totalSize > 0) {
-        cacheStr = [NSString stringWithFormat:@"%@: (%ld)B", cacheStr, self.totalSize];
+        cacheStr = [NSString stringWithFormat:@"%@: (%u)B", cacheStr, self.totalSize];
     }
     return cacheStr;
 }
@@ -140,9 +140,9 @@ static NSString * const ID = @"cell";
 - (void)getSDWebImageCacheSize
 {
     // 1.获取SDWebImage缓存大小,用于对比自己计算的缓存大小是否正确
-    NSInteger cacheSize = [[SDImageCache sharedImageCache] getSize];
+    NSUInteger cacheSize = [[SDImageCache sharedImageCache] getSize];
     
-    NSLog(@"cacheSize: %ld", cacheSize);
+    NSLog(@"cacheSize: %u", cacheSize);
 }
 
 @end

@@ -93,4 +93,13 @@
     }];
     
 }
+
+#pragma =======================================================================
+#pragma mark - 设置状态栏颜色
+// ----------------------------------------------------------------------------
+// 设置状态栏颜色
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 @end

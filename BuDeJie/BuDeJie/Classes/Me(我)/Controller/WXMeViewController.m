@@ -65,7 +65,7 @@ static CGFloat const margin = 1;
     // 设置tableView的分组间距(调整分组的头部尾部间距), 最顶部高度为35,通过设置内边距将最顶部间距设置为10
     self.tableView.sectionFooterHeight = 10;
     self.tableView.sectionHeaderHeight = 0;
-//    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
 }
 
 // ----------------------------------------------------------------------------
