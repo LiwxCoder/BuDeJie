@@ -107,6 +107,7 @@ static NSString * const ID = @"cell";
         // 删除SDWebImage的缓存路径(沙盒中的default路径)
         NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
         NSString *defaultPath = [cachePath stringByAppendingPathComponent:@"default"];
+        
         [SVProgressHUD showWithStatus:@"正在清理缓存..."];
         // 模拟清理缓存,使用dispatch_after延迟,实际应用不需要延迟执行dispatch_after
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

@@ -129,6 +129,8 @@ static NSString * const ID = @"cell";
     // 设置模型数据
     cell.item = self.subTags[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSLog(@"%p", cell);
     return cell;
 }
 
