@@ -29,7 +29,6 @@
     
     // 方式三 使用RunTime设置文本框的占位文字颜色
     self.placeholderColor = [UIColor lightGrayColor];
-    
 }
 
 #pragma =======================================================================
@@ -53,7 +52,7 @@
 
 
 // ----------------------------------------------------------------------------
-// TODO: TextField 设置文本框的占位文字颜色 方法二: 使用KVC方式设置
+// TODO: TextField 设置文本框的占位文字颜色 方法二: 使用KVC方式获取占位文字的UILabel,获取到Label在设置Label的文字颜色.
 // 该方法有前提,必须在设置占位文字颜色前先设置占位文字,因为占位文本Label是使用懒加载,如果使用KVC方式获取占位文本Label时,有可能该Label还没创建,所以使用该方法必须确保占位文本Label已经创建.
 - (void)setKVCPlaceholderColor:(UIColor *)placeholderColor
 {

@@ -44,7 +44,7 @@
     // 1.添加WXWebView到控制器的view,并加载网页
     [self setupWKWebView];
     
-    // 2.使用KVO添加监听
+    // 2.使用KVO添加监听后退,前进,进度条,网页标题的改变
     [self setupAddObserver];
 }
 
@@ -100,7 +100,7 @@
 }
 
 // ----------------------------------------------------------------------------
-// 移除KVO监听, 如果没师傅KVO监听,点击返回会报错"NSKeyValueObservationInfo"
+// 移除KVO监听, 如果没移除KVO监听,点击返回会报错"NSKeyValueObservationInfo"
 - (void)dealloc
 {
     [self.wkWebView removeObserver:self forKeyPath:@"canGoBack"];

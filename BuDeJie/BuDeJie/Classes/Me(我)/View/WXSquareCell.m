@@ -22,11 +22,14 @@
 @implementation WXSquareCell
 
 - (void)awakeFromNib {
+    // 设置UICollectionViewCell选中时的背景色
     UIView *backView =  [[UIView alloc] init];
     backView.backgroundColor = WXColor(206, 206, 206);
     self.selectedBackgroundView = backView;
 }
 
+// ----------------------------------------------------------------------------
+// 重写模型的set方法,设置图片和文字
 - (void)setItem:(WXSquareItem *)item
 {
     _item = item;

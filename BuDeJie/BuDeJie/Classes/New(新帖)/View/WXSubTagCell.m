@@ -87,6 +87,7 @@
 // 重写setFrame方法,目的是为了让分割线占据屏幕整个宽度
 - (void)setFrame:(CGRect)frame
 {
+    // 露出1pt充当背景分割线,
     frame.size.height -= 1;
     [super setFrame:frame];
 }

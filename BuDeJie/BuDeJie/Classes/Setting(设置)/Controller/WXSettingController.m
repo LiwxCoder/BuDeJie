@@ -54,7 +54,7 @@ static NSString * const ID = @"cell";
     [SVProgressHUD showWithStatus:@"正在计算缓存..."];
     
     // 5.3 异步获取缓存大小,使用dispatch_after是为了模拟正在计算缓存大小
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [WXFileCacheManager getCacheSizeOfDirectoriesPath:defaultPath completeBlock:^(NSInteger totalSize) {
             // 1.获取缓存总大小,重新刷新表格
             self.totalSize = totalSize;

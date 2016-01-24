@@ -38,19 +38,17 @@ static CGFloat const margin = 1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.view.backgroundColor = [UIColor orangeColor];
     // 1.设置导航条按钮
     [self setupNavigationItem];
+    
     // 2.设置标题
     [self setupTitle];
     
     // 3.添加tableFooterView
     [self setupTableFooterView];
     
-    // 4.设置tableView的分组间距(调整分组的头部尾部间距), 最顶部高度为35,通过设置内边距将最顶部间距设置为10
-    self.tableView.sectionFooterHeight = 10;
-    self.tableView.sectionHeaderHeight = 0;
-    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+    // 4.设置tableView的分组间距
+    [self setSectionMargin];
     
     // 5.请求cell数据
     [self loadData];
@@ -59,6 +57,16 @@ static CGFloat const margin = 1;
 
 #pragma =======================================================================
 #pragma mark - 初始化设置
+
+// ----------------------------------------------------------------------------
+// 设置tableView的分组间距
+- (void)setSectionMargin
+{
+    // 设置tableView的分组间距(调整分组的头部尾部间距), 最顶部高度为35,通过设置内边距将最顶部间距设置为10
+    self.tableView.sectionFooterHeight = 10;
+    self.tableView.sectionHeaderHeight = 0;
+//    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+}
 
 // ----------------------------------------------------------------------------
 // 设置标题
@@ -75,7 +83,7 @@ static CGFloat const margin = 1;
     UIBarButtonItem *settingItem = [UIBarButtonItem createItemWithImage:[UIImage imageNamed:@"mine-setting-icon"] highImage:[UIImage imageNamed:@"mine-setting-icon-click"] target:self action:@selector(settingBarButtonClick)];
     
     // 设置导航条右侧月亮按钮
-    UIBarButtonItem *nightItem = [UIBarButtonItem createItemWithImage:[UIImage imageNamed:@"mine-moon-icon"] selectedImage:[UIImage imageNamed:@"mine-moon-icon-click"] target:self action:@selector(nightBarButtonClick:)];
+    UIBarButtonItem *nightItem = [UIBarButtonItem createItemWithImage:[UIImage imageNamed:@"mine-moon-icon"] selectedImage:[UIImage imageNamed:@"mine-sun-icon-click"] target:self action:@selector(nightBarButtonClick:)];
     
     self.navigationItem.rightBarButtonItems = @[settingItem, nightItem];
 }
@@ -93,11 +101,12 @@ static CGFloat const margin = 1;
     
     // ------------------------------------------------------------------------
     // 2.创建collectionView,设置collectionView的属性
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 00) collectionViewLayout:flowLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:flowLayout];
     collectionView.backgroundColor = WXColor(206, 206, 206);
     collectionView.scrollEnabled = NO;
     self.collectionView = collectionView;
     
+    // ------------------------------------------------------------------------
     // 3.设置collectionView的数据源和代理
     collectionView.dataSource = self;
     collectionView.delegate = self;
@@ -105,7 +114,6 @@ static CGFloat const margin = 1;
     
     // ------------------------------------------------------------------------
     // 4.注册cell
-//    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
     [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([WXSquareCell class]) bundle:nil] forCellWithReuseIdentifier:ID];
 }
 

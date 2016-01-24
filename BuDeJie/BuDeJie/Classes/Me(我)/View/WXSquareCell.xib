@@ -15,8 +15,8 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO0-PW-eIA">
-                        <rect key="frame" x="42" y="84" width="37.5" height="36"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO0-PW-eIA">
+                        <rect key="frame" x="0.0" y="84" width="120" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -36,12 +36,15 @@
                 <constraint firstItem="iO0-PW-eIA" firstAttribute="top" secondItem="LhX-Ol-fCT" secondAttribute="bottom" constant="4" id="6J6-yV-Qih"/>
                 <constraint firstItem="LhX-Ol-fCT" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Tgr-3N-6xp"/>
                 <constraint firstItem="iO0-PW-eIA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="fg2-OK-W0B"/>
+                <constraint firstItem="iO0-PW-eIA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iRN-JT-Lmz"/>
                 <constraint firstItem="iO0-PW-eIA" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.3" id="olM-wS-Mlq"/>
+                <constraint firstAttribute="trailing" secondItem="iO0-PW-eIA" secondAttribute="trailing" id="vU0-Z0-JH7"/>
             </constraints>
             <connections>
                 <outlet property="iconImageView" destination="LhX-Ol-fCT" id="ckj-qH-PI3"/>
                 <outlet property="nameLabel" destination="iO0-PW-eIA" id="AwF-Sz-bMu"/>
             </connections>
+            <point key="canvasLocation" x="235" y="284"/>
         </collectionViewCell>
     </objects>
 </document>

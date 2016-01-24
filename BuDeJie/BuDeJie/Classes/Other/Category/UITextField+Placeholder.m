@@ -13,7 +13,7 @@
 
 
 // ----------------------------------------------------------------------------
-// TODO: TextField 方式三: 使用RunTime设置文本框的占位文字颜色
+// TODO: TextField 方式三: 使用RunTime方式,通过分类设置文本框的占位文字颜色
 /**
 
 ### 方式三: 使用RunTime设置文本框的占位文字颜色
@@ -45,11 +45,11 @@
 + (void)load
 {
     // 1.获取要交互的方法 Method是C语言结构体,不需要加*
-    Method m1 = class_getInstanceMethod(self, @selector(setPlaceholder:));
-    Method m2 = class_getInstanceMethod(self, @selector(wx_setPlaceholder:));
+    Method setPlaceholderMethod = class_getInstanceMethod(self, @selector(setPlaceholder:));
+    Method wx_setPlaceholderMethod = class_getInstanceMethod(self, @selector(wx_setPlaceholder:));
     
     // 2.交换方法
-    method_exchangeImplementations(m1, m2);
+    method_exchangeImplementations(setPlaceholderMethod, wx_setPlaceholderMethod);
 }
 
 // ----------------------------------------------------------------------------
