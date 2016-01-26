@@ -20,6 +20,12 @@
 		D92D6B8D1C526AC70008A53C /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B8C1C526AC70008A53C /* UITextField+Placeholder.m */; };
 		D92D6B911C5281C90008A53C /* WXMeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92D6B901C5281C90008A53C /* WXMeViewController.storyboard */; };
 		D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */; };
+		D942051F1C578C060011A49A /* WXTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D942051E1C578C060011A49A /* WXTitleButton.m */; };
+		D94205221C5794EB0011A49A /* WXAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94205211C5794EB0011A49A /* WXAllViewController.m */; };
+		D94205251C5794FE0011A49A /* WXVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94205241C5794FE0011A49A /* WXVideoViewController.m */; };
+		D94205281C5795110011A49A /* WXVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94205271C5795110011A49A /* WXVoiceViewController.m */; };
+		D942052B1C5795230011A49A /* WXPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D942052A1C5795230011A49A /* WXPictureViewController.m */; };
+		D942052E1C5795390011A49A /* WXWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D942052D1C5795390011A49A /* WXWordViewController.m */; };
 		D95F32F21C4D113700ED13EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F01C4D113700ED13EB /* Main.storyboard */; };
 		D95F32F41C4D113700ED13EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F31C4D113700ED13EB /* Assets.xcassets */; };
 		D95F32F71C4D113700ED13EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F32F51C4D113700ED13EB /* LaunchScreen.storyboard */; };
@@ -89,6 +95,18 @@
 		D92D6B901C5281C90008A53C /* WXMeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WXMeViewController.storyboard; sourceTree = "<group>"; };
 		D93E03A91C4D47E8002CBDE8 /* WXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNavigationController.h; sourceTree = "<group>"; };
 		D93E03AA1C4D47E8002CBDE8 /* WXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNavigationController.m; sourceTree = "<group>"; };
+		D942051D1C578C060011A49A /* WXTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTitleButton.h; sourceTree = "<group>"; };
+		D942051E1C578C060011A49A /* WXTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTitleButton.m; sourceTree = "<group>"; };
+		D94205201C5794EB0011A49A /* WXAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAllViewController.h; sourceTree = "<group>"; };
+		D94205211C5794EB0011A49A /* WXAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAllViewController.m; sourceTree = "<group>"; };
+		D94205231C5794FE0011A49A /* WXVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoViewController.h; sourceTree = "<group>"; };
+		D94205241C5794FE0011A49A /* WXVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoViewController.m; sourceTree = "<group>"; };
+		D94205261C5795110011A49A /* WXVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVoiceViewController.h; sourceTree = "<group>"; };
+		D94205271C5795110011A49A /* WXVoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVoiceViewController.m; sourceTree = "<group>"; };
+		D94205291C5795230011A49A /* WXPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPictureViewController.h; sourceTree = "<group>"; };
+		D942052A1C5795230011A49A /* WXPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPictureViewController.m; sourceTree = "<group>"; };
+		D942052C1C5795390011A49A /* WXWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXWordViewController.h; sourceTree = "<group>"; };
+		D942052D1C5795390011A49A /* WXWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWordViewController.m; sourceTree = "<group>"; };
 		D95F32E41C4D113700ED13EB /* BuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95F32F11C4D113700ED13EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D95F32F31C4D113700ED13EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -280,6 +298,16 @@
 			children = (
 				D95F33011C4D116500ED13EB /* WXEssenceViewController.h */,
 				D95F33021C4D116500ED13EB /* WXEssenceViewController.m */,
+				D94205201C5794EB0011A49A /* WXAllViewController.h */,
+				D94205211C5794EB0011A49A /* WXAllViewController.m */,
+				D94205231C5794FE0011A49A /* WXVideoViewController.h */,
+				D94205241C5794FE0011A49A /* WXVideoViewController.m */,
+				D94205261C5795110011A49A /* WXVoiceViewController.h */,
+				D94205271C5795110011A49A /* WXVoiceViewController.m */,
+				D94205291C5795230011A49A /* WXPictureViewController.h */,
+				D942052A1C5795230011A49A /* WXPictureViewController.m */,
+				D942052C1C5795390011A49A /* WXWordViewController.h */,
+				D942052D1C5795390011A49A /* WXWordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +322,8 @@
 		D95F33041C4D116500ED13EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D942051D1C578C060011A49A /* WXTitleButton.h */,
+				D942051E1C578C060011A49A /* WXTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -746,13 +776,18 @@
 			files = (
 				D95F33361C4D116500ED13EB /* WXNewViewController.m in Sources */,
 				D95F33311C4D116500ED13EB /* WXEssenceViewController.m in Sources */,
+				D94205281C5795110011A49A /* WXVoiceViewController.m in Sources */,
 				D9D1B8611C50F27300F9502E /* WXSubTagCell.m in Sources */,
 				D9D487CF1C4F16150015B0CD /* WXAdViewController.m in Sources */,
+				D94205251C5794FE0011A49A /* WXVideoViewController.m in Sources */,
 				D92D6B851C526A680008A53C /* UIImage+Antialias.m in Sources */,
 				D92D6B821C526A680008A53C /* AppDelegate.m in Sources */,
 				D95F33341C4D116500ED13EB /* WXTabBar.m in Sources */,
+				D942051F1C578C060011A49A /* WXTitleButton.m in Sources */,
 				D92D6B861C526A680008A53C /* UIImage+Render.m in Sources */,
+				D94205221C5794EB0011A49A /* WXAllViewController.m in Sources */,
 				D9D1B85D1C50EC4A00F9502E /* WXSubTagItem.m in Sources */,
+				D942052E1C5795390011A49A /* WXWordViewController.m in Sources */,
 				D9EAA7411C52A09800341505 /* WXSquareCell.m in Sources */,
 				D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */,
 				D9D1B86F1C51224900F9502E /* WXFastLoginView.m in Sources */,
@@ -775,6 +810,7 @@
 				D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */,
 				D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */,
 				D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */,
+				D942052B1C5795230011A49A /* WXPictureViewController.m in Sources */,
 				D9EAA73D1C5299E800341505 /* WXSquareItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -887,6 +923,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = BuDeJie/Classes/Other/BuDeJie.pch;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -902,6 +939,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = BuDeJie/Classes/Other/BuDeJie.pch;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

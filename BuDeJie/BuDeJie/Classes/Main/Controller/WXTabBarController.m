@@ -64,7 +64,7 @@
     [self setupTabBar];
     
     // 调试默认选中新帖
-    self.selectedIndex = 3;
+    self.selectedIndex = WXDefaultVcIndex;
 }
 
 #pragma =======================================================================

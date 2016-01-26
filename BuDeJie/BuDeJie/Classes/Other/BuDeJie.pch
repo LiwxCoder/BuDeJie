@@ -9,6 +9,8 @@
 #ifndef BuDeJie_pch
 #define BuDeJie_pch
 
+#ifdef __OBJC__
+
 
 // ----------------------------------------------------------------------------
 // 全局头文件
@@ -20,7 +22,10 @@
 #import "UIBarButtonItem+Item.h"
 #import "UITextField+Placeholder.h"
 
-#ifdef __OBJC__
+// ----------------------------------------------------------------------------
+// 默认配置
+/** 默认加载的控制器 */
+#define WXDefaultVcIndex    0
 
 // ----------------------------------------------------------------------------
 // 各设备的屏幕高度
@@ -47,6 +52,7 @@
 // ----------------------------------------------------------------------------
 // 快速设置颜色UIColor
 #define WXColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g) / 255.0 blue:(b)/ 255.0 alpha:1]
+#define WXRandomColor WXColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
 // ----------------------------------------------------------------------------
 // 获取应用程序的keyWindow

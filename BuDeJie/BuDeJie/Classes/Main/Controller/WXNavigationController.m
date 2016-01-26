@@ -82,7 +82,7 @@
     
     // 3.设置导航条背景图片:一定要是UIBarMetricsDefault
     // iOS8和iOS9适配: iOS9之前:UIBarMetricsDefault,导航控制器跟控制器的view尺寸会减少64,iOS9就没有减少64了
-    [navBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+//    [navBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
 }
 
 #pragma =======================================================================
