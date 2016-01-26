@@ -46,7 +46,7 @@
         cell.textLabel.textColor = [UIColor whiteColor];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%02ld", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%02ld. %@", indexPath.row, [self class]];
     
     return cell;
 }

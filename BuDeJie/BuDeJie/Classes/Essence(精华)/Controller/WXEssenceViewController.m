@@ -68,20 +68,16 @@
         UIViewController *vc = self.childViewControllers[i];
         vc.view.wx_x = i * self.scrollView.wx_width;
         // TODO: UITableView默认的y值是20
-        vc.view.wx_y = 0;
+//        vc.view.wx_y = 0;
         vc.view.wx_height = self.scrollView.wx_height;
         // 添加到scrollView对应位置
         [self.scrollView addSubview:vc.view];
         
     }
     
-    // 3.设置scrollView的属性
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    // 3.设置scrollView的滚动范围
     self.scrollView.contentSize = CGSizeMake(count * self.scrollView.wx_width, 0);
-    self.scrollView.pagingEnabled = YES;
-    self.scrollView.showsVerticalScrollIndicator = NO;
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    
+//    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 // ----------------------------------------------------------------------------
@@ -91,9 +87,13 @@
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.frame = self.view.bounds;
     scrollView.delegate = self;
-    scrollView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
+    
+    // 设置scrollView的属性
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
 }
 
 // ----------------------------------------------------------------------------
@@ -169,11 +169,13 @@
     
 }
 
+#pragma =======================================================================
+#pragma mark - titleButton按钮点击
 // ----------------------------------------------------------------------------
 // 监听按钮点击
 - (void)titleButtonClick:(WXTitleButton *)button
 {
-    // 切换选择状态
+    // 切换中状态
     self.selectedButton.selected = NO;
     button.selected = YES;
     self.selectedButton = button;

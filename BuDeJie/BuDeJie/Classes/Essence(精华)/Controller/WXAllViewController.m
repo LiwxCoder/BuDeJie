@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = WXRandomColor;
-    self.tableView.contentInset = UIEdgeInsetsMake(WXNavMaxY + WXTitlesViewH, 0, WXTabBarH, 0);
+//    self.tableView.contentInset = UIEdgeInsetsMake(WXNavMaxY + WXTitlesViewH, 0, WXTabBarH, 0);
 }
 
 #pragma =======================================================================
@@ -46,7 +46,7 @@
         cell.textLabel.textColor = [UIColor whiteColor];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%02ld", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%02ld. %@", indexPath.row, [self class]];
     
     return cell;
 }
