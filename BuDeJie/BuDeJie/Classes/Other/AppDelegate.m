@@ -31,7 +31,7 @@
     
     // 4.添加topWindow
     [WXTopWindow showWithStatusBarClickBlock:^{
-        NSLog(@"--------");
+        NSLog(@"点击了顶部状态栏区域");
     }];
     
     return YES;

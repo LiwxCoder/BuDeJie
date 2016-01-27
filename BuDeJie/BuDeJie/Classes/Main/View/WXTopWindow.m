@@ -61,7 +61,7 @@ static WXTopWindow *window_;
 // 监听顶部状态栏区域的点击,block会在状态栏区域被点击的时候调用
 + (void)showWithStatusBarClickBlock:(void (^)())block
 {
-    // 1.如果该window已经创建,无需再创建,因为window整个应用程序只需要一个,无需重复创建
+    // 1.判断如果该window已经创建,无需再创建,因为window整个应用程序只需要一个,无需重复创建
     if (window_) {
         return;
     }
@@ -80,6 +80,7 @@ static WXTopWindow *window_;
     topVc.view.backgroundColor = [UIColor clearColor];
     // TODO: 经验证,在此处设置自WXTopViewController的view的frame无效
     topVc.view.frame = [UIApplication sharedApplication].statusBarFrame;
+    // 控制器的view默认是长度宽度都自动拉伸,此处只需拉伸宽度,不需要拉伸高度.
     topVc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     topVc.statusBarClickBlock = block;
     window_.rootViewController = topVc;
