@@ -17,4 +17,8 @@
 @property CGFloat wx_centerX;
 @property CGFloat wx_centerY;
 
+
+/** 判断方法调用者和view是否重叠 */
+- (BOOL)wx_intersectWithView:(UIView *)view;
+
 @end

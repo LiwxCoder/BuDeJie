@@ -31,10 +31,39 @@
     
     // 4.添加topWindow
     [WXTopWindow showWithStatusBarClickBlock:^{
-        NSLog(@"点击了顶部状态栏区域");
+        [self searchAllScrollViewsInView:application.keyWindow];
     }];
     
     return YES;
+}
+
+// ----------------------------------------------------------------------------
+// 查找出view里面的所有scrollView
+- (void)searchAllScrollViewsInView:(UIView *)view
+{
+    // 1.判断是否在keyWindow的范围内(不跟window重叠),如果不在,直接退出
+    if (![view wx_intersectWithView:nil]) {
+        return;
+    }
+    
+    // 2.遍历view的所有子控件和子控件的子控件,此处for循环会退出,所以递归调用会退出
+    for (UIView *subview in view.subviews) {
+        [self searchAllScrollViewsInView:subview];
+    }
+    
+    // 3.判断如果scrollView,直接返回
+    if (![view isKindOfClass:[UIScrollView class]]) {
+        return;
+    }
+    
+    // 4.滚动scrollView到最顶部
+    UIScrollView *scrllView = (UIScrollView *)view;
+    CGPoint offset = scrllView.contentOffset;
+    offset.y = -scrllView.contentInset.top;
+    [scrllView setContentOffset:offset animated:YES];
+    
+    // 滚动scrollView到最顶部
+//    [scrollView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

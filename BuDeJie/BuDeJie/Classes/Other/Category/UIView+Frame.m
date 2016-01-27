@@ -9,6 +9,22 @@
 #import "UIView+Frame.h"
 
 @implementation UIView (Frame)
+
+// ----------------------------------------------------------------------------
+// 判断方法调用者和view是否重叠
+- (BOOL)wx_intersectWithView:(UIView *)view
+{
+    // 如果传入的参数是nil,则表示为[UIApplication sharedApplication].keyWindow
+    if (view == nil) {
+        view = [UIApplication sharedApplication].keyWindow;
+    }
+    
+    // 都统一转换成window坐标系,并判断是否重叠,返回判断结果
+    CGRect rect1 = [self convertRect:self.bounds toView:nil];
+    CGRect rect2 = [view convertRect:view.bounds toView:nil];
+    return CGRectIntersectsRect(rect1, rect2);
+}
+
 - (CGFloat)wx_height
 {
     return self.frame.size.height;
