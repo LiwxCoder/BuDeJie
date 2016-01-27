@@ -52,6 +52,8 @@
 #pragma =======================================================================
 #pragma mark - 初始化子控件
 
+// ----------------------------------------------------------------------------
+// 添加子控制器
 - (void)setupAllChildViewController
 {
     // 1.添加5个子控制器
@@ -61,23 +63,12 @@
     [self addChildViewController:[[WXPictureViewController alloc] init]];
     [self addChildViewController:[[WXWordViewController alloc] init]];
     
-    // 2.将子控制器的view添加到scrollView
+    // 2.获取子控制器数量
     NSInteger count = self.childViewControllers.count;
-    for (NSInteger i = 0; i < count; i++) {
-        // 取出子控制器的view并设置frame
-        UIViewController *vc = self.childViewControllers[i];
-        vc.view.wx_x = i * self.scrollView.wx_width;
-        // TODO: UITableView默认的y值是20
-//        vc.view.wx_y = 0;
-        vc.view.wx_height = self.scrollView.wx_height;
-        // 添加到scrollView对应位置
-        [self.scrollView addSubview:vc.view];
-        
-    }
-    
+    // 设置默认显示第0个子控制器的view
+    [self addChildVcViewIntoScrollView:0];
     // 3.设置scrollView的滚动范围
     self.scrollView.contentSize = CGSizeMake(count * self.scrollView.wx_width, 0);
-//    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 // ----------------------------------------------------------------------------
@@ -94,6 +85,7 @@
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 // ----------------------------------------------------------------------------
@@ -180,6 +172,10 @@
     button.selected = YES;
     self.selectedButton = button;
     
+    // 1.获取索引,按钮的tag值
+    NSInteger index = button.tag;
+    
+    // 2.执行下划线动画,动画执行完成修改scrollView的偏移量,显示对应子控制器的view
     [UIView animateWithDuration:0.25 animations:^{
         
         // TODO: 设置下划线的宽度和中心点
@@ -187,8 +183,40 @@
         self.underLineView.wx_centerX = button.wx_centerX;
         
         // 切换到对应的view
-        self.scrollView.contentOffset = CGPointMake(self.scrollView.wx_width * button.tag, self.scrollView.contentOffset.y);
+        self.scrollView.contentOffset = CGPointMake(self.scrollView.wx_width * index, self.scrollView.contentOffset.y);
+    } completion:^(BOOL finished) {
+        // 更新偏移量
+        CGPoint offset = self.scrollView.contentOffset;
+        offset.x = index * self.scrollView.wx_width;
+        [self.scrollView setContentOffset:offset];
+        
+        // 添加对应子控制器的view
+        [self addChildVcViewIntoScrollView:index];
     }];
+}
+
+// ----------------------------------------------------------------------------
+// 添加index位置对应的子控制器view到scrollView
+- (void)addChildVcViewIntoScrollView:(NSInteger)index
+{
+    // 1.根据索引获取子控制器
+    UIViewController *childVc = self.childViewControllers[index];
+    
+    // TODO: 2.判断子控制器的view是否已经加载过,如果已经加载过,退出
+    // 方法一: childVc.isViewLoaded 方法二: childVc.view.superview 方法三: childVc.view.window
+    if (childVc.isViewLoaded) {
+        return;
+    }
+    
+    // 3.设置要添加的子控制器view的frame,并添加到scrollView
+    // 3.1 设置x值
+    childVc.view.wx_x = index * self.scrollView.wx_width;
+    // 3.2 需将y设置为0,因为childVc.view是UITableView,UITableView默认的y值是20
+    childVc.view.wx_y = 0;
+    // 3.3 默认UITableView的高度是屏幕的高度减去它本身的y值(20),所以重新设置高度为整个scrollView的高度
+    childVc.view.wx_height = self.scrollView.wx_height;
+    // 3.4 添加子控制器的view到scrollView
+    [self.scrollView addSubview:childVc.view];
 }
 
 #pragma =======================================================================
