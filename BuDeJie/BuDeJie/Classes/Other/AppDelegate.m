@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WXAdViewController.h"
+#import "WXTopWindow.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,11 @@
     
     // 3.让window成为主窗口,并显示
     [self.window makeKeyAndVisible];
+    
+    // 4.添加topWindow
+    [WXTopWindow showWithStatusBarClickBlock:^{
+        NSLog(@"--------");
+    }];
     
     return YES;
 }

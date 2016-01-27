@@ -219,6 +219,21 @@
     [self.scrollView addSubview:childVc.view];
 }
 
+// ----------------------------------------------------------------------------
+// 使用偏移量计算索引,实现添加子控制器view到scrollView,该方法只能通过偏移量来控制要显示那个view,灵活性不够 (不推荐,因为其依赖偏移量)
+- (void)addChildVcViewIntoScrollView
+{
+    NSInteger index = self.scrollView.contentOffset.x / self.scrollView.wx_width;
+    UIViewController *childVc = self.childViewControllers[index];
+    
+    if (childVc.isViewLoaded) {
+        return;
+    }
+    
+    childVc.view.frame = self.scrollView.bounds;
+    [self.scrollView addSubview:childVc.view];
+}
+    
 #pragma =======================================================================
 #pragma mark - UIScrollViewDelegate代理方法
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
