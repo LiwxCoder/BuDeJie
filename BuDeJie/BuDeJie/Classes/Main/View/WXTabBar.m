@@ -85,7 +85,6 @@
     self.plusButton.center = CGPointMake(self.wx_width * 0.5, self.wx_height * 0.5);
 }
 
-
 // ----------------------------------------------------------------------------
 // 使用记录上一次点击的tabBarButton方法监听tabBarButton的点击
 //- (void)tabBarButtonClick:(UIControl *)tabBarButton
