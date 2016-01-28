@@ -20,3 +20,10 @@ CGFloat const WXTitlesViewH = 35;
 
 /** 导航栏的最大Y */
 CGFloat const WXNavMaxY = 64;
+
+/** TabBarButton重复点击的通知 */
+NSString * const WXTabBarButtonDidRepeatClickNotification = @"WXTabBarButtonDidRepeatClickNotification";
+
+
+
+

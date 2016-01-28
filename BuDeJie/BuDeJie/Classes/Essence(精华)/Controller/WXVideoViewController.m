@@ -21,6 +21,22 @@
     
     self.view.backgroundColor = WXRandomColor;
     self.tableView.contentInset = UIEdgeInsetsMake(WXNavMaxY + WXTitlesViewH, 0, WXTabBarH, 0);
+    
+    // 1.监听通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClick) name:WXTabBarButtonDidRepeatClickNotification object:nil];
+}
+
+#pragma =======================================================================
+#pragma mark - 监听tabBarButton重复点击通知
+- (void)tabBarButtonDidRepeatClick
+{
+    NSLog(@"%@: 下拉刷新", [self class]);
+}
+
+- (void)dealloc
+{
+    // 移除通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma =======================================================================
