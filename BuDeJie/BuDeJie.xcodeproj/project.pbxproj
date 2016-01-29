@@ -10,6 +10,8 @@
 		123A15B51E56D72C45FB83C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230C706D036B4FFBE8847587 /* libPods.a */; };
 		D907CB981C4F44920042E669 /* WXAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D907CB971C4F44920042E669 /* WXAdItem.m */; };
 		D91592111C5B83FF0028D7A6 /* WXTopicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D91592101C5B83FF0028D7A6 /* WXTopicItem.m */; };
+		D915921F1C5BD0540028D7A6 /* WXTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D915921D1C5BD0540028D7A6 /* WXTopicCell.m */; };
+		D91592201C5BD0540028D7A6 /* WXTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D915921E1C5BD0540028D7A6 /* WXTopicCell.xib */; };
 		D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B691C5244C20008A53C /* WXTextField.m */; };
 		D92D6B821C526A680008A53C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B701C526A680008A53C /* AppDelegate.m */; };
 		D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B741C526A680008A53C /* UIBarButtonItem+Item.m */; };
@@ -78,6 +80,9 @@
 		D907CB971C4F44920042E669 /* WXAdItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAdItem.m; sourceTree = "<group>"; };
 		D915920F1C5B83FF0028D7A6 /* WXTopicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTopicItem.h; sourceTree = "<group>"; };
 		D91592101C5B83FF0028D7A6 /* WXTopicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTopicItem.m; sourceTree = "<group>"; };
+		D915921C1C5BD0540028D7A6 /* WXTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTopicCell.h; sourceTree = "<group>"; };
+		D915921D1C5BD0540028D7A6 /* WXTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTopicCell.m; sourceTree = "<group>"; };
+		D915921E1C5BD0540028D7A6 /* WXTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXTopicCell.xib; sourceTree = "<group>"; };
 		D92D6B681C5244C20008A53C /* WXTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTextField.h; sourceTree = "<group>"; };
 		D92D6B691C5244C20008A53C /* WXTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTextField.m; sourceTree = "<group>"; };
 		D92D6B6F1C526A680008A53C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -332,6 +337,9 @@
 			children = (
 				D942051D1C578C060011A49A /* WXTitleButton.h */,
 				D942051E1C578C060011A49A /* WXTitleButton.m */,
+				D915921C1C5BD0540028D7A6 /* WXTopicCell.h */,
+				D915921D1C5BD0540028D7A6 /* WXTopicCell.m */,
+				D915921E1C5BD0540028D7A6 /* WXTopicCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -721,6 +729,7 @@
 				D9D1B8621C50F27300F9502E /* WXSubTagCell.xib in Resources */,
 				D9D1B8671C51006100F9502E /* WXFriendTrendViewController.xib in Resources */,
 				D92D6B911C5281C90008A53C /* WXMeViewController.storyboard in Resources */,
+				D91592201C5BD0540028D7A6 /* WXTopicCell.xib in Resources */,
 				D9D487D91C4F19F60015B0CD /* LaunchImage-568h@2x.png in Resources */,
 				D9D487DE1C4F19F60015B0CD /* LaunchImage.png in Resources */,
 				D9D487D01C4F16150015B0CD /* WXAdViewController.xib in Resources */,
@@ -823,6 +832,7 @@
 				D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */,
 				D91592111C5B83FF0028D7A6 /* WXTopicItem.m in Sources */,
 				D942052B1C5795230011A49A /* WXPictureViewController.m in Sources */,
+				D915921F1C5BD0540028D7A6 /* WXTopicCell.m in Sources */,
 				D9EAA73D1C5299E800341505 /* WXSquareItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

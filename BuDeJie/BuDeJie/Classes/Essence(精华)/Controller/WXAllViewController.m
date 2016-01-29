@@ -10,7 +10,9 @@
 #import <AFNetworking.h>
 #import <MJExtension.h>
 #import <UIImageView+WebCache.h>
+#import <SVProgressHUD.h>
 #import "WXTopicItem.h"
+#import "WXTopicCell.h"
 
 /** 下拉显示的header高度 */
 static CGFloat const HeaderHeight = 44;
@@ -49,6 +51,9 @@ static CGFloat const FooterHeight = 35;
 
 @implementation WXAllViewController
 
+
+static NSString * const WXTopicCellId = @"WXTopicCellId";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -57,17 +62,18 @@ static CGFloat const FooterHeight = 35;
     self.view.backgroundColor = WXRandomColor;
     self.tableView.contentInset = UIEdgeInsetsMake(WXNavMaxY + WXTitlesViewH, 0, WXTabBarH, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    self.tableView.rowHeight = 300;
     
     // 1.监听通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClick) name:WXTabBarButtonDidRepeatClickNotification object:nil];
     // 2.监听标题栏重复点击
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleButtonDidRepeatClick) name:WXTitleButtonDidRepeatClickNotification object:nil];
     
-    // 3.请求帖子数据
-//    [self loadNewTopics];
-    
     // 3.刷新帖子列表
     [self setupRefresh];
+    
+    // 4.注册cell
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([WXTopicCell class]) bundle:nil] forCellReuseIdentifier:WXTopicCellId];
 }
 
 #pragma =======================================================================
@@ -164,7 +170,17 @@ static CGFloat const FooterHeight = 35;
             inset.top -= self.header.wx_height;
             self.tableView.contentInset = inset;
         }];
-        NSLog(@"%@", error);
+        
+        // 取消任务的错误编码：-999
+        // 找不到服务器的错误编码：-1003
+        // 所有的URL错误编码都可以在NSURLError.h中找到
+        if (error.code == NSURLErrorCancelled) {
+            // 如果是取消操作,不弹窗报错
+            return;
+        }
+        
+        // 弹窗提示错误
+        [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
     }];
 }
 
@@ -257,27 +273,9 @@ static CGFloat const FooterHeight = 35;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static UIColor *bgColor = nil;
-    if (bgColor == nil) {
-        bgColor = WXRandomColor;
-    }
+    WXTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:WXTopicCellId];
     
-    static NSString * const ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        cell.backgroundColor = bgColor;
-        cell.textLabel.textColor = [UIColor whiteColor];
-    }
-    
-    WXTopicItem *item = self.topics[indexPath.row];
-    cell.textLabel.text = item.name;
-    cell.detailTextLabel.text = item.text;
-    
-//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
-//    [imageView setImageWithURL:[NSURL URLWithString:item.profile_image] placeholderImage:[UIImage imageNamed:@"placeholder"]];
-//    [cell setValue:imageView forKeyPath:@"imageView"];
+    cell.topicItem = self.topics[indexPath.row];
     
     return cell;
 }
@@ -384,8 +382,11 @@ static CGFloat const FooterHeight = 35;
         self.footerRefreshing = YES;
         self.footerLabel.text = @"正在加载更多数据";
         
-        // 发送请求
-        [self loadMoreTopics];
+        // 延迟模拟
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 发送请求
+            [self loadMoreTopics];
+        });
     }
 }
 
