@@ -12,13 +12,38 @@
 #import <UIImageView+WebCache.h>
 #import "WXTopicItem.h"
 
+/** 下拉显示的header高度 */
+static CGFloat const HeaderHeight = 44;
+/** 上拉显示的footer高度 */
+static CGFloat const FooterHeight = 35;
+
 @interface WXAllViewController ()
 
 /** 请求会话管理者 */
 @property (nonatomic, strong) AFHTTPSessionManager *mgr;
-
 /** 数据源数组,存放服务器返回的cell列表数据 */
 @property (nonatomic, strong) NSMutableArray *topics;
+/** 用来加载下一页数据 */
+@property (nonatomic, copy) NSString *maxtime;
+
+
+// ----------------------------------------------------------------------------
+// header
+/** 头部刷新状态 */
+@property (nonatomic, assign, getter=isHeaderRefreshing) BOOL headerRefreshing;
+/** 下拉刷新显示的view */
+@property (nonatomic, weak) UIView *header;
+/** 下拉刷新显示的view中的文字Label */
+@property (nonatomic, weak) UILabel *headerLabel;
+
+// ----------------------------------------------------------------------------
+// footer
+/** 尾部刷新状态 */
+@property (nonatomic, assign, getter=isFooterRefreshing) BOOL footerRefreshing;
+/** 上拉刷新显示的view */
+@property (nonatomic, weak) UIView *footer;
+/** 上拉刷新显示的view中的文字Label */
+@property (nonatomic, weak) UILabel *footerLabel;
 
 @end
 
@@ -39,29 +64,146 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleButtonDidRepeatClick) name:WXTitleButtonDidRepeatClickNotification object:nil];
     
     // 3.请求帖子数据
-    [self loadNewTopics];
+//    [self loadNewTopics];
+    
+    // 3.刷新帖子列表
+    [self setupRefresh];
 }
 
 #pragma =======================================================================
-#pragma mark - 请求帖子数据
+#pragma mark - 刷新帖子列表,请求帖子数据
+// ----------------------------------------------------------------------------
+// 刷新帖子列表
+- (void)setupRefresh
+{
+    self.tableView.tableHeaderView = [[UISwitch alloc] init];
+    // ------------------------------------------------------------------------
+    // 下拉显示的view
+    // 1.创建下拉时显示的header
+    UIView *header = [[UIView alloc] init];
+    header.frame = CGRectMake(0, -HeaderHeight, self.tableView.wx_width, HeaderHeight);
+    header.backgroundColor = [UIColor redColor];
+    self.header = header;
+    [self.tableView addSubview:header];
+    
+    // 2.创建显示下拉可以刷新Label,并添加到tableView
+    UILabel *headerLabel = [[UILabel alloc] init];
+    headerLabel.text = @"下拉可以刷新";
+    headerLabel.textAlignment = NSTextAlignmentCenter;
+    headerLabel.frame = header.bounds;
+    headerLabel.backgroundColor = [UIColor yellowColor];
+    self.headerLabel = headerLabel;
+    [header addSubview:headerLabel];
+    
+    // ------------------------------------------------------------------------
+    // 下拉显示的view
+    // 1.创建下拉时显示的header
+    UIView *footer = [[UIView alloc] init];
+    footer.hidden = YES;
+    footer.frame = CGRectMake(0, 0, self.tableView.wx_width, FooterHeight);
+    header.backgroundColor = [UIColor redColor];
+    self.footer = footer;
+    self.tableView.tableFooterView = footer;
+    
+    // 2.创建显示下拉可以刷新Label,并添加到tableView
+    UILabel *footerLabel = [[UILabel alloc] init];
+    footerLabel.text = @"上拉可以刷新";
+    footerLabel.textAlignment = NSTextAlignmentCenter;
+    footerLabel.frame = footer.bounds;
+    footerLabel.backgroundColor = [UIColor yellowColor];
+    self.footerLabel = footerLabel;
+    [footer addSubview:footerLabel];
+    
+}
+
+
 // ----------------------------------------------------------------------------
 // 请求帖子数据
 - (void)loadNewTopics
 {
-    // 1.拼接参数
+    // 1.创建请求会话管理者 (采用懒加载)
+    // 2.拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
+    parameters[@"type"] = @1;
     
-    // 2.发送请求
+    // 3.发送请求
     [self.mgr GET:baseUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        // 记录mactime,用来加载下一页数据
+        self.maxtime = responseObject[@"info"][@"mactime"];
         
         // 2.1 解析服务器返回的数据
         self.topics = [WXTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
         // 2.2 刷新列表
         [self.tableView reloadData];
+        
+        // 2.3 更新刷新状态
+        self.headerRefreshing = NO;
+        self.headerLabel.text = @"下拉可以刷新";
+        self.headerLabel.backgroundColor = [UIColor yellowColor];
+        
+        // 2.4 动画回弹header到标题栏位置
+        [UIView animateWithDuration:0.25 animations:^{
+            UIEdgeInsets inset = self.tableView.contentInset;
+            inset.top -= self.header.wx_height;
+            self.tableView.contentInset = inset;
+        }];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        // 2.3 更新刷新状态
+        self.headerRefreshing = NO;
+        self.headerLabel.text = @"下拉可以刷新";
+        self.headerLabel.backgroundColor = [UIColor yellowColor];
+        
+        // 2.4 动画回弹header到标题栏位置
+        [UIView animateWithDuration:0.25 animations:^{
+            UIEdgeInsets inset = self.tableView.contentInset;
+            inset.top -= self.header.wx_height;
+            self.tableView.contentInset = inset;
+        }];
+        NSLog(@"%@", error);
+    }];
+}
+
+// ----------------------------------------------------------------------------
+// 请求更多的帖子数据
+- (void)loadMoreTopics
+{
+    // 1.取消当前所有任务,避免通知进行两个请求时,造成缺失部分数据
+    [self.mgr.tasks makeObjectsPerformSelector:@selector(cancel)];
+    
+    // 2.拼接参数
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = @1;
+    parameters[@"maxtime"] = self.maxtime;
+    
+    // 3.发送请求
+    [self.mgr GET:baseUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        // 1.存储maxtime,用于获取下一页数据
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        
+        // 2.追加数据
+        NSArray *moreTopics = [WXTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [self.topics addObjectsFromArray:moreTopics];
+        
+        // 3.刷新数据
+        [self.tableView reloadData];
+        
+        // 4.更新状态
+        self.footerRefreshing = NO;
+        self.footerLabel.text = @"上拉可以加载更多";
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        // 更新状态
+        self.footerRefreshing = NO;
+        self.footerLabel.text = @"上拉可以加载更多";
         NSLog(@"%@", error);
     }];
 }
@@ -106,6 +248,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    // 如果tableView有数据,则显示footer,否则隐藏
+    self.footer.hidden = (self.topics.count == 0);
+    
     return self.topics.count;
 }
 
@@ -131,7 +276,7 @@
     cell.detailTextLabel.text = item.text;
     
 //    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
-//    [imageView sd_setImageWithURL:[NSURL URLWithString:item.profile_image] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+//    [imageView setImageWithURL:[NSURL URLWithString:item.profile_image] placeholderImage:[UIImage imageNamed:@"placeholder"]];
 //    [cell setValue:imageView forKeyPath:@"imageView"];
     
     return cell;
@@ -148,6 +293,102 @@
     }
     return _mgr;
 }
+
+#pragma =======================================================================
+#pragma mark - UIScrollViewDelegate
+
+// ----------------------------------------------------------------------------
+// 停止拖拽是调用
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    // 1.判断如果正在请求刷新,直接返回
+    if (self.isHeaderRefreshing) {
+        return;
+    }
+    
+    // 2.获取完全显示时的偏移量
+    CGFloat offsetY = -(self.tableView.contentInset.top + self.header.wx_height);
+    
+    // 3.判断如果header已经完全显示(偏移量y值 <= offsetY),则请求数据
+    if (self.tableView.contentOffset.y <= offsetY) {
+        
+        // 1.更新为刷新状态
+        self.headerRefreshing = YES;
+        self.headerLabel.text = @"正在刷新数据";
+        self.headerLabel.backgroundColor = [UIColor greenColor];
+        
+        // 2.设置内边距慢慢变化到标题栏下,否则手松开时,会有弹跳
+        [UIView animateWithDuration:0.25 animations:^{
+            UIEdgeInsets inset = self.tableView.contentInset;
+            inset.top += self.header.wx_height;
+            self.tableView.contentInset = inset;
+        }];
+        
+        // 3.发送请求
+        [self loadNewTopics];
+    }
+}
+
+// ----------------------------------------------------------------------------
+// 拖拽时调用
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // 1.处理header
+    [self dealHeader];
+    
+    // 2.处理footer
+    [self dealFooter];
+}
+
+// ----------------------------------------------------------------------------
+// 处理dealHeader
+- (void)dealHeader
+{
+    if (self.header == nil) {
+        return;
+    }
+    
+    // 如果当前正在刷新,无需重复调用,直接返回
+    if (self.isHeaderRefreshing) {
+        return;
+    }
+    
+    // 当偏移量的y值 <= offsetY ,header完全显示
+    CGFloat offsetY = -(self.tableView.contentInset.top + self.header.wx_height);
+    
+    if (self.tableView.contentOffset.y <= offsetY) {
+        self.headerLabel.text = @"松开立即刷新";
+        self.headerLabel.backgroundColor = [UIColor yellowColor];
+    }else {
+        self.headerLabel.text = @"下拉可以刷新刷新";
+        self.headerLabel.backgroundColor = [UIColor redColor];
+    }
+}
+
+- (void)dealFooter
+{
+    // 1.如果当前tableView没有数据,直接返回
+    if (self.topics.count == 0) {
+        return;
+    }
+    
+    // 2.如果当前正在刷新,直接返回
+    if (self.footerRefreshing) {
+        return;
+    }
+    
+    // 3.当偏移量 >= offsetY时，footer就已经完全出现
+    CGFloat offsetY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.wx_height;
+    if (self.tableView.contentOffset.y >= offsetY) {
+        // 更新状态
+        self.footerRefreshing = YES;
+        self.footerLabel.text = @"正在加载更多数据";
+        
+        // 发送请求
+        [self loadMoreTopics];
+    }
+}
+
 
 
 
