@@ -25,26 +25,36 @@
     
     // 1.监听通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClick) name:WXTabBarButtonDidRepeatClickNotification object:nil];
+    // 2.监听标题栏重复点击
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleButtonDidRepeatClick) name:WXTitleButtonDidRepeatClickNotification object:nil];
 }
 
 #pragma =======================================================================
-#pragma mark - 监听tabBarButton重复点击通知
+#pragma mark - 监听tabBarButton和titleButton重复点击
+// ----------------------------------------------------------------------------
+// 监听tabBarButton重复点击通知
 - (void)tabBarButtonDidRepeatClick
 {
     // 如果控制器的view不在window上,则直接返回
     if (self.view.window == nil) {
-//        NSLog(@"%@: window = nil", self.class);
         return;
     }
     
     // 如果控制器的view没有和window重叠,则直接返回
     if (![self.view wx_intersectWithView:nil]) {
-//        NSLog(@"%@: view没有和window重叠", self.class);
         return;
     }
     
     NSLog(@"%@: 重复点击，执行下拉刷新", [self class]);
 }
+
+// ----------------------------------------------------------------------------
+// 监听tabBarButton重复点击通知
+- (void)titleButtonDidRepeatClick
+{
+    [self tabBarButtonDidRepeatClick];
+}
+
 
 - (void)dealloc
 {

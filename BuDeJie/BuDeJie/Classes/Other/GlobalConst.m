@@ -24,6 +24,9 @@ CGFloat const WXNavMaxY = 64;
 /** TabBarButton重复点击的通知 */
 NSString * const WXTabBarButtonDidRepeatClickNotification = @"WXTabBarButtonDidRepeatClickNotification";
 
+/** TitleButton重复点击的通知 */
+NSString * const WXTitleButtonDidRepeatClickNotification = @"WXTitleButtonDidRepeatClickNotification";
+
 
 
 

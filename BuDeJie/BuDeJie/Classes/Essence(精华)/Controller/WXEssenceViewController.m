@@ -167,6 +167,12 @@
 // 监听按钮点击
 - (void)titleButtonClick:(WXTitleButton *)button
 {
+    // 判断标题栏的按钮titleButton重复点击
+    if (self.selectedButton == button) {
+        // 发送通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:WXTitleButtonDidRepeatClickNotification object:nil];
+    }
+    
     // 切换中状态
     self.selectedButton.selected = NO;
     button.selected = YES;

@@ -21,3 +21,6 @@ UIKIT_EXTERN CGFloat const WXNavMaxY;
 
 /** TabBarButton重复点击的通知 */
 UIKIT_EXTERN NSString * const WXTabBarButtonDidRepeatClickNotification;
+
+/** TitleButton重复点击的通知 */
+UIKIT_EXTERN NSString * const WXTitleButtonDidRepeatClickNotification;
