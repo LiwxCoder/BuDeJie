@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		123A15B51E56D72C45FB83C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230C706D036B4FFBE8847587 /* libPods.a */; };
 		D907CB981C4F44920042E669 /* WXAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D907CB971C4F44920042E669 /* WXAdItem.m */; };
+		D91592111C5B83FF0028D7A6 /* WXTopicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D91592101C5B83FF0028D7A6 /* WXTopicItem.m */; };
 		D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B691C5244C20008A53C /* WXTextField.m */; };
 		D92D6B821C526A680008A53C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B701C526A680008A53C /* AppDelegate.m */; };
 		D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B741C526A680008A53C /* UIBarButtonItem+Item.m */; };
@@ -75,6 +76,8 @@
 		A10883ECFFD4AAC4A85084F1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D907CB961C4F44920042E669 /* WXAdItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAdItem.h; sourceTree = "<group>"; };
 		D907CB971C4F44920042E669 /* WXAdItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAdItem.m; sourceTree = "<group>"; };
+		D915920F1C5B83FF0028D7A6 /* WXTopicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTopicItem.h; sourceTree = "<group>"; };
+		D91592101C5B83FF0028D7A6 /* WXTopicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTopicItem.m; sourceTree = "<group>"; };
 		D92D6B681C5244C20008A53C /* WXTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTextField.h; sourceTree = "<group>"; };
 		D92D6B691C5244C20008A53C /* WXTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTextField.m; sourceTree = "<group>"; };
 		D92D6B6F1C526A680008A53C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 		D95F33031C4D116500ED13EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D915920F1C5B83FF0028D7A6 /* WXTopicItem.h */,
+				D91592101C5B83FF0028D7A6 /* WXTopicItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -816,6 +821,7 @@
 				D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */,
 				D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */,
 				D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */,
+				D91592111C5B83FF0028D7A6 /* WXTopicItem.m in Sources */,
 				D942052B1C5795230011A49A /* WXPictureViewController.m in Sources */,
 				D9EAA73D1C5299E800341505 /* WXSquareItem.m in Sources */,
 			);
