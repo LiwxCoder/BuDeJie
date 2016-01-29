@@ -71,7 +71,7 @@
             // TODO: 使用AddTarget监听tabBarButton的点击
             UIControl *tabBarButton = (UIControl *)view;
             tabBarButton.tag = index;
-            [tabBarButton addTarget:self action:@selector(tabBarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//            [tabBarButton addTarget:self action:@selector(tabBarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
             
             index++;
             // 判断如果是是第二个batBarButton,空一格

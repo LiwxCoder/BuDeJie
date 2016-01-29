@@ -9,13 +9,35 @@
 #import "AppDelegate.h"
 #import "WXAdViewController.h"
 #import "WXTopWindow.h"
+#import "WXTabBarController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
 @implementation AppDelegate
 
+
+// ----------------------------------------------------------------------------
+// 监听tabBarController当前选中哪个控制器
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    // selectedVc用于存放TabBarController上一次选中的控制器
+    static UIViewController *selectedVc = nil;
+    
+    // 设置初始化上一次选中的控制器为tabBarController的第0个子控制器.
+    if (selectedVc == nil) {
+        selectedVc = tabBarController.childViewControllers[WXDefaultVcIndex];
+    }
+    
+    // 如果上一次选中的控制器和当前选中控制器一样,表示重复点击,发送通知
+    if (selectedVc == viewController) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:WXTabBarButtonDidRepeatClickNotification object:nil];
+    }
+    
+    // 更新上一次选中控制器
+    selectedVc = viewController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -41,7 +63,7 @@
 // 查找出view里面的所有scrollView
 - (void)searchAllScrollViewsInView:(UIView *)view
 {
-    // 1.判断是否在keyWindow的范围内(不跟window重叠),如果不在,直接退出
+    // 1.判断是否在keyWindow的范围内(不跟window重叠),如果不在window范围内,直接退出
     if (![view wx_intersectWithView:nil]) {
         return;
     }

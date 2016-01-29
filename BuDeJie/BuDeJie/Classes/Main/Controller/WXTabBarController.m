@@ -63,7 +63,7 @@
     // 3.设置自定义tabBar
     [self setupTabBar];
     
-    // 调试默认选中新帖
+    // TabBarController默认控制器
     self.selectedIndex = WXDefaultVcIndex;
 }
 

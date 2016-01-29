@@ -21,6 +21,7 @@
     
     self.view.backgroundColor = WXRandomColor;
     self.tableView.contentInset = UIEdgeInsetsMake(WXNavMaxY + WXTitlesViewH, 0, WXTabBarH, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     
     // 1.监听通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClick) name:WXTabBarButtonDidRepeatClickNotification object:nil];
@@ -30,6 +31,16 @@
 #pragma mark - 监听tabBarButton重复点击通知
 - (void)tabBarButtonDidRepeatClick
 {
+    // 如果控制器的view不在window上,则直接返回
+    if (self.view.window == nil) {
+        return;
+    }
+    
+    // 如果控制器的view没有和window重叠,则直接返回
+    if (![self.view wx_intersectWithView:nil]) {
+        return;
+    }
+    
     NSLog(@"%@: 重复点击，执行下拉刷新", [self class]);
 }
 

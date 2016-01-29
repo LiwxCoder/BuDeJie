@@ -217,7 +217,7 @@ static NSString * const code2 = @"phcqnauGuHYkFMRquANhmgN_IauBThfqmgKsUARhIWdGUL
     [self.timer invalidate];
     
     WXTabBarController *tabBarVc = [[WXTabBarController alloc] init];
-    
+    tabBarVc.delegate = (id<UITabBarControllerDelegate>)[UIApplication sharedApplication].delegate;
     [UIApplication sharedApplication].keyWindow.rootViewController = tabBarVc;
 }
 
@@ -231,6 +231,10 @@ static NSString * const code2 = @"phcqnauGuHYkFMRquANhmgN_IauBThfqmgKsUARhIWdGUL
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.adItem.ori_curl]];
     }
 }
+
+#pragma =======================================================================
+#pragma mark - UITabBarDelegate
+
 
 
 @end

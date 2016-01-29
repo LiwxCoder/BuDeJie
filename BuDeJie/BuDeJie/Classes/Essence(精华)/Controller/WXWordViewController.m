@@ -22,6 +22,7 @@
     
     self.view.backgroundColor = WXRandomColor;
     self.tableView.contentInset = UIEdgeInsetsMake(WXNavMaxY + WXTitlesViewH, 0, WXTabBarH, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
 }
 
 #pragma =======================================================================
