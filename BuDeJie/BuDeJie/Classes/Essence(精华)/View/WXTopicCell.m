@@ -36,8 +36,12 @@
     
     [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topicItem.profile_image]];
     self.nameLabel.text = topicItem.name;
-    self.createdAtLabel.text = topicItem.created_at;
     self.text_label.text = topicItem.text;
+    
+    // ------------------------------------------------------------------------
+    // 日期处理
+    [self setCreatedAt];
+    
     // ------------------------------------------------------------------------
     // 底部按钮文字显示处理
     [self setButton:self.dingButton number:topicItem.ding placeholder:@"顶"];
@@ -48,7 +52,51 @@
     self.topCmtContentLabel.text = @"最热评论测试数据最热评论测试数据最热评论测试数据最热评论测试数据";
 }
 
-// ------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// 日期处理
+- (void)setCreatedAt
+{
+    // 1.将日期字符串转NSDate
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDate *createdAtDate = [fmt dateFromString:self.topicItem.created_at];
+    
+    NSString *createdAtText = nil;
+    // ------------------------------------------------------------------------
+    // 2.判断是否是今年
+    if (createdAtDate.wx_isInThisYear) {
+        
+        if (createdAtDate.wx_isInYesterday) {       // 2.1 昨天
+            fmt.dateFormat = @"昨天 HH:mm:ss";
+            createdAtText = [fmt stringFromDate:createdAtDate];
+        } else if (createdAtDate.wx_isInToday) {    // 2.2 今天
+            
+            // 获取时分秒
+            NSCalendarUnit unit = NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+            NSDateComponents *cmps = [[NSCalendar wx_calendar] components:unit fromDate:createdAtDate toDate:[NSDate date] options:0];
+            
+            if (cmps.hour >= 1) {           // 间隔 >= 1小时
+                createdAtText = [NSString stringWithFormat:@"%ld小时前", cmps.hour];
+            } else if (cmps.minute >= 1){   // 间隔 >= 1分钟
+                createdAtText = [NSString stringWithFormat:@"%ld分钟前", cmps.minute];
+            } else {
+                createdAtText = @"刚刚";
+            }
+            
+        } else {    // 2.3 除了昨天,今天,今年的其他天
+            fmt.dateFormat = @"MM-dd HH:mm:ss";
+            createdAtText = [fmt stringFromDate:createdAtDate];
+        }
+    // ------------------------------------------------------------------------
+    // 去年
+    } else {
+        createdAtText = self.topicItem.created_at;
+    }
+    
+    self.createdAtLabel.text = createdAtText;
+}
+
+// ----------------------------------------------------------------------------
 // 底部按钮文字显示处理
 - (void)setButton:(UIButton *)button number:(NSInteger)number placeholder:(NSString *)placeholder
 {

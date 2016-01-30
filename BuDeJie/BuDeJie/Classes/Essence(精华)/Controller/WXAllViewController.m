@@ -24,7 +24,7 @@ static CGFloat const FooterHeight = 35;
 /** 请求会话管理者 */
 @property (nonatomic, strong) AFHTTPSessionManager *mgr;
 /** 数据源数组,存放服务器返回的cell列表数据 */
-@property (nonatomic, strong) NSMutableArray *topics;
+@property (nonatomic, strong) NSMutableArray<WXTopicItem *> *topics;
 /** 用来加载下一页数据 */
 @property (nonatomic, copy) NSString *maxtime;
 
@@ -281,7 +281,6 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
 }
 
 
-
 #pragma =======================================================================
 #pragma mark - 懒加载
 - (AFHTTPSessionManager *)mgr
@@ -363,6 +362,8 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     }
 }
 
+// ----------------------------------------------------------------------------
+// 处理dealFooter
 - (void)dealFooter
 {
     // 1.如果当前tableView没有数据,直接返回
