@@ -231,17 +231,42 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
 // 监听tabBarButton重复点击通知
 - (void)tabBarButtonDidRepeatClick
 {
+    // ------------------------------------------------------------------------
+    // 1.判断控制器的view有没有在window上,有没有和window重叠
     // 如果控制器的view不在window上,则直接返回
-    if (self.view.window == nil) {
-        return;
-    }
+    if (self.view.window == nil) return;
     
     // 如果控制器的view没有和window重叠,则直接返回
-    if (![self.view wx_intersectWithView:nil]) {
-        return;
-    }
+    if (![self.view wx_intersectWithView:nil]) return;
     
-    NSLog(@"%@: 重复点击，执行下拉刷新", [self class]);
+    // ------------------------------------------------------------------------
+    // 2.重复点击，执行下拉刷新
+    // 2.1 判断当前是否在刷新,如果正在刷新直接退出
+    if (self.isHeaderRefreshing) return;
+    // 2.2 更新为刷新状态
+    self.headerRefreshing = YES;
+    self.headerLabel.text = @"正在刷新数据...";
+    self.headerLabel.backgroundColor = [UIColor greenColor];
+    
+    // 2.3 设置内边距和偏移量,让header处于titleView的下面
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        // 2.3.1 修改内边距,增加顶部内边距
+        UIEdgeInsets inset = self.tableView.contentInset;
+        inset.top += self.header.wx_height;
+        self.tableView.contentInset = inset;
+        
+        // 2.3.2 修改偏移量
+        CGPoint offset = self.tableView.contentOffset;
+        offset.y = -(WXNavMaxY + WXTitlesViewH + self.header.wx_height);
+        [self.tableView setContentOffset:offset];
+    }];
+    
+    // ------------------------------------------------------------------------
+    // 3.请求数据, 延迟模拟
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self loadNewTopics];
+    });
 }
 
 // ----------------------------------------------------------------------------
