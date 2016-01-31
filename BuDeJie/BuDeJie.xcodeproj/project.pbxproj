@@ -72,6 +72,7 @@
 		D9EAA7421C52A09800341505 /* WXSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9EAA7401C52A09800341505 /* WXSquareCell.xib */; };
 		D9FB1FBB1C5E4EFA00DC3D62 /* WXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FB1FBA1C5E4EFA00DC3D62 /* WXRefreshHeader.m */; };
 		D9FB1FBE1C5E55F400DC3D62 /* WXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FB1FBD1C5E55F400DC3D62 /* WXRefreshFooter.m */; };
+		D9FB1FC21C5E778B00DC3D62 /* WXHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FB1FC11C5E778B00DC3D62 /* WXHTTPSessionManager.m */; };
 		D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF0B001C5312FA00A98A2E /* WXWebViewController.m */; };
 		D9FF0B031C5312FA00A98A2E /* WXWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF0B011C5312FA00A98A2E /* WXWebViewController.xib */; };
 		D9FF0B051C5318AD00A98A2E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF0B041C5318AD00A98A2E /* WebKit.framework */; };
@@ -193,6 +194,8 @@
 		D9FB1FBA1C5E4EFA00DC3D62 /* WXRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXRefreshHeader.m; sourceTree = "<group>"; };
 		D9FB1FBC1C5E55F400DC3D62 /* WXRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXRefreshFooter.h; sourceTree = "<group>"; };
 		D9FB1FBD1C5E55F400DC3D62 /* WXRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXRefreshFooter.m; sourceTree = "<group>"; };
+		D9FB1FC01C5E778B00DC3D62 /* WXHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHTTPSessionManager.h; sourceTree = "<group>"; };
+		D9FB1FC11C5E778B00DC3D62 /* WXHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHTTPSessionManager.m; sourceTree = "<group>"; };
 		D9FF0AFF1C5312FA00A98A2E /* WXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXWebViewController.h; sourceTree = "<group>"; };
 		D9FF0B001C5312FA00A98A2E /* WXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebViewController.m; sourceTree = "<group>"; };
 		D9FF0B011C5312FA00A98A2E /* WXWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXWebViewController.xib; sourceTree = "<group>"; };
@@ -666,9 +669,19 @@
 			path = "启动图片";
 			sourceTree = "<group>";
 		};
+		D9FB1FBF1C5E777200DC3D62 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D9FB1FC01C5E778B00DC3D62 /* WXHTTPSessionManager.h */,
+				D9FB1FC11C5E778B00DC3D62 /* WXHTTPSessionManager.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		D9FF0B061C533AD600A98A2E /* Tool(业务类) */ = {
 			isa = PBXGroup;
 			children = (
+				D9FB1FBF1C5E777200DC3D62 /* Networking */,
 				D9FF0B071C533AD600A98A2E /* File */,
 			);
 			path = "Tool(业务类)";
@@ -863,6 +876,7 @@
 				D93E03AB1C4D47E8002CBDE8 /* WXNavigationController.m in Sources */,
 				D97567CF1C5D2224009E616C /* NSDate+Interval.m in Sources */,
 				D9D1B8741C51269900F9502E /* WXFastLoginButton.m in Sources */,
+				D9FB1FC21C5E778B00DC3D62 /* WXHTTPSessionManager.m in Sources */,
 				D92D6B881C526A680008A53C /* UIView+Frame.m in Sources */,
 				D95F333C1C4D116500ED13EB /* WXPublishViewController.m in Sources */,
 				D95F33331C4D116500ED13EB /* WXTabBarController.m in Sources */,

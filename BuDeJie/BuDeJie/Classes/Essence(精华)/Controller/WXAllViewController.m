@@ -7,7 +7,7 @@
 //
 
 #import "WXAllViewController.h"
-#import <AFNetworking.h>
+#import "WXHTTPSessionManager.h"
 #import <MJExtension.h>
 #import <UIImageView+WebCache.h>
 #import <SVProgressHUD.h>
@@ -210,7 +210,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
 - (AFHTTPSessionManager *)mgr
 {
     if (_mgr == nil) {
-        _mgr = [AFHTTPSessionManager manager];
+        _mgr = [WXHTTPSessionManager manager];
     }
     return _mgr;
 }
