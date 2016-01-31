@@ -42,6 +42,8 @@
 		D95F333C1C4D116500ED13EB /* WXPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F332E1C4D116500ED13EB /* WXPublishViewController.m */; };
 		D97567CE1C5D2224009E616C /* NSCalendar+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = D97567CB1C5D2224009E616C /* NSCalendar+Init.m */; };
 		D97567CF1C5D2224009E616C /* NSDate+Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = D97567CD1C5D2224009E616C /* NSDate+Interval.m */; };
+		D97812801C5DE5B6004960DB /* UIImage+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = D978127F1C5DE5B6004960DB /* UIImage+Circle.m */; };
+		D97812831C5DE7F0004960DB /* UIImageView+Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D97812821C5DE7F0004960DB /* UIImageView+Header.m */; };
 		D97FC41B1C4E89FC00D8EC8D /* WXSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */; };
 		D9D1B85A1C50E54000F9502E /* WXSubTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D1B8591C50E54000F9502E /* WXSubTagViewController.m */; };
 		D9D1B85D1C50EC4A00F9502E /* WXSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D1B85C1C50EC4A00F9502E /* WXSubTagItem.m */; };
@@ -143,6 +145,10 @@
 		D97567CB1C5D2224009E616C /* NSCalendar+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+Init.m"; sourceTree = "<group>"; };
 		D97567CC1C5D2224009E616C /* NSDate+Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Interval.h"; sourceTree = "<group>"; };
 		D97567CD1C5D2224009E616C /* NSDate+Interval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Interval.m"; sourceTree = "<group>"; };
+		D978127E1C5DE5B6004960DB /* UIImage+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Circle.h"; sourceTree = "<group>"; };
+		D978127F1C5DE5B6004960DB /* UIImage+Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Circle.m"; sourceTree = "<group>"; };
+		D97812811C5DE7F0004960DB /* UIImageView+Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Header.h"; sourceTree = "<group>"; };
+		D97812821C5DE7F0004960DB /* UIImageView+Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Header.m"; sourceTree = "<group>"; };
 		D97FC4191C4E89FC00D8EC8D /* WXSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSettingController.h; sourceTree = "<group>"; };
 		D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSettingController.m; sourceTree = "<group>"; };
 		D9D1B8581C50E54000F9502E /* WXSubTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSubTagViewController.h; sourceTree = "<group>"; };
@@ -241,6 +247,10 @@
 				D92D6B7A1C526A680008A53C /* UIImage+Render.m */,
 				D92D6B7D1C526A680008A53C /* UIView+Frame.h */,
 				D92D6B7E1C526A680008A53C /* UIView+Frame.m */,
+				D978127E1C5DE5B6004960DB /* UIImage+Circle.h */,
+				D978127F1C5DE5B6004960DB /* UIImage+Circle.m */,
+				D97812811C5DE7F0004960DB /* UIImageView+Header.h */,
+				D97812821C5DE7F0004960DB /* UIImageView+Header.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -826,8 +836,10 @@
 				D94205221C5794EB0011A49A /* WXAllViewController.m in Sources */,
 				D9D1B85D1C50EC4A00F9502E /* WXSubTagItem.m in Sources */,
 				D942052E1C5795390011A49A /* WXWordViewController.m in Sources */,
+				D97812831C5DE7F0004960DB /* UIImageView+Header.m in Sources */,
 				D9EAA7411C52A09800341505 /* WXSquareCell.m in Sources */,
 				D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */,
+				D97812801C5DE5B6004960DB /* UIImage+Circle.m in Sources */,
 				D9D1B86F1C51224900F9502E /* WXFastLoginView.m in Sources */,
 				D95F33321C4D116500ED13EB /* WXFriendTrendViewController.m in Sources */,
 				D9FF0B0A1C533B0000A98A2E /* WXFileCacheManager.m in Sources */,

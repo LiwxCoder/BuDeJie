@@ -34,7 +34,7 @@
     _topicItem = topicItem;
     
     
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topicItem.profile_image]];
+    [self.profileImageView wx_setHeader:topicItem.profile_image];
     self.nameLabel.text = topicItem.name;
     self.text_label.text = topicItem.text;
     

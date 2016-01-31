@@ -18,6 +18,8 @@
 
 #import "UIColor+Hex.h"
 #import "UIImage+Render.h"
+#import "UIImage+Circle.h"
+#import "UIImageView+Header.h"
 #import "UIView+Frame.h"
 #import "UIBarButtonItem+Item.h"
 #import "UITextField+Placeholder.h"

@@ -40,30 +40,10 @@
 {
     _item = item;
     
+    
     // ------------------------------------------------------------------------
-    // 设置圆形图片
-    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-        // --------------------------------------------------------------------
-        // 重新生产圆形图片
-        // 1.开启位图上下文(自适应位图上下文比例)
-        UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
-        
-        // 2.贝塞尔曲线描述裁减路径
-        UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
-        // 3.设置裁减区域
-        [path addClip];
-        // 4.绘图
-        [image drawAtPoint:CGPointZero];
-        // 5.从上下文获取裁剪好的图片
-        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-        // 6.关闭上下文
-        UIGraphicsEndImageContext();
-        
-        // 7.用抗锯齿分类设置圆形图片抗锯齿(抗锯齿实现原理: 生成1像素的图形边框)
-        self.iconImageView.image = [newImage imageAntialias];
-        
-    }];
+    // 设置圆形头像
+    [self.iconImageView wx_setHeader:item.image_list];
     
     // ------------------------------------------------------------------------
     // 设置标题和订阅数
