@@ -71,6 +71,7 @@
 		D9EAA7411C52A09800341505 /* WXSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA73F1C52A09800341505 /* WXSquareCell.m */; };
 		D9EAA7421C52A09800341505 /* WXSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9EAA7401C52A09800341505 /* WXSquareCell.xib */; };
 		D9FB1FBB1C5E4EFA00DC3D62 /* WXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FB1FBA1C5E4EFA00DC3D62 /* WXRefreshHeader.m */; };
+		D9FB1FBE1C5E55F400DC3D62 /* WXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FB1FBD1C5E55F400DC3D62 /* WXRefreshFooter.m */; };
 		D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF0B001C5312FA00A98A2E /* WXWebViewController.m */; };
 		D9FF0B031C5312FA00A98A2E /* WXWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF0B011C5312FA00A98A2E /* WXWebViewController.xib */; };
 		D9FF0B051C5318AD00A98A2E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF0B041C5318AD00A98A2E /* WebKit.framework */; };
@@ -190,6 +191,8 @@
 		D9EAA7401C52A09800341505 /* WXSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXSquareCell.xib; sourceTree = "<group>"; };
 		D9FB1FB91C5E4EFA00DC3D62 /* WXRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXRefreshHeader.h; sourceTree = "<group>"; };
 		D9FB1FBA1C5E4EFA00DC3D62 /* WXRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXRefreshHeader.m; sourceTree = "<group>"; };
+		D9FB1FBC1C5E55F400DC3D62 /* WXRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXRefreshFooter.h; sourceTree = "<group>"; };
+		D9FB1FBD1C5E55F400DC3D62 /* WXRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXRefreshFooter.m; sourceTree = "<group>"; };
 		D9FF0AFF1C5312FA00A98A2E /* WXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXWebViewController.h; sourceTree = "<group>"; };
 		D9FF0B001C5312FA00A98A2E /* WXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebViewController.m; sourceTree = "<group>"; };
 		D9FF0B011C5312FA00A98A2E /* WXWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXWebViewController.xib; sourceTree = "<group>"; };
@@ -448,6 +451,8 @@
 				D945A01E1C58E6510070C071 /* WXTopWindow.m */,
 				D9FB1FB91C5E4EFA00DC3D62 /* WXRefreshHeader.h */,
 				D9FB1FBA1C5E4EFA00DC3D62 /* WXRefreshHeader.m */,
+				D9FB1FBC1C5E55F400DC3D62 /* WXRefreshFooter.h */,
+				D9FB1FBD1C5E55F400DC3D62 /* WXRefreshFooter.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -863,6 +868,7 @@
 				D907CB981C4F44920042E669 /* WXAdItem.m in Sources */,
 				D9D1B85A1C50E54000F9502E /* WXSubTagViewController.m in Sources */,
 				D92D6B841C526A680008A53C /* UIColor+Hex.m in Sources */,
+				D9FB1FBE1C5E55F400DC3D62 /* WXRefreshFooter.m in Sources */,
 				D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */,
 				D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */,
 				D9FB1FBB1C5E4EFA00DC3D62 /* WXRefreshHeader.m in Sources */,

@@ -14,11 +14,7 @@
 #import "WXTopicItem.h"
 #import "WXTopicCell.h"
 #import "WXRefreshHeader.h"
-
-/** 下拉显示的header高度 */
-static CGFloat const HeaderHeight = 44;
-/** 上拉显示的footer高度 */
-static CGFloat const FooterHeight = 35;
+#import "WXRefreshFooter.h"
 
 @interface WXAllViewController ()
 
@@ -28,20 +24,6 @@ static CGFloat const FooterHeight = 35;
 @property (nonatomic, strong) NSMutableArray<WXTopicItem *> *topics;
 /** 用来加载下一页数据 */
 @property (nonatomic, copy) NSString *maxtime;
-
-
-// ----------------------------------------------------------------------------
-// header 使用系统自带的刷新控件UIRefreshControl
-//@property (nonatomic, weak) UIRefreshControl *header;
-
-// ----------------------------------------------------------------------------
-// footer
-/** 尾部刷新状态 */
-@property (nonatomic, assign, getter=isFooterRefreshing) BOOL footerRefreshing;
-/** 上拉刷新显示的view */
-@property (nonatomic, weak) UIView *footer;
-/** 上拉刷新显示的view中的文字Label */
-@property (nonatomic, weak) UILabel *footerLabel;
 
 @end
 
@@ -86,22 +68,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
 
     // ------------------------------------------------------------------------
     // 下拉显示的view
-    // 1.创建下拉时显示的header
-    UIView *footer = [[UIView alloc] init];
-    footer.hidden = YES;
-    footer.frame = CGRectMake(0, 0, self.tableView.wx_width, FooterHeight);
-    self.footer = footer;
-    self.tableView.tableFooterView = footer;
-    
-    // 2.创建显示下拉可以刷新Label,并添加到tableView
-    UILabel *footerLabel = [[UILabel alloc] init];
-    footerLabel.text = @"上拉可以刷新";
-    footerLabel.textAlignment = NSTextAlignmentCenter;
-    footerLabel.frame = footer.bounds;
-    footerLabel.backgroundColor = [UIColor yellowColor];
-    self.footerLabel = footerLabel;
-    [footer addSubview:footerLabel];
-    
+    self.tableView.mj_footer = [WXRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
 }
 
 
@@ -177,14 +144,12 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
         [self.tableView reloadData];
         
         // 4.更新状态
-        self.footerRefreshing = NO;
-        self.footerLabel.text = @"上拉可以加载更多";
+        [self.tableView.mj_footer endRefreshing];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         // 更新状态
-        self.footerRefreshing = NO;
-        self.footerLabel.text = @"上拉可以加载更多";
+        [self.tableView.mj_footer endRefreshing];
         NSLog(@"%@", error);
     }];
 }
@@ -227,9 +192,6 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    // 如果tableView有数据,则显示footer,否则隐藏
-    self.footer.hidden = (self.topics.count == 0);
-    
     return self.topics.count;
 }
 
@@ -253,48 +215,5 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     }
     return _mgr;
 }
-
-#pragma =======================================================================
-#pragma mark - UIScrollViewDelegate
-
-// ----------------------------------------------------------------------------
-// 拖拽时调用
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    // 2.处理footer
-    [self dealFooter];
-}
-
-// ----------------------------------------------------------------------------
-// 处理dealFooter
-- (void)dealFooter
-{
-    // 1.如果当前tableView没有数据,直接返回
-    if (self.topics.count == 0) {
-        return;
-    }
-    
-    // 2.如果当前正在刷新,直接返回
-    if (self.footerRefreshing) {
-        return;
-    }
-    
-    // 3.当偏移量 >= offsetY时，footer就已经完全出现
-    CGFloat offsetY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.wx_height;
-    if (self.tableView.contentOffset.y >= offsetY) {
-        // 更新状态
-        self.footerRefreshing = YES;
-        self.footerLabel.text = @"正在加载更多数据";
-        
-        // 延迟模拟
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 发送请求
-            [self loadMoreTopics];
-//        });
-    }
-}
-
-
-
 
 @end
