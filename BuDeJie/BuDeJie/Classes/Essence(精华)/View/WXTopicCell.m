@@ -49,7 +49,64 @@
     [self setButton:self.repostButton number:topicItem.repost placeholder:@"分享"];
     [self setButton:self.commentButton number:topicItem.comment placeholder:@"评论"];
     
-    self.topCmtContentLabel.text = @"最热评论测试数据最热评论测试数据最热评论测试数据最热评论测试数据";
+    // ------------------------------------------------------------------------
+    // 设置最热评论
+    [self setTopCmt];
+}
+
+/**
+ 
+ // 最热评论数据
+{
+    content = "\U4e94\U767e\U5e74\U524d\U4e00\U4eba\U8e0f\U5e73\U5929\U754c\Uff0c\U4eca\U5929\U5341\U4e09\U4ebf\U4eba\U5e2e\U4f60\U8e0f\U5e73\U6625\U665a\U3002";
+    ctime = "2016-01-28 16:54:32";
+    "data_id" = 17032894;
+    id = 42164160;
+    "like_count" = 678;
+    precid = 0;
+    precmt =     (
+    );
+    preuid = 0;
+    status = 0;
+    user =     {
+        id = 16413351;
+        "is_vip" = 0;
+        "personal_page" = "http://user.qzone.qq.com/DFA2DC83F91D296282FD922FA4C45181";
+        "profile_image" = "http://qzapp.qlogo.cn/qzapp/100336987/DFA2DC83F91D296282FD922FA4C45181/100";
+        "qq_uid" = "";
+        "qzone_uid" = DFA2DC83F91D296282FD922FA4C45181;
+        sex = f;
+        username = "\U3001Just .";
+        "weibo_uid" = "";
+    };
+    voicetime = 0;
+    voiceuri = "";
+}
+ */
+
+// ----------------------------------------------------------------------------
+// 设置最热评论
+- (void)setTopCmt
+{
+    // 1.获取最热评论数据,返回数据为字典,只显示第一条,只需取出第一条即可
+    NSDictionary *dict = self.topicItem.top_cmt.firstObject;
+    // 2.判断是否有最热评论数据
+    if (dict) {
+        
+        // 1.获取最热评论 用户名 + 评论内容
+        NSString *username = dict[@"user"][@"username"];
+        NSString *content = dict[@"content"];
+        // 判断评论内容是否为空串,空串是语音评论
+        if (content.length == 0) {
+            content = @"[语音评论]";
+        }
+        
+        self.topCmtContentLabel.text = [NSString stringWithFormat:@"%@ : %@", username, content];
+        self.topCmtView.hidden = NO;
+    } else {
+        self.topCmtContentLabel.text = @"";
+        self.topCmtView.hidden = YES;
+    }
 }
 
 // ----------------------------------------------------------------------------
