@@ -30,13 +30,8 @@ static CGFloat const FooterHeight = 35;
 
 
 // ----------------------------------------------------------------------------
-// header
-/** 头部刷新状态 */
-@property (nonatomic, assign, getter=isHeaderRefreshing) BOOL headerRefreshing;
-/** 下拉刷新显示的view */
-@property (nonatomic, weak) UIView *header;
-/** 下拉刷新显示的view中的文字Label */
-@property (nonatomic, weak) UILabel *headerLabel;
+// header 使用系统自带的刷新控件UIRefreshControl
+@property (nonatomic, weak) UIRefreshControl *header;
 
 // ----------------------------------------------------------------------------
 // footer
@@ -85,22 +80,13 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     self.tableView.tableHeaderView = [[UISwitch alloc] init];
     // ------------------------------------------------------------------------
     // 下拉显示的view
-    // 1.创建下拉时显示的header
-    UIView *header = [[UIView alloc] init];
-    header.frame = CGRectMake(0, -HeaderHeight, self.tableView.wx_width, HeaderHeight);
-    header.backgroundColor = [UIColor redColor];
-    self.header = header;
+    // TODO: 1.使用系统的刷新控件UIRefreshControl, UIRefreshControl控件有个问题,在UIRefreshControl的刷新指示器
+    // 正在刷新时切换到其他控制器,再返回控制器,会出现刷新指示器停止动画了.
+    UIRefreshControl *header = [[UIRefreshControl alloc] init];
+    [header addTarget:self action:@selector(loadNewTopics) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:header];
-    
-    // 2.创建显示下拉可以刷新Label,并添加到tableView
-    UILabel *headerLabel = [[UILabel alloc] init];
-    headerLabel.text = @"下拉可以刷新";
-    headerLabel.textAlignment = NSTextAlignmentCenter;
-    headerLabel.frame = header.bounds;
-    headerLabel.backgroundColor = [UIColor yellowColor];
-    self.headerLabel = headerLabel;
-    [header addSubview:headerLabel];
-    
+    self.header = header;
+
     // ------------------------------------------------------------------------
     // 下拉显示的view
     // 1.创建下拉时显示的header
@@ -147,29 +133,11 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
         [self.tableView reloadData];
         
         // 2.3 更新刷新状态
-        self.headerRefreshing = NO;
-        self.headerLabel.text = @"下拉可以刷新";
-        self.headerLabel.backgroundColor = [UIColor yellowColor];
-        
-        // 2.4 动画回弹header到标题栏位置
-        [UIView animateWithDuration:0.25 animations:^{
-            UIEdgeInsets inset = self.tableView.contentInset;
-            inset.top -= self.header.wx_height;
-            self.tableView.contentInset = inset;
-        }];
+        [self.header endRefreshing];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         // 2.3 更新刷新状态
-        self.headerRefreshing = NO;
-        self.headerLabel.text = @"下拉可以刷新";
-        self.headerLabel.backgroundColor = [UIColor yellowColor];
-        
-        // 2.4 动画回弹header到标题栏位置
-        [UIView animateWithDuration:0.25 animations:^{
-            UIEdgeInsets inset = self.tableView.contentInset;
-            inset.top -= self.header.wx_height;
-            self.tableView.contentInset = inset;
-        }];
+        [self.header endRefreshing];
         
         // 取消任务的错误编码：-999
         // 找不到服务器的错误编码：-1003
@@ -241,32 +209,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     
     // ------------------------------------------------------------------------
     // 2.重复点击，执行下拉刷新
-    // 2.1 判断当前是否在刷新,如果正在刷新直接退出
-    if (self.isHeaderRefreshing) return;
-    // 2.2 更新为刷新状态
-    self.headerRefreshing = YES;
-    self.headerLabel.text = @"正在刷新数据...";
-    self.headerLabel.backgroundColor = [UIColor greenColor];
-    
-    // 2.3 设置内边距和偏移量,让header处于titleView的下面
-    [UIView animateWithDuration:0.25 animations:^{
-        
-        // 2.3.1 修改内边距,增加顶部内边距
-        UIEdgeInsets inset = self.tableView.contentInset;
-        inset.top += self.header.wx_height;
-        self.tableView.contentInset = inset;
-        
-        // 2.3.2 修改偏移量
-        CGPoint offset = self.tableView.contentOffset;
-        offset.y = -(WXNavMaxY + WXTitlesViewH + self.header.wx_height);
-        [self.tableView setContentOffset:offset];
-    }];
-    
-    // ------------------------------------------------------------------------
-    // 3.请求数据, 延迟模拟
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self loadNewTopics];
-    });
+    [self.header beginRefreshing];
 }
 
 // ----------------------------------------------------------------------------
@@ -276,13 +219,11 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     [self tabBarButtonDidRepeatClick];
 }
 
-
 - (void)dealloc
 {
     // 移除通知
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
 
 #pragma =======================================================================
 #pragma mark - UITableViewDataSource数据源
@@ -320,71 +261,11 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
 #pragma mark - UIScrollViewDelegate
 
 // ----------------------------------------------------------------------------
-// 停止拖拽是调用
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    // 1.判断如果正在请求刷新,直接返回
-    if (self.isHeaderRefreshing) {
-        return;
-    }
-    
-    // 2.获取完全显示时的偏移量
-    CGFloat offsetY = -(self.tableView.contentInset.top + self.header.wx_height);
-    
-    // 3.判断如果header已经完全显示(偏移量y值 <= offsetY),则请求数据
-    if (self.tableView.contentOffset.y <= offsetY) {
-        
-        // 1.更新为刷新状态
-        self.headerRefreshing = YES;
-        self.headerLabel.text = @"正在刷新数据";
-        self.headerLabel.backgroundColor = [UIColor greenColor];
-        
-        // 2.设置内边距慢慢变化到标题栏下,否则手松开时,会有弹跳
-        [UIView animateWithDuration:0.25 animations:^{
-            UIEdgeInsets inset = self.tableView.contentInset;
-            inset.top += self.header.wx_height;
-            self.tableView.contentInset = inset;
-        }];
-        
-        // 3.发送请求
-        [self loadNewTopics];
-    }
-}
-
-// ----------------------------------------------------------------------------
 // 拖拽时调用
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // 1.处理header
-    [self dealHeader];
-    
     // 2.处理footer
     [self dealFooter];
-}
-
-// ----------------------------------------------------------------------------
-// 处理dealHeader
-- (void)dealHeader
-{
-    if (self.header == nil) {
-        return;
-    }
-    
-    // 如果当前正在刷新,无需重复调用,直接返回
-    if (self.isHeaderRefreshing) {
-        return;
-    }
-    
-    // 当偏移量的y值 <= offsetY ,header完全显示
-    CGFloat offsetY = -(self.tableView.contentInset.top + self.header.wx_height);
-    
-    if (self.tableView.contentOffset.y <= offsetY) {
-        self.headerLabel.text = @"松开立即刷新";
-        self.headerLabel.backgroundColor = [UIColor yellowColor];
-    }else {
-        self.headerLabel.text = @"下拉可以刷新刷新";
-        self.headerLabel.backgroundColor = [UIColor redColor];
-    }
 }
 
 // ----------------------------------------------------------------------------
