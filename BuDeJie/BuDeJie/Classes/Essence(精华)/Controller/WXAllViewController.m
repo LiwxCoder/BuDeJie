@@ -13,6 +13,7 @@
 #import <SVProgressHUD.h>
 #import "WXTopicItem.h"
 #import "WXTopicCell.h"
+#import "WXRefreshHeader.h"
 
 /** 下拉显示的header高度 */
 static CGFloat const HeaderHeight = 44;
@@ -31,7 +32,7 @@ static CGFloat const FooterHeight = 35;
 
 // ----------------------------------------------------------------------------
 // header 使用系统自带的刷新控件UIRefreshControl
-@property (nonatomic, weak) UIRefreshControl *header;
+//@property (nonatomic, weak) UIRefreshControl *header;
 
 // ----------------------------------------------------------------------------
 // footer
@@ -79,13 +80,9 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
 {
     self.tableView.tableHeaderView = [[UISwitch alloc] init];
     // ------------------------------------------------------------------------
-    // 下拉显示的view
-    // TODO: 1.使用系统的刷新控件UIRefreshControl, UIRefreshControl控件有个问题,在UIRefreshControl的刷新指示器
-    // 正在刷新时切换到其他控制器,再返回控制器,会出现刷新指示器停止动画了.
-    UIRefreshControl *header = [[UIRefreshControl alloc] init];
-    [header addTarget:self action:@selector(loadNewTopics) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:header];
-    self.header = header;
+    // 下拉显示的view,程序进入默认刷新
+    self.tableView.mj_header = [WXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
+    [self.tableView.mj_header beginRefreshing];
 
     // ------------------------------------------------------------------------
     // 下拉显示的view
@@ -93,7 +90,6 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     UIView *footer = [[UIView alloc] init];
     footer.hidden = YES;
     footer.frame = CGRectMake(0, 0, self.tableView.wx_width, FooterHeight);
-    header.backgroundColor = [UIColor redColor];
     self.footer = footer;
     self.tableView.tableFooterView = footer;
     
@@ -133,11 +129,12 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
         [self.tableView reloadData];
         
         // 2.3 更新刷新状态
-        [self.header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         // 2.3 更新刷新状态
-        [self.header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
         
         // 取消任务的错误编码：-999
         // 找不到服务器的错误编码：-1003
@@ -209,7 +206,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     
     // ------------------------------------------------------------------------
     // 2.重复点击，执行下拉刷新
-    [self.header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 // ----------------------------------------------------------------------------
