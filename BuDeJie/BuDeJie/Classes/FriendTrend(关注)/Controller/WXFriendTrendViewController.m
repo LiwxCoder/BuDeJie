@@ -55,7 +55,8 @@
 {
     WXLoginRegisterViewController *loginRegisterVc = [[WXLoginRegisterViewController alloc] init];
     
-    [self presentViewController:loginRegisterVc animated:YES completion:nil];
+//    [self presentViewController:loginRegisterVc animated:YES completion:nil];
+    [self.navigationController pushViewController:loginRegisterVc animated:YES];
 }
 
 

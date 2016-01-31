@@ -29,7 +29,6 @@
 
 @implementation WXAllViewController
 
-
 static NSString * const WXTopicCellId = @"WXTopicCellId";
 
 - (void)viewDidLoad {
