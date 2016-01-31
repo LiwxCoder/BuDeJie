@@ -384,10 +384,10 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
         self.footerLabel.text = @"正在加载更多数据";
         
         // 延迟模拟
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             // 发送请求
             [self loadMoreTopics];
-        });
+//        });
     }
 }
 

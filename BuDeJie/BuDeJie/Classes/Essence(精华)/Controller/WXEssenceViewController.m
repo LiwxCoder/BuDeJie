@@ -173,6 +173,14 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:WXTitleButtonDidRepeatClickNotification object:nil];
     }
     
+    // 处理标题按钮、下划线、scrollView
+    [self dealTitleButtonClick:button];
+}
+
+// ----------------------------------------------------------------------------
+// 处理标题按钮、下划线、scrollView
+- (void)dealTitleButtonClick:(WXTitleButton *)button
+{
     // 切换中状态
     self.selectedButton.selected = NO;
     button.selected = YES;
@@ -251,7 +259,7 @@
     WXTitleButton *titleButton = self.titleView.subviews[index];
     
     // 3.调用按钮的点击事件
-    [self titleButtonClick:titleButton];
+    [self dealTitleButtonClick:titleButton];
 }
 
 
