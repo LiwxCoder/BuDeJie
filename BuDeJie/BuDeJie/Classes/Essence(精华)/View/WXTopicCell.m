@@ -123,6 +123,9 @@
         self.pictureView.hidden = YES;
         self.voiceView.hidden = YES;
         self.videoView.hidden = NO;
+        
+        // 设置中间视频图片控件数据
+        self.videoView.topicItem = topicItem;
     } else if (self.topicItem.type == WXTopicTypeWord) {    // 文字
         self.pictureView.hidden = YES;
         self.voiceView.hidden = YES;

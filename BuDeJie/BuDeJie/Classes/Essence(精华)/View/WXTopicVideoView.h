@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WXTopicItem;
 
 @interface WXTopicVideoView : UIView
+
+/** 帖子模型数据 */
+@property (nonatomic, strong) WXTopicItem *topicItem;
 
 @end

@@ -20,6 +20,7 @@
 #import "UIImage+Render.h"
 #import "UIImage+Circle.h"
 #import "UIImageView+Header.h"
+#import "UIImageView+Image.h"
 #import "UIView+Frame.h"
 #import "UIView+Init.h"
 #import "UIBarButtonItem+Item.h"

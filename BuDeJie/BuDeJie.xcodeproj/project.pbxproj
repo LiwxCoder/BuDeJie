@@ -19,6 +19,7 @@
 		D91B9BAF1C76118F004FF25A /* WXTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91B9BAE1C76118F004FF25A /* WXTopicPictureView.xib */; };
 		D91B9BB21C761207004FF25A /* WXTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91B9BB01C761207004FF25A /* WXTopicVideoView.xib */; };
 		D91B9BB31C761207004FF25A /* WXTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91B9BB11C761207004FF25A /* WXTopicVoiceView.xib */; };
+		D91B9BB61C7631EE004FF25A /* UIImageView+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D91B9BB51C7631EE004FF25A /* UIImageView+Image.m */; };
 		D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B691C5244C20008A53C /* WXTextField.m */; };
 		D92D6B821C526A680008A53C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B701C526A680008A53C /* AppDelegate.m */; };
 		D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B741C526A680008A53C /* UIBarButtonItem+Item.m */; };
@@ -108,6 +109,8 @@
 		D91B9BAE1C76118F004FF25A /* WXTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXTopicPictureView.xib; sourceTree = "<group>"; };
 		D91B9BB01C761207004FF25A /* WXTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXTopicVideoView.xib; sourceTree = "<group>"; };
 		D91B9BB11C761207004FF25A /* WXTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXTopicVoiceView.xib; sourceTree = "<group>"; };
+		D91B9BB41C7631EE004FF25A /* UIImageView+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Image.h"; sourceTree = "<group>"; };
+		D91B9BB51C7631EE004FF25A /* UIImageView+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Image.m"; sourceTree = "<group>"; };
 		D92D6B681C5244C20008A53C /* WXTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTextField.h; sourceTree = "<group>"; };
 		D92D6B691C5244C20008A53C /* WXTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTextField.m; sourceTree = "<group>"; };
 		D92D6B6F1C526A680008A53C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				D97812821C5DE7F0004960DB /* UIImageView+Header.m */,
 				D91B9BA21C760F29004FF25A /* UIView+Init.h */,
 				D91B9BA31C760F29004FF25A /* UIView+Init.m */,
+				D91B9BB41C7631EE004FF25A /* UIImageView+Image.h */,
+				D91B9BB51C7631EE004FF25A /* UIImageView+Image.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -913,6 +918,7 @@
 				D97567CF1C5D2224009E616C /* NSDate+Interval.m in Sources */,
 				D9D1B8741C51269900F9502E /* WXFastLoginButton.m in Sources */,
 				D9FB1FC21C5E778B00DC3D62 /* WXHTTPSessionManager.m in Sources */,
+				D91B9BB61C7631EE004FF25A /* UIImageView+Image.m in Sources */,
 				D92D6B881C526A680008A53C /* UIView+Frame.m in Sources */,
 				D95F333C1C4D116500ED13EB /* WXPublishViewController.m in Sources */,
 				D95F33331C4D116500ED13EB /* WXTabBarController.m in Sources */,
