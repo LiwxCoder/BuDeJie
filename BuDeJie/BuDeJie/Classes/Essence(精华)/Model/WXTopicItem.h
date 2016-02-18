@@ -64,6 +64,8 @@ typedef NS_ENUM(NSInteger, WXTopicType) {
 @property (nonatomic, copy) NSString *image1;
 /** 中图 */
 @property (nonatomic, copy) NSString *image2;
+/** 是否为动态图 */
+@property (nonatomic, assign) BOOL is_gif;
 
 
 #pragma =======================================================================
@@ -73,5 +75,7 @@ typedef NS_ENUM(NSInteger, WXTopicType) {
 @property (nonatomic, assign) CGFloat cellHeight;
 /** 中间内容的frame */
 @property (nonatomic, assign) CGRect centerFrame;
+/** 是否为长图 */
+@property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture;
 
 @end

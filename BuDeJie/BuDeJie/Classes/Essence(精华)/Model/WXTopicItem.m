@@ -35,6 +35,13 @@
         // centerW / centerH = self.width / self.height;
         CGFloat centerW = textMaxW;
         CGFloat centerH = centerW * self.height / self.width;
+        
+        // 判断是否是长图
+        if (centerH >= screenH) {
+            centerH = 200;
+            self.bigPicture = YES;
+        }
+        
         CGFloat centerX = WXMargin;
         CGFloat centerY = _cellHeight;
         self.centerFrame = CGRectMake(centerX, centerY, centerW, centerH);
