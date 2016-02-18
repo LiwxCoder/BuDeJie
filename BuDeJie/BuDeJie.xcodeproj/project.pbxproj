@@ -12,6 +12,13 @@
 		D91592111C5B83FF0028D7A6 /* WXTopicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D91592101C5B83FF0028D7A6 /* WXTopicItem.m */; };
 		D915921F1C5BD0540028D7A6 /* WXTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D915921D1C5BD0540028D7A6 /* WXTopicCell.m */; };
 		D91592201C5BD0540028D7A6 /* WXTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D915921E1C5BD0540028D7A6 /* WXTopicCell.xib */; };
+		D91B9BA41C760F29004FF25A /* UIView+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = D91B9BA31C760F29004FF25A /* UIView+Init.m */; };
+		D91B9BA71C761141004FF25A /* WXTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D91B9BA61C761141004FF25A /* WXTopicPictureView.m */; };
+		D91B9BAA1C76115D004FF25A /* WXTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = D91B9BA91C76115D004FF25A /* WXTopicVoiceView.m */; };
+		D91B9BAD1C761175004FF25A /* WXTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D91B9BAC1C761175004FF25A /* WXTopicVideoView.m */; };
+		D91B9BAF1C76118F004FF25A /* WXTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91B9BAE1C76118F004FF25A /* WXTopicPictureView.xib */; };
+		D91B9BB21C761207004FF25A /* WXTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91B9BB01C761207004FF25A /* WXTopicVideoView.xib */; };
+		D91B9BB31C761207004FF25A /* WXTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91B9BB11C761207004FF25A /* WXTopicVoiceView.xib */; };
 		D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B691C5244C20008A53C /* WXTextField.m */; };
 		D92D6B821C526A680008A53C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B701C526A680008A53C /* AppDelegate.m */; };
 		D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D92D6B741C526A680008A53C /* UIBarButtonItem+Item.m */; };
@@ -90,6 +97,17 @@
 		D915921C1C5BD0540028D7A6 /* WXTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTopicCell.h; sourceTree = "<group>"; };
 		D915921D1C5BD0540028D7A6 /* WXTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTopicCell.m; sourceTree = "<group>"; };
 		D915921E1C5BD0540028D7A6 /* WXTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXTopicCell.xib; sourceTree = "<group>"; };
+		D91B9BA21C760F29004FF25A /* UIView+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Init.h"; sourceTree = "<group>"; };
+		D91B9BA31C760F29004FF25A /* UIView+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Init.m"; sourceTree = "<group>"; };
+		D91B9BA51C761141004FF25A /* WXTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTopicPictureView.h; sourceTree = "<group>"; };
+		D91B9BA61C761141004FF25A /* WXTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTopicPictureView.m; sourceTree = "<group>"; };
+		D91B9BA81C76115D004FF25A /* WXTopicVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTopicVoiceView.h; sourceTree = "<group>"; };
+		D91B9BA91C76115D004FF25A /* WXTopicVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTopicVoiceView.m; sourceTree = "<group>"; };
+		D91B9BAB1C761175004FF25A /* WXTopicVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTopicVideoView.h; sourceTree = "<group>"; };
+		D91B9BAC1C761175004FF25A /* WXTopicVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTopicVideoView.m; sourceTree = "<group>"; };
+		D91B9BAE1C76118F004FF25A /* WXTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXTopicPictureView.xib; sourceTree = "<group>"; };
+		D91B9BB01C761207004FF25A /* WXTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXTopicVideoView.xib; sourceTree = "<group>"; };
+		D91B9BB11C761207004FF25A /* WXTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXTopicVoiceView.xib; sourceTree = "<group>"; };
 		D92D6B681C5244C20008A53C /* WXTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTextField.h; sourceTree = "<group>"; };
 		D92D6B691C5244C20008A53C /* WXTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTextField.m; sourceTree = "<group>"; };
 		D92D6B6F1C526A680008A53C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -260,6 +278,8 @@
 				D978127F1C5DE5B6004960DB /* UIImage+Circle.m */,
 				D97812811C5DE7F0004960DB /* UIImageView+Header.h */,
 				D97812821C5DE7F0004960DB /* UIImageView+Header.m */,
+				D91B9BA21C760F29004FF25A /* UIView+Init.h */,
+				D91B9BA31C760F29004FF25A /* UIView+Init.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -366,6 +386,15 @@
 				D915921C1C5BD0540028D7A6 /* WXTopicCell.h */,
 				D915921D1C5BD0540028D7A6 /* WXTopicCell.m */,
 				D915921E1C5BD0540028D7A6 /* WXTopicCell.xib */,
+				D91B9BA51C761141004FF25A /* WXTopicPictureView.h */,
+				D91B9BAE1C76118F004FF25A /* WXTopicPictureView.xib */,
+				D91B9BA61C761141004FF25A /* WXTopicPictureView.m */,
+				D91B9BA81C76115D004FF25A /* WXTopicVoiceView.h */,
+				D91B9BA91C76115D004FF25A /* WXTopicVoiceView.m */,
+				D91B9BB11C761207004FF25A /* WXTopicVoiceView.xib */,
+				D91B9BAB1C761175004FF25A /* WXTopicVideoView.h */,
+				D91B9BAC1C761175004FF25A /* WXTopicVideoView.m */,
+				D91B9BB01C761207004FF25A /* WXTopicVideoView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -767,7 +796,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D91B9BB31C761207004FF25A /* WXTopicVoiceView.xib in Resources */,
 				D9DBC02F1C5146260018B030 /* WXLoginRegisterView.xib in Resources */,
+				D91B9BB21C761207004FF25A /* WXTopicVideoView.xib in Resources */,
 				D9D1B86C1C51047300F9502E /* WXLoginRegisterViewController.xib in Resources */,
 				D95F32F71C4D113700ED13EB /* LaunchScreen.storyboard in Resources */,
 				D9D487DD1C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
@@ -781,6 +812,7 @@
 				D9D1B8621C50F27300F9502E /* WXSubTagCell.xib in Resources */,
 				D9D1B8671C51006100F9502E /* WXFriendTrendViewController.xib in Resources */,
 				D92D6B911C5281C90008A53C /* WXMeViewController.storyboard in Resources */,
+				D91B9BAF1C76118F004FF25A /* WXTopicPictureView.xib in Resources */,
 				D91592201C5BD0540028D7A6 /* WXTopicCell.xib in Resources */,
 				D9D487D91C4F19F60015B0CD /* LaunchImage-568h@2x.png in Resources */,
 				D9D487DE1C4F19F60015B0CD /* LaunchImage.png in Resources */,
@@ -850,6 +882,7 @@
 				D94205281C5795110011A49A /* WXVoiceViewController.m in Sources */,
 				D9D1B8611C50F27300F9502E /* WXSubTagCell.m in Sources */,
 				D9D487CF1C4F16150015B0CD /* WXAdViewController.m in Sources */,
+				D91B9BAD1C761175004FF25A /* WXTopicVideoView.m in Sources */,
 				D94205251C5794FE0011A49A /* WXVideoViewController.m in Sources */,
 				D92D6B851C526A680008A53C /* UIImage+Antialias.m in Sources */,
 				D92D6B821C526A680008A53C /* AppDelegate.m in Sources */,
@@ -860,6 +893,7 @@
 				D94205221C5794EB0011A49A /* WXAllViewController.m in Sources */,
 				D9D1B85D1C50EC4A00F9502E /* WXSubTagItem.m in Sources */,
 				D942052E1C5795390011A49A /* WXWordViewController.m in Sources */,
+				D91B9BAA1C76115D004FF25A /* WXTopicVoiceView.m in Sources */,
 				D97812831C5DE7F0004960DB /* UIImageView+Header.m in Sources */,
 				D9EAA7411C52A09800341505 /* WXSquareCell.m in Sources */,
 				D92D6B6A1C5244C20008A53C /* WXTextField.m in Sources */,
@@ -867,9 +901,11 @@
 				D9D1B86F1C51224900F9502E /* WXFastLoginView.m in Sources */,
 				D95F33321C4D116500ED13EB /* WXFriendTrendViewController.m in Sources */,
 				D9FF0B0A1C533B0000A98A2E /* WXFileCacheManager.m in Sources */,
+				D91B9BA41C760F29004FF25A /* UIView+Init.m in Sources */,
 				D97FC41B1C4E89FC00D8EC8D /* WXSettingController.m in Sources */,
 				D9D1B86A1C5103EB00F9502E /* WXLoginRegisterViewController.m in Sources */,
 				D95F33351C4D116500ED13EB /* WXMeViewController.m in Sources */,
+				D91B9BA71C761141004FF25A /* WXTopicPictureView.m in Sources */,
 				D92D6B8D1C526AC70008A53C /* UITextField+Placeholder.m in Sources */,
 				D9EAA73A1C5298AF00341505 /* GlobalConst.m in Sources */,
 				D92D6B891C526A680008A53C /* main.m in Sources */,

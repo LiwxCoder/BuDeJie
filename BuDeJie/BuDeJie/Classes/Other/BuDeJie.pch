@@ -21,6 +21,7 @@
 #import "UIImage+Circle.h"
 #import "UIImageView+Header.h"
 #import "UIView+Frame.h"
+#import "UIView+Init.h"
 #import "UIBarButtonItem+Item.h"
 #import "UITextField+Placeholder.h"
 #import "NSCalendar+Init.h"

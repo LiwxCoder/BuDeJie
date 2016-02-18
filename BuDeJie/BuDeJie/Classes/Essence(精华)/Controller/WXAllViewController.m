@@ -82,7 +82,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(WXTopicTypeVoice);
+    parameters[@"type"] = @(WXTopicTypeAll);
     
     
     // 3.发送请求

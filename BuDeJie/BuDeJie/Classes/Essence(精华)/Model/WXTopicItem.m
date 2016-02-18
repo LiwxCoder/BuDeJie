@@ -28,6 +28,21 @@
     _cellHeight += [self.text boundingRectWithSize:CGSizeMake(textMaxW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size.height + WXMargin;
     
     // ------------------------------------------------------------------------
+    // 3.中间图片控件高度,等比例填充方式显示图片
+    // 3.1 判断如果不是文字段子,累加图片控件高度
+    if (self.type != WXTopicTypeWord) {
+        // 3.2 计算图片控件实际的frame
+        // centerW / centerH = self.width / self.height;
+        CGFloat centerW = textMaxW;
+        CGFloat centerH = centerW * self.height / self.width;
+        CGFloat centerX = WXMargin;
+        CGFloat centerY = _cellHeight;
+        self.centerFrame = CGRectMake(centerX, centerY, centerW, centerH);
+        
+        _cellHeight += centerH + WXMargin;
+    }
+    
+    // ------------------------------------------------------------------------
     // 3.最热评论高度 = 最热评论标题高度(20) + 最热评论内容高度
     // 3.1 取出最热评论
     NSDictionary *cmt = self.top_cmt.firstObject;

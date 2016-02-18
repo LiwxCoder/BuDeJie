@@ -48,6 +48,10 @@ typedef NS_ENUM(NSInteger, WXTopicType) {
 @property (nonatomic, assign) WXTopicType type;
 /** 最热评论 */
 @property (nonatomic, strong) NSArray *top_cmt;
+/** 图片宽度 */
+@property (nonatomic, assign) CGFloat width;
+/** 图片高度 */
+@property (nonatomic, assign) CGFloat height;
 
 
 #pragma =======================================================================
@@ -55,5 +59,7 @@ typedef NS_ENUM(NSInteger, WXTopicType) {
 
 /** 通过这个模型计算出来的cell高度 */
 @property (nonatomic, assign) CGFloat cellHeight;
+/** 中间内容的frame */
+@property (nonatomic, assign) CGRect centerFrame;
 
 @end
