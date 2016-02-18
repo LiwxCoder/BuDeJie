@@ -11,9 +11,20 @@
             <rect key="frame" x="0.0" y="0.0" width="335" height="190"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="9JY-YK-Epz" userLabel="占位图片">
+                    <rect key="frame" x="42" y="20" width="250" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="KtI-4b-Ecm"/>
+                        <constraint firstAttribute="height" constant="35" id="w7N-9q-wNR"/>
+                    </constraints>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BkB-ed-n14" userLabel="背景图片">
                     <rect key="frame" x="0.0" y="0.0" width="335" height="190"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaR-YV-dBb" userLabel="中间按钮">
+                    <rect key="frame" x="132" y="59" width="71" height="71"/>
+                    <state key="normal" backgroundImage="video-play"/>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1314播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAe-xw-12j" userLabel="播放数量">
                     <rect key="frame" x="272" y="0.0" width="62.5" height="18"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
@@ -28,18 +39,16 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaR-YV-dBb" userLabel="中间按钮">
-                    <rect key="frame" x="132" y="59" width="71" height="71"/>
-                    <state key="normal" backgroundImage="video-play"/>
-                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="DaR-YV-dBb" firstAttribute="centerX" secondItem="5VR-2o-amG" secondAttribute="centerX" id="3u4-nJ-MeG"/>
                 <constraint firstItem="CAe-xw-12j" firstAttribute="top" secondItem="5VR-2o-amG" secondAttribute="top" id="4gT-op-OdD"/>
                 <constraint firstItem="BkB-ed-n14" firstAttribute="top" secondItem="5VR-2o-amG" secondAttribute="top" id="JhD-P2-goK"/>
                 <constraint firstAttribute="trailing" secondItem="Ng6-W2-dPd" secondAttribute="trailing" id="NCF-3e-0tX"/>
+                <constraint firstItem="9JY-YK-Epz" firstAttribute="centerX" secondItem="5VR-2o-amG" secondAttribute="centerX" id="TfR-8n-hRT"/>
                 <constraint firstItem="BkB-ed-n14" firstAttribute="leading" secondItem="5VR-2o-amG" secondAttribute="leading" id="VVw-pO-Sg6"/>
                 <constraint firstItem="DaR-YV-dBb" firstAttribute="centerY" secondItem="5VR-2o-amG" secondAttribute="centerY" id="cbh-AK-XT5"/>
+                <constraint firstItem="9JY-YK-Epz" firstAttribute="top" secondItem="5VR-2o-amG" secondAttribute="top" constant="20" id="hIW-bO-kIf"/>
                 <constraint firstAttribute="trailing" secondItem="CAe-xw-12j" secondAttribute="trailing" id="qOo-1a-0Wn"/>
                 <constraint firstAttribute="trailing" secondItem="BkB-ed-n14" secondAttribute="trailing" id="wOA-Ig-QlX"/>
                 <constraint firstAttribute="bottom" secondItem="BkB-ed-n14" secondAttribute="bottom" id="zB6-ce-f12"/>
@@ -56,6 +65,7 @@
         </view>
     </objects>
     <resources>
+        <image name="imageBackground" width="75" height="15"/>
         <image name="video-play" width="71" height="71"/>
     </resources>
 </document>
