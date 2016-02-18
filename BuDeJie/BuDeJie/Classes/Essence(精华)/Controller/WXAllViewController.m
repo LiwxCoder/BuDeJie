@@ -82,7 +82,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(WXTopicTypeAll);
+    parameters[@"type"] = @(WXTopicTypeVoice);
     
     
     // 3.发送请求
@@ -212,7 +212,6 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WXTopicItem *item = self.topics[indexPath.row];
-    NSLog(@"heightForRowAtIndexPath - %02ld", indexPath.row);
     return item.cellHeight;
 }
 

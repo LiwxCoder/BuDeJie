@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WXTopicItem;
 
 @interface WXTopicVoiceView : UIView
+
+/** 提供模型数据 */
+@property (nonatomic, strong) WXTopicItem *topicItem;
 
 @end

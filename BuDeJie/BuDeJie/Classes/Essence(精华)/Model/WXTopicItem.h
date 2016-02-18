@@ -52,6 +52,18 @@ typedef NS_ENUM(NSInteger, WXTopicType) {
 @property (nonatomic, assign) CGFloat width;
 /** 图片高度 */
 @property (nonatomic, assign) CGFloat height;
+/** 播放数量 */
+@property (nonatomic, assign) NSInteger playcount;
+/** 声音文件的播放时长 */
+@property (nonatomic, assign) NSInteger voicetime;
+/** 视频文件的播放时长 */
+@property (nonatomic, assign) NSInteger videotime;
+/** 小图 */
+@property (nonatomic, copy) NSString *image0;
+/** 大图 */
+@property (nonatomic, copy) NSString *image1;
+/** 中图 */
+@property (nonatomic, copy) NSString *image2;
 
 
 #pragma =======================================================================
