@@ -12,6 +12,9 @@
 NSString * const baseUrl = @"http://api.budejie.com/api/api_open.php";
 
 
+/** 通用的间距 */
+CGFloat const WXMargin = 10;
+
 /** UITabBar的高度 */
 CGFloat const WXTabBarH = 49;
 

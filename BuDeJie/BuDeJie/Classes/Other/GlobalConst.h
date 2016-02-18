@@ -10,6 +10,9 @@
 
 extern NSString * const baseUrl;
 
+/** 通用的间距 */
+UIKIT_EXTERN CGFloat const WXMargin;
+
 /** UITabBar的高度 */
 UIKIT_EXTERN CGFloat const WXTabBarH;
 

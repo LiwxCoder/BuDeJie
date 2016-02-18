@@ -28,11 +28,16 @@
 @end
 
 @implementation WXTopicCell
+// ----------------------------------------------------------------------------
+// 设置cell的背景图片,需在Assets.xcassets中设置mainCellBackground图片为可拉伸图片
+- (void)awakeFromNib
+{
+    self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
+}
 
 - (void)setTopicItem:(WXTopicItem *)topicItem
 {
     _topicItem = topicItem;
-    
     
     [self.profileImageView wx_setHeader:topicItem.profile_image];
     self.nameLabel.text = topicItem.name;
@@ -167,6 +172,15 @@
     }
     
     [button setTitle:title forState:UIControlStateNormal];
+}
+
+// ----------------------------------------------------------------------------
+// 重写,设置每个cell之间的间隔为10
+- (void)setFrame:(CGRect)frame
+{
+    frame.size.height -= WXMargin;
+    
+    [super setFrame:frame];
 }
 
 @end

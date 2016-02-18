@@ -15,6 +15,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="330" height="310.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXR-jn-8DD" userLabel="顶部view">
+                        <rect key="frame" x="0.0" y="0.0" width="330" height="55"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UU6-v1-qsT" userLabel="头像">
+                                <rect key="frame" x="10" y="10" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="6Qd-mt-5Fe"/>
+                                    <constraint firstAttribute="width" constant="35" id="B5Z-Rx-QNN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So5-fM-tVu" userLabel="昵称">
+                                <rect key="frame" x="55" y="10" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iF-Ld-5g7" userLabel="时间">
+                                <rect key="frame" x="55" y="29" width="33" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Pm-JL-ZGI" userLabel="更多">
+                                <rect key="frame" x="290" y="10" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="KhB-yS-GYj"/>
+                                    <constraint firstAttribute="height" constant="30" id="scl-zv-hk8"/>
+                                </constraints>
+                                <state key="normal" image="cellmorebtnnormal"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UU6-v1-qsT" firstAttribute="leading" secondItem="OXR-jn-8DD" secondAttribute="leading" constant="10" id="1uK-oq-hqf"/>
+                            <constraint firstAttribute="height" constant="55" id="Jz6-jc-YhE"/>
+                            <constraint firstItem="3Pm-JL-ZGI" firstAttribute="top" secondItem="OXR-jn-8DD" secondAttribute="top" constant="10" id="iVH-Ql-2A0"/>
+                            <constraint firstAttribute="trailing" secondItem="3Pm-JL-ZGI" secondAttribute="trailing" constant="10" id="mTw-KM-bJF"/>
+                            <constraint firstItem="So5-fM-tVu" firstAttribute="leading" secondItem="UU6-v1-qsT" secondAttribute="trailing" constant="10" id="oiD-cj-nmn"/>
+                            <constraint firstItem="6iF-Ld-5g7" firstAttribute="leading" secondItem="So5-fM-tVu" secondAttribute="leading" id="t4R-O8-QkJ"/>
+                            <constraint firstAttribute="bottom" secondItem="UU6-v1-qsT" secondAttribute="bottom" constant="10" id="w60-Kt-3S9"/>
+                            <constraint firstItem="6iF-Ld-5g7" firstAttribute="bottom" secondItem="UU6-v1-qsT" secondAttribute="bottom" id="xdD-up-cmi"/>
+                            <constraint firstItem="UU6-v1-qsT" firstAttribute="top" secondItem="OXR-jn-8DD" secondAttribute="top" constant="10" id="xuR-Jd-3Rm"/>
+                            <constraint firstItem="So5-fM-tVu" firstAttribute="top" secondItem="OXR-jn-8DD" secondAttribute="top" constant="10" id="yya-WZ-u5k"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjD-f5-Dtr" userLabel="底部工具条">
                         <rect key="frame" x="0.0" y="275" width="330" height="35"/>
                         <subviews>
@@ -111,20 +156,20 @@
                             </mask>
                         </variation>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRD-9j-H7h">
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRD-9j-H7h" userLabel="最热评论">
                         <rect key="frame" x="10" y="215.5" width="310" height="49.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9v-fb-7Pt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9v-fb-7Pt" userLabel="最热评论-标题">
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="18"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论最热评论最热评论最热评论最热评论最热评论最热评论最热评论最热评论最热评论" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svm-At-rSS">
-                                <rect key="frame" x="0.0" y="17.5" width="310" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论最热评论最热评论最热评论最热评论最热评论最热评论最热评论最热评论最热评论" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svm-At-rSS" userLabel="最热评论-内容">
+                                <rect key="frame" x="0.0" y="17.5" width="310" height="33.5"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -139,52 +184,7 @@
                             <constraint firstItem="Svm-At-rSS" firstAttribute="leading" secondItem="SRD-9j-H7h" secondAttribute="leading" id="s85-Iy-c5x"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXR-jn-8DD">
-                        <rect key="frame" x="0.0" y="0.0" width="330" height="55"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UU6-v1-qsT">
-                                <rect key="frame" x="10" y="10" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="6Qd-mt-5Fe"/>
-                                    <constraint firstAttribute="width" constant="35" id="B5Z-Rx-QNN"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So5-fM-tVu">
-                                <rect key="frame" x="55" y="10" width="37.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iF-Ld-5g7">
-                                <rect key="frame" x="55" y="29" width="33" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Pm-JL-ZGI">
-                                <rect key="frame" x="290" y="10" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="KhB-yS-GYj"/>
-                                    <constraint firstAttribute="height" constant="30" id="scl-zv-hk8"/>
-                                </constraints>
-                                <state key="normal" image="cellmorebtnnormal"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UU6-v1-qsT" firstAttribute="leading" secondItem="OXR-jn-8DD" secondAttribute="leading" constant="10" id="1uK-oq-hqf"/>
-                            <constraint firstAttribute="height" constant="55" id="Jz6-jc-YhE"/>
-                            <constraint firstItem="3Pm-JL-ZGI" firstAttribute="top" secondItem="OXR-jn-8DD" secondAttribute="top" constant="10" id="iVH-Ql-2A0"/>
-                            <constraint firstAttribute="trailing" secondItem="3Pm-JL-ZGI" secondAttribute="trailing" constant="10" id="mTw-KM-bJF"/>
-                            <constraint firstItem="So5-fM-tVu" firstAttribute="leading" secondItem="UU6-v1-qsT" secondAttribute="trailing" constant="10" id="oiD-cj-nmn"/>
-                            <constraint firstItem="6iF-Ld-5g7" firstAttribute="leading" secondItem="So5-fM-tVu" secondAttribute="leading" id="t4R-O8-QkJ"/>
-                            <constraint firstAttribute="bottom" secondItem="UU6-v1-qsT" secondAttribute="bottom" constant="10" id="w60-Kt-3S9"/>
-                            <constraint firstItem="6iF-Ld-5g7" firstAttribute="bottom" secondItem="UU6-v1-qsT" secondAttribute="bottom" id="xdD-up-cmi"/>
-                            <constraint firstItem="UU6-v1-qsT" firstAttribute="top" secondItem="OXR-jn-8DD" secondAttribute="top" constant="10" id="xuR-Jd-3Rm"/>
-                            <constraint firstItem="So5-fM-tVu" firstAttribute="top" secondItem="OXR-jn-8DD" secondAttribute="top" constant="10" id="yya-WZ-u5k"/>
-                        </constraints>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMa-20-222">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMa-20-222" userLabel="文字内容">
                         <rect key="frame" x="10" y="55" width="310" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

@@ -38,8 +38,10 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     
     self.view.backgroundColor = WXRandomColor;
     self.tableView.contentInset = UIEdgeInsetsMake(WXNavMaxY + WXTitlesViewH, 0, WXTabBarH, 0);
+    // 设置滚动条在滚动视图中的位置(滚动条的内边距)
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
-    self.tableView.rowHeight = 300;
+    self.tableView.backgroundColor = WXColor(206, 206, 206);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     // 1.监听通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClick) name:WXTabBarButtonDidRepeatClickNotification object:nil];
@@ -80,13 +82,14 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @1;
+    parameters[@"type"] = @(WXTopicTypeVoice);
+    
     
     // 3.发送请求
     [self.mgr GET:baseUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         // 记录mactime,用来加载下一页数据
-        self.maxtime = responseObject[@"info"][@"mactime"];
+        self.maxtime = responseObject[@"info"][@"maxtime"];
         
         // 2.1 解析服务器返回的数据
         self.topics = [WXTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
@@ -126,7 +129,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @1;
+    parameters[@"type"] = @(WXTopicTypeAll);
     parameters[@"maxtime"] = self.maxtime;
     
     // 3.发送请求
@@ -202,6 +205,15 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     cell.topicItem = self.topics[indexPath.row];
     
     return cell;
+}
+
+// ----------------------------------------------------------------------------
+// 通过模型数据计算cell高度,并设置对应cell高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WXTopicItem *item = self.topics[indexPath.row];
+    NSLog(@"heightForRowAtIndexPath - %02ld", indexPath.row);
+    return item.cellHeight;
 }
 
 

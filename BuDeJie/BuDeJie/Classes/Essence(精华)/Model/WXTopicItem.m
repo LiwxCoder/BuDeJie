@@ -10,4 +10,47 @@
 
 @implementation WXTopicItem
 
+// ----------------------------------------------------------------------------
+// 计算cell高度
+- (CGFloat)cellHeight
+{
+    // 如果已经计算过cell的高度,无需再计算
+    if (_cellHeight) return _cellHeight;
+    
+    // ------------------------------------------------------------------------
+    // 1.顶部view高度55
+    _cellHeight += 55;
+    
+    // ------------------------------------------------------------------------
+    // 2.文字高度
+    // 2.1 文字最大宽度 = 屏幕宽度 - 2 * 间距
+    CGFloat textMaxW = screenW - 2 * WXMargin;
+    _cellHeight += [self.text boundingRectWithSize:CGSizeMake(textMaxW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size.height + WXMargin;
+    
+    // ------------------------------------------------------------------------
+    // 3.最热评论高度 = 最热评论标题高度(20) + 最热评论内容高度
+    // 3.1 取出最热评论
+    NSDictionary *cmt = self.top_cmt.firstObject;
+    
+    if (cmt) {
+        // 3.2 最热评论标题高度20
+        _cellHeight += 20;
+        
+        // 3.3 最热评论内容高度
+        NSString *username = cmt[@"user"][@"username"];
+        NSString *content = cmt[@"content"];
+        if (content.length == 0) {
+            content = @"[语音评论]";
+        }
+        NSString *cmtText = [NSString stringWithFormat:@"%@ : %@", username, content];
+        _cellHeight += [cmtText boundingRectWithSize:CGSizeMake(textMaxW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height + WXMargin;
+    }
+    
+    // ------------------------------------------------------------------------
+    // 4.底部工具条高度
+    _cellHeight += 35 + WXMargin;
+    
+    return _cellHeight;
+}
+
 @end
