@@ -40,7 +40,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     self.tableView.contentInset = UIEdgeInsetsMake(WXNavMaxY + WXTitlesViewH, 0, WXTabBarH, 0);
     // 设置滚动条在滚动视图中的位置(滚动条的内边距)
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
-    self.tableView.backgroundColor = WXColor(206, 206, 206);
+    self.tableView.backgroundColor = WXCommonBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     // 1.监听通知

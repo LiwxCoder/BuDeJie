@@ -56,7 +56,7 @@ static NSString * const ID = @"cell";
     // 4.取消系统的分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // 设置tableView背景色,之后将cell的高度-1,漏出的背景充当分割线
-    self.tableView.backgroundColor = WXColor(206, 206, 206);
+    self.tableView.backgroundColor = WXCommonBgColor;
 }
 
 #pragma =======================================================================

@@ -58,7 +58,10 @@
 // ----------------------------------------------------------------------------
 // 快速设置颜色UIColor
 #define WXColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g) / 255.0 blue:(b)/ 255.0 alpha:1]
-#define WXRandomColor WXColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define WXRandomColor   WXColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+#define WXGrayColor(v)  WXColor((v), (v), (v))
+#define WXCommonBgColor WXGrayColor(206)
 
 // ----------------------------------------------------------------------------
 // 获取应用程序的keyWindow
