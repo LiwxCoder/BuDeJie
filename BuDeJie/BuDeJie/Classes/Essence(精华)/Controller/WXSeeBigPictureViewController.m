@@ -102,62 +102,29 @@
 
 
 #pragma =======================================================================
+#pragma mark - 获得自定义相册,相机胶卷相册
+// ----------------------------------------------------------------------------
+// 获得自定义相册,相机胶卷相册测试, 仅作为测试
+- (void)getAssetCollections
+{
+    // 获得所有自定义相册
+    PHFetchResult<PHAssetCollection *> *collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    for (PHAssetCollection *collection in collections) {
+        WXLog(@"%@", collection.localizedTitle);
+    }
+    
+    // 获得相机胶卷相册
+    PHAssetCollection *cameraRoll = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil].firstObject;
+    WXLog(@"%@", cameraRoll.localizedTitle);
+}
+
+#pragma =======================================================================
 #pragma mark - 监听返回,保存按钮点击
 
 - (IBAction)back
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-
-- (IBAction)save
-{
-    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-    switch (status) {
-            // User has not yet made a choice with regards to this application
-            // 用户还没有对当前App进行授权（还没有弹框让用户做过选择）
-        case PHAuthorizationStatusNotDetermined: {
-            // 弹框让用户做出选择
-            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus justNowStatus) {
-                // 在用户做出选择以后就会自动调用这个block
-                // 传进来的status参数就是用户刚才做的选择
-                if (justNowStatus == PHAuthorizationStatusDenied) {
-                    XMGLog(@"用户点击了“Don't Allow”")
-                } else if (justNowStatus == PHAuthorizationStatusAuthorized) {
-                    [self saveImage];
-                }
-            }];
-            break;
-        }
-            
-            // User has explicitly denied this application access to photos data.
-            // 用户不允许当前App访问相册（之前在弹框时，用户点击了“Don't Allow”\“不允许”）
-        case PHAuthorizationStatusDenied: {
-            // 提醒用户打开相册的访问开关：设置-隐私-照片-App名字
-            XMGLog(@"提醒用户打开相册的访问开关：设置-隐私-照片-App名字")
-            break;
-        }
-            
-            // User has authorized this application to access photos data.
-            // 用户允许当前App访问相册（之前在弹框时，用户点击了“OK”\“好”）
-        case PHAuthorizationStatusAuthorized: {
-            [self saveImage];
-            break;
-        }
-            
-            // This application is not authorized to access photo data.
-            // The user cannot change this application’s status, possibly due to active restrictions such as parental controls being in place.
-            // 系统级别的限制，导致当前App无法访问相册（用户也无法改变这种状态）
-        case PHAuthorizationStatusRestricted: {
-            [SVProgressHUD showErrorWithStatus:@"因为系统原因，无法保存图片！"];
-            break;
-        }
-    }
-}
-
- 
-*/
 
 - (IBAction)save
 {
@@ -215,12 +182,130 @@
 
 - (void)saveImage
 {
+    NSError *error = nil;
+    
+    // ------------------------------------------------------------------------
     // 1.保存图片到【Camera Roll（相机胶卷）】中
+    __block NSString *assetId = nil;
+    // performChangesAndWait方法中的block是同步执行的
+    // 1.1 获取要保存的图片的占位标识,保存图片到相机胶卷
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        // 此处只是创建占位标识,并不能获取到PHAsset图片对象,必须等这个block执行完成后才能获取到PHAsset图片对象.
+        // 执行完block会保存图片到相机胶卷(Camera Roll主相册).
+        assetId  = [PHAssetChangeRequest creationRequestForAssetFromImage:self.imageView.image].placeholderForCreatedAsset.localIdentifier;
+    } error:&error];
+    // 1.2 通过占位标识获取PHAsset图片对象,目的是为了后面关联到自定义相册.
+    PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsWithLocalIdentifiers:@[assetId] options:nil];
+
     
-    // 2.创建【自定义相册】
+    // ------------------------------------------------------------------------
+    // 2.创建【自定义相册】,名称为App的名称
+    // 2.1 获得App的名称
+    NSString *title = [NSBundle mainBundle].infoDictionary[(__bridge NSString *)kCFBundleNameKey];
+    // 2.2 检测有没有创建过相册
+    PHAssetCollection *createCollection = nil;
+    PHFetchResult<PHAssetCollection *> *collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    // 遍历查找是否已经存在App名称的相册,
+    for (PHAssetCollection *collection in collections) {
+        if ([collection.localizedTitle isEqualToString:title]) {
+            // 查找到已经存在App名称的相册,退出遍历
+            createCollection = collection;
+            break;
+        }
+    }
     
+    // 2.3 判断有没有创建过相册
+    if (createCollection == nil) {
+        // 还没创建过App相册,创建自定义App名称的相册
+        __block NSString *collectionId = nil;
+        [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+            // 获取相册的占位标识
+            collectionId = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:title].placeholderForCreatedAssetCollection.localIdentifier;
+        } error:&error];
+        
+        // 2.4 通过相册占位标识获取相册对象,目的是为了后面关联到自定义相册.
+        createCollection = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[collectionId] options:nil].firstObject;
+    }
+    
+    // ------------------------------------------------------------------------
     // 3.将刚才保存到【Camera Roll（相机胶卷）】中的图片，引用（添加）到【自定义相册】
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        // 通过创建的相册对象创建PHAssetCollectionChangeRequest对象
+        PHAssetCollectionChangeRequest *request = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:createCollection];
+        // 使用PHAssetCollectionChangeRequest对象为图片对象和自定义App名称的相册对象添加关联
+        [request insertAssets:assets atIndexes:[NSIndexSet indexSetWithIndex:0]];
+    } error:&error];
+    
+    
+    // ------------------------------------------------------------------------
+    // 提示保存成功/失败
+    if (error) {
+        [SVProgressHUD showErrorWithStatus:@"保存失败!"];
+    } else {
+        [SVProgressHUD showSuccessWithStatus:@"保存成功!"];
+    }
 }
+
+// ----------------------------------------------------------------------------
+// Photos框架使用说明
+
+/*
+ // 不允许changes中嵌套changes
+ [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+ [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+ 
+ } error:nil];
+ } error:nil];*/
+
+/*
+ 在CF和NS数据类型之间转换，需要利用桥接__bridge
+ //    NSString *key = (__bridge NSString *)kCFBundleNameKey;
+ //    CFStringRef string = (__bridge CFStringRef)@"123";
+ */
+
+/*
+ This method can only be called from inside of -[PHPhotoLibrary performChanges:completionHandler:] or -[PHPhotoLibrary performChangesAndWait:error:]
+ 
+ [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+ [PHAssetChangeRequest creationRequestForAssetFromImage:self.imageView.image];
+ } completionHandler:^(BOOL success, NSError * _Nullable error) {
+ 
+ }];
+ 
+ [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+ [PHAssetChangeRequest creationRequestForAssetFromImage:self.imageView.image];
+ } error:nil];
+ */
+
+/*
+ Photos.framework使用须知
+ 1.PHAsset : 一个PHAsset对象代表相册中的一张图片或者一段视频
+ 
+ 2.PHAssetCollection : 一个PHAssetCollection对象代表一个相册
+ 
+ 3.PHAssetChangeRequest : 利用这个对象能添加、删除、修改PHAsset对象
+ 
+ 4.PHAssetCollectionChangeRequest : 利用这个对象能添加、删除、修改PHAssetCollection对象
+ 
+ 5.对相片\相册的任何改动操作，都必须放在以下方法的block中
+ 1> -[PHPhotoLibrary performChanges:completionHandler:]
+ 2> -[PHPhotoLibrary performChangesAndWait:error:]
+ */
+
+/*
+ 1.保存图片到【Camera Roll（相机胶卷）】中
+ 1> UIImageWriteToSavedPhotosAlbum函数
+ 2> AssetsLibrary.framework - 从iOS9开始废弃
+ 3> Photos.framework - 从iOS8开始可以使用，可以完全取代AssetsLibrary.framework
+ 
+ 2.创建【自定义相册】
+ 1> AssetsLibrary.framework
+ 2> Photos.framework
+ 
+ 3.将刚才保存到【Camera Roll（相机胶卷）】中的图片，引用（添加）到【自定义相册】
+ 1> AssetsLibrary.framework
+ 2> Photos.framework
+ */
 
 
 
