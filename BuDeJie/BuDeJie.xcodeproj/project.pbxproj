@@ -53,6 +53,8 @@
 		D97812801C5DE5B6004960DB /* UIImage+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = D978127F1C5DE5B6004960DB /* UIImage+Circle.m */; };
 		D97812831C5DE7F0004960DB /* UIImageView+Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D97812821C5DE7F0004960DB /* UIImageView+Header.m */; };
 		D97FC41B1C4E89FC00D8EC8D /* WXSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */; };
+		D9CAE56A1C7876CC002AD1BB /* WXSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CAE5681C7876CC002AD1BB /* WXSeeBigPictureViewController.m */; };
+		D9CAE56B1C7876CC002AD1BB /* WXSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CAE5691C7876CC002AD1BB /* WXSeeBigPictureViewController.xib */; };
 		D9D1B85A1C50E54000F9502E /* WXSubTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D1B8591C50E54000F9502E /* WXSubTagViewController.m */; };
 		D9D1B85D1C50EC4A00F9502E /* WXSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D1B85C1C50EC4A00F9502E /* WXSubTagItem.m */; };
 		D9D1B8611C50F27300F9502E /* WXSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D1B85F1C50F27300F9502E /* WXSubTagCell.m */; };
@@ -175,6 +177,9 @@
 		D97812821C5DE7F0004960DB /* UIImageView+Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Header.m"; sourceTree = "<group>"; };
 		D97FC4191C4E89FC00D8EC8D /* WXSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSettingController.h; sourceTree = "<group>"; };
 		D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSettingController.m; sourceTree = "<group>"; };
+		D9CAE5671C7876CC002AD1BB /* WXSeeBigPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSeeBigPictureViewController.h; sourceTree = "<group>"; };
+		D9CAE5681C7876CC002AD1BB /* WXSeeBigPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSeeBigPictureViewController.m; sourceTree = "<group>"; };
+		D9CAE5691C7876CC002AD1BB /* WXSeeBigPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXSeeBigPictureViewController.xib; sourceTree = "<group>"; };
 		D9D1B8581C50E54000F9502E /* WXSubTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSubTagViewController.h; sourceTree = "<group>"; };
 		D9D1B8591C50E54000F9502E /* WXSubTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSubTagViewController.m; sourceTree = "<group>"; };
 		D9D1B85B1C50EC4A00F9502E /* WXSubTagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSubTagItem.h; sourceTree = "<group>"; };
@@ -370,6 +375,9 @@
 				D942052A1C5795230011A49A /* WXPictureViewController.m */,
 				D942052C1C5795390011A49A /* WXWordViewController.h */,
 				D942052D1C5795390011A49A /* WXWordViewController.m */,
+				D9CAE5671C7876CC002AD1BB /* WXSeeBigPictureViewController.h */,
+				D9CAE5681C7876CC002AD1BB /* WXSeeBigPictureViewController.m */,
+				D9CAE5691C7876CC002AD1BB /* WXSeeBigPictureViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -818,6 +826,7 @@
 				D9D1B8671C51006100F9502E /* WXFriendTrendViewController.xib in Resources */,
 				D92D6B911C5281C90008A53C /* WXMeViewController.storyboard in Resources */,
 				D91B9BAF1C76118F004FF25A /* WXTopicPictureView.xib in Resources */,
+				D9CAE56B1C7876CC002AD1BB /* WXSeeBigPictureViewController.xib in Resources */,
 				D91592201C5BD0540028D7A6 /* WXTopicCell.xib in Resources */,
 				D9D487D91C4F19F60015B0CD /* LaunchImage-568h@2x.png in Resources */,
 				D9D487DE1C4F19F60015B0CD /* LaunchImage.png in Resources */,
@@ -929,6 +938,7 @@
 				D92D6B831C526A680008A53C /* UIBarButtonItem+Item.m in Sources */,
 				D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */,
 				D9FB1FBB1C5E4EFA00DC3D62 /* WXRefreshHeader.m in Sources */,
+				D9CAE56A1C7876CC002AD1BB /* WXSeeBigPictureViewController.m in Sources */,
 				D97567CE1C5D2224009E616C /* NSCalendar+Init.m in Sources */,
 				D9FF0B021C5312FA00A98A2E /* WXWebViewController.m in Sources */,
 				D91592111C5B83FF0028D7A6 /* WXTopicItem.m in Sources */,
