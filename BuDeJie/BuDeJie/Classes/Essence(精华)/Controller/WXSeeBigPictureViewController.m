@@ -9,6 +9,7 @@
 #import "WXSeeBigPictureViewController.h"
 #import "WXTopicItem.h"
 #import <UIImageView+WebCache.h>
+#import <SVProgressHUD.h>
 
 @interface WXSeeBigPictureViewController ()<UIScrollViewDelegate>
 
@@ -109,7 +110,24 @@
 
 - (IBAction)save
 {
-    WXLog(@"%s", __func__);
+    // ------------------------------------------------------------------------
+    // 保存图片到Camera Roll（相机胶卷）中,第三个参数必须传image:didFinishSavingWithError:contextInfo:格式的方法,方法名可以不一样,但是参数必须一样,否则会报错
+    /*
+     NSInvocation : 出现这个类名，一般都是“调用方法”时报的错误
+     
+     -[NSInvocation setArgument:atIndex:]: index (2) out of bounds [-1, 1]
+     错误原因：方法调用时参数越界，参数个数不够
+     */
+    UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (error) {
+        [SVProgressHUD showErrorWithStatus:@"保存失败!"];
+    } else {
+        [SVProgressHUD showSuccessWithStatus:@"保存成功!"];
+    }
 }
 
 @end
