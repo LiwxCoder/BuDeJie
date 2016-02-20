@@ -30,6 +30,8 @@
     // 1.创建scrollView
     // 因为控制器的view是从xib中加载的,所以此时控制器view的尺寸并不是最终显示的尺寸,所以不能让scrollView的frame = self.view.frame;
     UIScrollView *scrollView = [[UIScrollView alloc] init];
+    // scrollView添加手势,实现点击图片或其他位置,退出控制器
+    [scrollView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(back)]];
     scrollView.backgroundColor = [UIColor orangeColor];
     // 方案一
     scrollView.frame = [UIScreen mainScreen].bounds;
