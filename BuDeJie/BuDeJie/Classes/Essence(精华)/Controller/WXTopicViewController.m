@@ -29,6 +29,12 @@
 
 @implementation WXTopicViewController
 
+/** 仅防止警告而已 */
+- (WXTopicType)type
+{
+    return 0;
+}
+
 static NSString * const WXTopicCellId = @"WXTopicCellId";
 
 - (void)viewDidLoad {

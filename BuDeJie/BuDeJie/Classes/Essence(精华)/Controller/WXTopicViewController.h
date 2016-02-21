@@ -11,7 +11,7 @@
 
 @interface WXTopicViewController : UITableViewController
 
-// 方法二: 帖子父类控制器对外提供type属性
-@property (nonatomic, assign) WXTopicType type;
+/** 对外提供接口方法type方法,让子类重写 */
+- (WXTopicType)type;
 
 @end

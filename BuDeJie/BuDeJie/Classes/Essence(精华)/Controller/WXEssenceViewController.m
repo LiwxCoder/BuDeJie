@@ -57,34 +57,11 @@
 - (void)setupAllChildViewController
 {
     // 1.添加5个子控制器
-//    [self addChildViewController:[[WXAllViewController alloc] init]];
-//    [self addChildViewController:[[WXVideoViewController alloc] init]];
-//    [self addChildViewController:[[WXVoiceViewController alloc] init]];
-//    [self addChildViewController:[[WXPictureViewController alloc] init]];
-//    [self addChildViewController:[[WXWordViewController alloc] init]];
-    
-    // 方法二: 添加子控制器
-    WXAllViewController *allVc = [[WXAllViewController alloc] init];
-    allVc.type = WXTopicTypeAll;
-    [self addChildViewController:allVc];
-    
-    WXVideoViewController *videoVc = [[WXVideoViewController alloc] init];
-    videoVc.type = WXTopicTypeVideo;
-    [self addChildViewController:videoVc];
-    
-    WXVoiceViewController *voiceVc = [[WXVoiceViewController alloc] init];
-    voiceVc.type = WXTopicTypeVoice;
-    [self addChildViewController:voiceVc];
-    
-    WXPictureViewController *pictureVc = [[WXPictureViewController alloc] init];
-    pictureVc.type = WXTopicTypePicture;
-    [self addChildViewController:pictureVc];
-    
-    WXWordViewController *wordVc = [[WXWordViewController alloc] init];
-    wordVc.type = WXTopicTypeWord;
-    [self addChildViewController:wordVc];
-    
-    
+    [self addChildViewController:[[WXAllViewController alloc] init]];
+    [self addChildViewController:[[WXVideoViewController alloc] init]];
+    [self addChildViewController:[[WXVoiceViewController alloc] init]];
+    [self addChildViewController:[[WXPictureViewController alloc] init]];
+    [self addChildViewController:[[WXWordViewController alloc] init]];
     
     // 2.获取子控制器数量
     NSInteger count = self.childViewControllers.count;

@@ -15,12 +15,15 @@
 @implementation WXAllViewController
 
 - (void)viewDidLoad {
-    
-    // 方法二: 必须在[super viewDidLoad]之前设置类型
-    self.type = WXTopicTypeAll;
-    
     [super viewDidLoad];
     
+}
+
+// ----------------------------------------------------------------------------
+// 子类重写父类的type方法
+- (WXTopicType)type
+{
+    return WXTopicTypeAll;
 }
 
 @end
