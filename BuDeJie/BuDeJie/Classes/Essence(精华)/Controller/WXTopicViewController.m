@@ -219,6 +219,14 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     return item.cellHeight;
 }
 
+#pragma mark - <UIScrollViewDelegate>
+// ----------------------------------------------------------------------------
+// 监听scrollView滚动停止.滚动停止时清除图片缓存
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [[SDImageCache sharedImageCache] clearMemory];
+}
+
 
 #pragma =======================================================================
 #pragma mark - 懒加载
