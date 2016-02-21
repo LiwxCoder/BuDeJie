@@ -15,6 +15,10 @@
 @implementation WXWordViewController
 
 - (void)viewDidLoad {
+    
+    // 方法二: 必须在[super viewDidLoad]之前设置类型
+    self.type = WXTopicTypeWord;
+    
     [super viewDidLoad];
     
 }
