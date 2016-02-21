@@ -16,6 +16,13 @@
 #import "WXRefreshHeader.h"
 #import "WXRefreshFooter.h"
 
+// 方法一 必须添加子类的头文件,不推荐
+#import "WXAllViewController.h"
+#import "WXVideoViewController.h"
+#import "WXVoiceViewController.h"
+#import "WXPictureViewController.h"
+#import "WXWordViewController.h"
+
 @interface WXTopicViewController ()
 
 /** 请求会话管理者 */
@@ -28,6 +35,25 @@
 @end
 
 @implementation WXTopicViewController
+
+// ----------------------------------------------------------------------------
+// 返回帖子请求的数据类型
+// 方法一 通过调用者的类名来判断要返回请求什么类型的数据.(不推荐,此方式必须在父类中包含子类控制器)
+- (WXTopicType)type
+{
+    /** 全部 */
+    if ([self isKindOfClass:[WXAllViewController class]]) return WXTopicTypeAll;
+    /** 图片 */
+    if ([self isKindOfClass:[WXPictureViewController class]]) return WXTopicTypePicture;
+    /** 文字 */
+    if ([self isKindOfClass:[WXWordViewController class]]) return WXTopicTypeWord;
+    /** 声音 */
+    if ([self isKindOfClass:[WXVoiceViewController class]]) return WXTopicTypeVoice;
+    /** 视频 */
+    if ([self isKindOfClass:[WXVideoViewController class]]) return WXTopicTypeVideo;
+
+    return 0;
+}
 
 static NSString * const WXTopicCellId = @"WXTopicCellId";
 
@@ -82,7 +108,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(WXTopicTypeAll);
+    parameters[@"type"] = @(self.type);
     
     
     // 3.发送请求
@@ -129,7 +155,7 @@ static NSString * const WXTopicCellId = @"WXTopicCellId";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(WXTopicTypeAll);
+    parameters[@"type"] = @(self.type);
     parameters[@"maxtime"] = self.maxtime;
     
     // 3.发送请求
