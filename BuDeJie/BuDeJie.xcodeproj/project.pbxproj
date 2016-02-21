@@ -363,18 +363,9 @@
 		D95F33001C4D116500ED13EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D9D6388B1C79D22200278D8B /* Topic */,
 				D95F33011C4D116500ED13EB /* WXEssenceViewController.h */,
 				D95F33021C4D116500ED13EB /* WXEssenceViewController.m */,
-				D94205201C5794EB0011A49A /* WXAllViewController.h */,
-				D94205211C5794EB0011A49A /* WXAllViewController.m */,
-				D94205231C5794FE0011A49A /* WXVideoViewController.h */,
-				D94205241C5794FE0011A49A /* WXVideoViewController.m */,
-				D94205261C5795110011A49A /* WXVoiceViewController.h */,
-				D94205271C5795110011A49A /* WXVoiceViewController.m */,
-				D94205291C5795230011A49A /* WXPictureViewController.h */,
-				D942052A1C5795230011A49A /* WXPictureViewController.m */,
-				D942052C1C5795390011A49A /* WXWordViewController.h */,
-				D942052D1C5795390011A49A /* WXWordViewController.m */,
 				D9CAE5671C7876CC002AD1BB /* WXSeeBigPictureViewController.h */,
 				D9CAE5681C7876CC002AD1BB /* WXSeeBigPictureViewController.m */,
 				D9CAE5691C7876CC002AD1BB /* WXSeeBigPictureViewController.xib */,
@@ -709,6 +700,23 @@
 				D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */,
 			);
 			path = "启动图片";
+			sourceTree = "<group>";
+		};
+		D9D6388B1C79D22200278D8B /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				D94205201C5794EB0011A49A /* WXAllViewController.h */,
+				D94205211C5794EB0011A49A /* WXAllViewController.m */,
+				D94205231C5794FE0011A49A /* WXVideoViewController.h */,
+				D94205241C5794FE0011A49A /* WXVideoViewController.m */,
+				D94205261C5795110011A49A /* WXVoiceViewController.h */,
+				D94205271C5795110011A49A /* WXVoiceViewController.m */,
+				D94205291C5795230011A49A /* WXPictureViewController.h */,
+				D942052A1C5795230011A49A /* WXPictureViewController.m */,
+				D942052C1C5795390011A49A /* WXWordViewController.h */,
+				D942052D1C5795390011A49A /* WXWordViewController.m */,
+			);
+			name = Topic;
 			sourceTree = "<group>";
 		};
 		D9FB1FBF1C5E777200DC3D62 /* Networking */ = {
