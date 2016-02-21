@@ -6,7 +6,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WXLoginRegisterViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WXLoginRegisterController">
             <connections>
                 <outlet property="fastLoginView" destination="J9p-KD-M06" id="Mbz-Ot-T57"/>
                 <outlet property="leftMargin" destination="RMM-eM-dgD" id="Qv0-Zg-QgU"/>

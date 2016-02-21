@@ -7,7 +7,7 @@
 //
 
 #import "WXFriendTrendViewController.h"
-#import "WXLoginRegisterViewController.h"
+#import "WXLoginRegisterController.h"
 
 @interface WXFriendTrendViewController ()
 
@@ -53,10 +53,10 @@
 #pragma mark - 立即登录注册按钮点击
 - (IBAction)clickLoginRegister
 {
-    WXLoginRegisterViewController *loginRegisterVc = [[WXLoginRegisterViewController alloc] init];
+    WXLoginRegisterController *loginRegisterVc = [[WXLoginRegisterController alloc] init];
     
-//    [self presentViewController:loginRegisterVc animated:YES completion:nil];
-    [self.navigationController pushViewController:loginRegisterVc animated:YES];
+    [self presentViewController:loginRegisterVc animated:YES completion:nil];
+//    [self.navigationController pushViewController:loginRegisterVc animated:YES];
 }
 
 

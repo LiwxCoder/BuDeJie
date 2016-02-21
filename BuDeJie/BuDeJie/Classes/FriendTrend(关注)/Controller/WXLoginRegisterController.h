@@ -1,5 +1,5 @@
 //
-//  WXLoginRegisterViewController.h
+//  WXLoginRegisterController.h
 //  BuDeJie
 //
 //  Created by liwx on 16/1/21.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WXLoginRegisterViewController : UIViewController
+@interface WXLoginRegisterController : UIViewController
 
 @end

@@ -1,16 +1,16 @@
 //
-//  WXLoginRegisterViewController.m
+//  WXLoginRegisterController.m
 //  BuDeJie
 //
 //  Created by liwx on 16/1/21.
 //  Copyright © 2016年 liwx. All rights reserved.
 //
 
-#import "WXLoginRegisterViewController.h"
+#import "WXLoginRegisterController.h"
 #import "WXFastLoginView.h"
 #import "WXLoginRegisterView.h"
 
-@interface WXLoginRegisterViewController ()
+@interface WXLoginRegisterController ()
 /** 底部view的占位视图 */
 @property (weak, nonatomic) IBOutlet UIView *fastLoginView;
 /** 中间的view */
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation WXLoginRegisterViewController
+@implementation WXLoginRegisterController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
