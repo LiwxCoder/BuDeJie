@@ -74,6 +74,7 @@
 		D9D487DD1C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D61C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png */; };
 		D9D487DE1C4F19F60015B0CD /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D71C4F19F60015B0CD /* LaunchImage.png */; };
 		D9D487DF1C4F19F60015B0CD /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */; };
+		D9D6388E1C79D44000278D8B /* WXTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D6388D1C79D44000278D8B /* WXTopicViewController.m */; };
 		D9DBC02D1C51461B0018B030 /* WXLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DBC02C1C51461B0018B030 /* WXLoginRegisterView.m */; };
 		D9DBC02F1C5146260018B030 /* WXLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DBC02E1C5146260018B030 /* WXLoginRegisterView.xib */; };
 		D9EAA73A1C5298AF00341505 /* GlobalConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EAA7391C5298AF00341505 /* GlobalConst.m */; };
@@ -206,6 +207,8 @@
 		D9D487D61C4F19F60015B0CD /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
 		D9D487D71C4F19F60015B0CD /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		D9D487D81C4F19F60015B0CD /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		D9D6388C1C79D44000278D8B /* WXTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTopicViewController.h; sourceTree = "<group>"; };
+		D9D6388D1C79D44000278D8B /* WXTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTopicViewController.m; sourceTree = "<group>"; };
 		D9DBC02B1C51461B0018B030 /* WXLoginRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLoginRegisterView.h; sourceTree = "<group>"; };
 		D9DBC02C1C51461B0018B030 /* WXLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLoginRegisterView.m; sourceTree = "<group>"; };
 		D9DBC02E1C5146260018B030 /* WXLoginRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXLoginRegisterView.xib; sourceTree = "<group>"; };
@@ -715,6 +718,8 @@
 				D942052A1C5795230011A49A /* WXPictureViewController.m */,
 				D942052C1C5795390011A49A /* WXWordViewController.h */,
 				D942052D1C5795390011A49A /* WXWordViewController.m */,
+				D9D6388C1C79D44000278D8B /* WXTopicViewController.h */,
+				D9D6388D1C79D44000278D8B /* WXTopicViewController.m */,
 			);
 			name = Topic;
 			sourceTree = "<group>";
@@ -906,6 +911,7 @@
 				D9D487CF1C4F16150015B0CD /* WXAdViewController.m in Sources */,
 				D91B9BAD1C761175004FF25A /* WXTopicVideoView.m in Sources */,
 				D94205251C5794FE0011A49A /* WXVideoViewController.m in Sources */,
+				D9D6388E1C79D44000278D8B /* WXTopicViewController.m in Sources */,
 				D92D6B851C526A680008A53C /* UIImage+Antialias.m in Sources */,
 				D92D6B821C526A680008A53C /* AppDelegate.m in Sources */,
 				D945A01F1C58E6510070C071 /* WXTopWindow.m in Sources */,

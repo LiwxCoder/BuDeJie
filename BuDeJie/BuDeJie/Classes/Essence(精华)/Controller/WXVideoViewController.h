@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WXTopicViewController.h"
 
-@interface WXVideoViewController : UITableViewController
+@interface WXVideoViewController : WXTopicViewController
 
 @end
