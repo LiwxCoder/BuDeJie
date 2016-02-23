@@ -28,6 +28,8 @@ typedef NS_ENUM(NSInteger, WXTopicType) {
 #pragma =======================================================================
 #pragma mark - 服务器返回的模型数据
 
+/** id */
+@property (nonatomic, copy) NSString *ID;
 /** 用户的名字 */
 @property (nonatomic, copy) NSString *name;
 /** 用户的头像 */
@@ -59,11 +61,11 @@ typedef NS_ENUM(NSInteger, WXTopicType) {
 /** 视频文件的播放时长 */
 @property (nonatomic, assign) NSInteger videotime;
 /** 小图 */
-@property (nonatomic, copy) NSString *image0;
+@property (nonatomic, copy) NSString *small_image;
 /** 大图 */
-@property (nonatomic, copy) NSString *image1;
+@property (nonatomic, copy) NSString *large_image;
 /** 中图 */
-@property (nonatomic, copy) NSString *image2;
+@property (nonatomic, copy) NSString *middle_image;
 /** 是否为动态图 */
 @property (nonatomic, assign) BOOL is_gif;
 

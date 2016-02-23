@@ -53,7 +53,7 @@
     
     // ------------------------------------------------------------------------
     // 1.设置图片
-    [self.imageView wx_setLargetImage:topicItem.image1 smallImage:topicItem.image0 placeholder:nil];
+    [self.imageView wx_setLargetImage:topicItem.large_image smallImage:topicItem.small_image placeholder:nil];
     
     // ------------------------------------------------------------------------
     // 2.设置播放数量

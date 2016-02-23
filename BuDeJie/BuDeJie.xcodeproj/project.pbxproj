@@ -55,6 +55,7 @@
 		D97812801C5DE5B6004960DB /* UIImage+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = D978127F1C5DE5B6004960DB /* UIImage+Circle.m */; };
 		D97812831C5DE7F0004960DB /* UIImageView+Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D97812821C5DE7F0004960DB /* UIImageView+Header.m */; };
 		D97FC41B1C4E89FC00D8EC8D /* WXSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */; };
+		D992843C1C7C41E20077E217 /* MJExtensionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D992843B1C7C41E20077E217 /* MJExtensionConfig.m */; };
 		D9CAE56A1C7876CC002AD1BB /* WXSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CAE5681C7876CC002AD1BB /* WXSeeBigPictureViewController.m */; };
 		D9CAE56B1C7876CC002AD1BB /* WXSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CAE5691C7876CC002AD1BB /* WXSeeBigPictureViewController.xib */; };
 		D9D1B85A1C50E54000F9502E /* WXSubTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D1B8591C50E54000F9502E /* WXSubTagViewController.m */; };
@@ -181,6 +182,8 @@
 		D97812821C5DE7F0004960DB /* UIImageView+Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Header.m"; sourceTree = "<group>"; };
 		D97FC4191C4E89FC00D8EC8D /* WXSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSettingController.h; sourceTree = "<group>"; };
 		D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSettingController.m; sourceTree = "<group>"; };
+		D992843A1C7C41E20077E217 /* MJExtensionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConfig.h; sourceTree = "<group>"; };
+		D992843B1C7C41E20077E217 /* MJExtensionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConfig.m; sourceTree = "<group>"; };
 		D9CAE5671C7876CC002AD1BB /* WXSeeBigPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSeeBigPictureViewController.h; sourceTree = "<group>"; };
 		D9CAE5681C7876CC002AD1BB /* WXSeeBigPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSeeBigPictureViewController.m; sourceTree = "<group>"; };
 		D9CAE5691C7876CC002AD1BB /* WXSeeBigPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXSeeBigPictureViewController.xib; sourceTree = "<group>"; };
@@ -258,6 +261,7 @@
 		D92D6B6E1C526A680008A53C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				D99284391C7C412D0077E217 /* ModelTools */,
 				D92D6B721C526A680008A53C /* Category */,
 				D92D6B6F1C526A680008A53C /* AppDelegate.h */,
 				D92D6B701C526A680008A53C /* AppDelegate.m */,
@@ -655,6 +659,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D99284391C7C412D0077E217 /* ModelTools */ = {
+			isa = PBXGroup;
+			children = (
+				D992843A1C7C41E20077E217 /* MJExtensionConfig.h */,
+				D992843B1C7C41E20077E217 /* MJExtensionConfig.m */,
+			);
+			path = ModelTools;
+			sourceTree = "<group>";
+		};
 		D9D487C81C4F15D90015B0CD /* Ad(广告) */ = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +933,7 @@
 				D942051F1C578C060011A49A /* WXTitleButton.m in Sources */,
 				D92D6B861C526A680008A53C /* UIImage+Render.m in Sources */,
 				D94205221C5794EB0011A49A /* WXAllViewController.m in Sources */,
+				D992843C1C7C41E20077E217 /* MJExtensionConfig.m in Sources */,
 				D9D1B85D1C50EC4A00F9502E /* WXSubTagItem.m in Sources */,
 				D942052E1C5795390011A49A /* WXWordViewController.m in Sources */,
 				D91B9BAA1C76115D004FF25A /* WXTopicVoiceView.m in Sources */,

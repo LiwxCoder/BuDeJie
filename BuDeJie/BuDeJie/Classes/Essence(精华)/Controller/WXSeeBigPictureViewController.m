@@ -46,7 +46,7 @@
     UIImageView *imageView = [[UIImageView alloc] init];
     
     // 2.2 设置图片
-    [imageView sd_setImageWithURL:[NSURL URLWithString:self.topicItem.image1] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [imageView sd_setImageWithURL:[NSURL URLWithString:self.topicItem.large_image] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         // 判断图片是否下载成功
         if (image == nil) return;
         // 保存按钮变成可用状态

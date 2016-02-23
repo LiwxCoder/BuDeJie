@@ -51,7 +51,7 @@
     _topicItem = topicItem;
     
     // 设置图片
-    [self.imageView wx_setLargetImage:topicItem.image1 smallImage:topicItem.image0 placeholder:nil];
+    [self.imageView wx_setLargetImage:topicItem.large_image smallImage:topicItem.small_image placeholder:nil];
     
     // 控制gif图片隐藏/显示
     self.gifView.hidden = !topicItem.is_gif;
