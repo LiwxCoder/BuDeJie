@@ -11,6 +11,8 @@
 #import "WXTopicPictureView.h"
 #import "WXTopicVoiceView.h"
 #import "WXTopicVideoView.h"
+#import "WXComment.h"
+#import "WXUser.h"
 #import <UIImageView+WebCache.h>
 
 @interface WXTopicCell ()
@@ -171,13 +173,13 @@
 - (void)setTopCmt
 {
     // 1.获取最热评论数据,返回数据为字典,只显示第一条,只需取出第一条即可
-    NSDictionary *dict = self.topicItem.top_cmt.firstObject;
+    WXComment *cmt = self.topicItem.top_cmt;
     // 2.判断是否有最热评论数据
-    if (dict) {
+    if (cmt) {
         
         // 1.获取最热评论 用户名 + 评论内容
-        NSString *username = dict[@"user"][@"username"];
-        NSString *content = dict[@"content"];
+        NSString *username = cmt.user.username; // dict[@"user"][@"username"];
+        NSString *content = cmt.content;        // dict[@"content"];
         // 判断评论内容是否为空串,空串是语音评论
         if (content.length == 0) {
             content = @"[语音评论]";

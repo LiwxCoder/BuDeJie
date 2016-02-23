@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class WXComment;
 
 // ----------------------------------------------------------------------------
 // 帖子的类型
@@ -49,7 +50,8 @@ typedef NS_ENUM(NSInteger, WXTopicType) {
 /** 帖子的类型 */
 @property (nonatomic, assign) WXTopicType type;
 /** 最热评论 */
-@property (nonatomic, strong) NSArray *top_cmt;
+//@property (nonatomic, strong) NSArray *top_cmt;
+@property (nonatomic, strong) WXComment *top_cmt;
 /** 图片宽度 */
 @property (nonatomic, assign) CGFloat width;
 /** 图片高度 */

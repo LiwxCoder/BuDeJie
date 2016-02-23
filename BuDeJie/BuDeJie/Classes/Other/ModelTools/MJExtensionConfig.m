@@ -24,9 +24,17 @@
                  @"small_image" : @"image0",
                  @"large_image" : @"image1",
                  @"middle_image" : @"image2",
+                 @"top_cmt" : @"top_cmt[0]",
 //                 @"ID" : @"id"
                  };
     }];
+    
+//    // ------------------------------------------------------------------------
+//    // mj_setupObjectClassInArray: 数组中需要转换的模型类
+//    // top_cmt是字典数组,则转为WXComment模型数组
+//    [WXTopicItem mj_setupObjectClassInArray:^NSDictionary *{
+//        return @{@"top_cmt" : @"WXComment"};
+//    }];
     
     // ------------------------------------------------------------------------
     // 统一映射所有类中id属性为ID

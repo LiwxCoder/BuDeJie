@@ -56,6 +56,8 @@
 		D97812831C5DE7F0004960DB /* UIImageView+Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D97812821C5DE7F0004960DB /* UIImageView+Header.m */; };
 		D97FC41B1C4E89FC00D8EC8D /* WXSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */; };
 		D992843C1C7C41E20077E217 /* MJExtensionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D992843B1C7C41E20077E217 /* MJExtensionConfig.m */; };
+		D992843F1C7C47230077E217 /* WXUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D992843E1C7C47230077E217 /* WXUser.m */; };
+		D99284421C7C476D0077E217 /* WXComment.m in Sources */ = {isa = PBXBuildFile; fileRef = D99284411C7C476D0077E217 /* WXComment.m */; };
 		D9CAE56A1C7876CC002AD1BB /* WXSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CAE5681C7876CC002AD1BB /* WXSeeBigPictureViewController.m */; };
 		D9CAE56B1C7876CC002AD1BB /* WXSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CAE5691C7876CC002AD1BB /* WXSeeBigPictureViewController.xib */; };
 		D9D1B85A1C50E54000F9502E /* WXSubTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D1B8591C50E54000F9502E /* WXSubTagViewController.m */; };
@@ -184,6 +186,10 @@
 		D97FC41A1C4E89FC00D8EC8D /* WXSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSettingController.m; sourceTree = "<group>"; };
 		D992843A1C7C41E20077E217 /* MJExtensionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConfig.h; sourceTree = "<group>"; };
 		D992843B1C7C41E20077E217 /* MJExtensionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConfig.m; sourceTree = "<group>"; };
+		D992843D1C7C47230077E217 /* WXUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUser.h; sourceTree = "<group>"; };
+		D992843E1C7C47230077E217 /* WXUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXUser.m; sourceTree = "<group>"; };
+		D99284401C7C476D0077E217 /* WXComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXComment.h; sourceTree = "<group>"; };
+		D99284411C7C476D0077E217 /* WXComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXComment.m; sourceTree = "<group>"; };
 		D9CAE5671C7876CC002AD1BB /* WXSeeBigPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSeeBigPictureViewController.h; sourceTree = "<group>"; };
 		D9CAE5681C7876CC002AD1BB /* WXSeeBigPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSeeBigPictureViewController.m; sourceTree = "<group>"; };
 		D9CAE5691C7876CC002AD1BB /* WXSeeBigPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXSeeBigPictureViewController.xib; sourceTree = "<group>"; };
@@ -385,6 +391,10 @@
 			children = (
 				D915920F1C5B83FF0028D7A6 /* WXTopicItem.h */,
 				D91592101C5B83FF0028D7A6 /* WXTopicItem.m */,
+				D992843D1C7C47230077E217 /* WXUser.h */,
+				D992843E1C7C47230077E217 /* WXUser.m */,
+				D99284401C7C476D0077E217 /* WXComment.h */,
+				D99284411C7C476D0077E217 /* WXComment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -925,6 +935,7 @@
 				D91B9BAD1C761175004FF25A /* WXTopicVideoView.m in Sources */,
 				D94205251C5794FE0011A49A /* WXVideoViewController.m in Sources */,
 				D9D6388E1C79D44000278D8B /* WXTopicViewController.m in Sources */,
+				D99284421C7C476D0077E217 /* WXComment.m in Sources */,
 				D92D6B851C526A680008A53C /* UIImage+Antialias.m in Sources */,
 				D92D6B821C526A680008A53C /* AppDelegate.m in Sources */,
 				D972716F1C7A006900905D92 /* WXLoginRegisterController.m in Sources */,
@@ -945,6 +956,7 @@
 				D95F33321C4D116500ED13EB /* WXFriendTrendViewController.m in Sources */,
 				D9FF0B0A1C533B0000A98A2E /* WXFileCacheManager.m in Sources */,
 				D91B9BA41C760F29004FF25A /* UIView+Init.m in Sources */,
+				D992843F1C7C47230077E217 /* WXUser.m in Sources */,
 				D97FC41B1C4E89FC00D8EC8D /* WXSettingController.m in Sources */,
 				D95F33351C4D116500ED13EB /* WXMeViewController.m in Sources */,
 				D91B9BA71C761141004FF25A /* WXTopicPictureView.m in Sources */,
