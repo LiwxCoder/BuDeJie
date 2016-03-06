@@ -51,6 +51,12 @@
 #define WXLog(...)
 #endif
 
+#ifdef DEBUG
+#define WXAppLog(s, ... ) NSLog( @"[%@：in line: %d]-->%@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define WXAppLog(s, ... )
+#endif
+
 // ----------------------------------------------------------------------------
 // 调试打印信息
 #define WXFunc()    WXLog(@"%s", __func__)
